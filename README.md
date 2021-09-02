@@ -28,9 +28,8 @@ A command prompt for Windows 10 Mobile.
 
    > NOTE: UWP based Telnet client cannot be connect to any host either without Wpinternal's Root Access or disabling firewall.
    
-3. Connect to IP `127.0.0.1` & PORT `23`.
-4. Run the command "`Setup`".
-5. Done!! You have now CMD in your pocket ;).
+2. Connect to IP `127.0.0.1` & PORT `23`.
+3. Done!! You have now CMD in your pocket ;).
 
 
 ### Screenshots
