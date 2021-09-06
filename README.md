@@ -19,24 +19,21 @@ A command prompt for Windows 10 Mobile.
  
    > `Permanent Injection` files will be survive the hard reset. So after hard reset, you won’t need to inject CMD again in this case.
 
-3. click `Inject` button.
+3. Click `Inject` button.
 4. Perform a restart.
 
 
 ### Usage
-1. Install any Telnet client you wish.
-
-   > NOTE: UWP based Telnet client cannot be connect to any host either without Wpinternal's Root Access or disabling firewall.
-   
+1. Install & launch any Telnet client you wish.
 2. Connect to IP `127.0.0.1` & PORT `23`.
 3. Done!! You have now CMD in your pocket ;).
 
 
 ### Screenshots
-<img src="https://user-images.githubusercontent.com/66063294/131874666-8ac45206-1c15-4175-9f2e-f160468cabbe.png" width="285" height="508" alt="CMD Injector Home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/66063294/131874671-dcbb65ea-9185-4e33-95a7-8fed2e6f13db.png" width="285" height="508" alt="CMD Injector About">
+<img src="https://user-images.githubusercontent.com/66063294/131874666-8ac45206-1c15-4175-9f2e-f160468cabbe.png" width="285" height="508" alt="CMD Injector Home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/66063294/132209019-9239c5c3-7167-4545-95d1-62d3205eb72f.png" width="285" height="508" alt="CMD Injector About">
 <br/>
 <br/>
-<img src="https://user-images.githubusercontent.com/66063294/131887711-2ee7ae41-7bce-4200-8e1f-9f233232f98c.png" width="285" height="508" alt="CMD Injector Home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/66063294/131887724-937a35f2-1299-48c9-949a-34c8f90a5629.png" width="285" height="508" alt="CMD Injector About">
+<img src="https://user-images.githubusercontent.com/66063294/132209134-5827c904-c600-44b2-8583-da06d54a6ed2.png" width="285" height="508" alt="Token2Shell Home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/66063294/132209185-2221a780-3756-4516-b30c-e92522cc259d.png" width="285" height="508" alt="Token2Shell Server">
 
 
 ### Thanks
