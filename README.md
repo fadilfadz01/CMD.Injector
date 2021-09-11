@@ -13,14 +13,8 @@ A command prompt for Windows 10 Mobile.
 
 ### Instructions
 1. Launch CMD Injector.
-2. Select the Injection type.
-
-   > `Temporary Injection` files will be removed when you Hard reset the phone. After that CMD will not work until you inject again using this app.
- 
-   > `Permanent Injection` files will be survive the hard reset. So after hard reset, you won’t need to inject CMD again in this case.
-
-3. Click `Inject` button.
-4. Perform a restart.
+2. Click `Inject` button.
+3. Perform a restart.
 
 
 ### Usage
@@ -30,7 +24,7 @@ A command prompt for Windows 10 Mobile.
 
 
 ### Screenshots
-<img src="https://user-images.githubusercontent.com/66063294/131874666-8ac45206-1c15-4175-9f2e-f160468cabbe.png" width="285" height="508" alt="CMD Injector Home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/66063294/132209019-9239c5c3-7167-4545-95d1-62d3205eb72f.png" width="285" height="508" alt="CMD Injector About">
+<img src="https://user-images.githubusercontent.com/66063294/132942936-fa0bb621-17ab-4bee-a927-01ad4f1a1adb.png" width="285" height="508" alt="CMD Injector Home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/66063294/132942940-b36c29ff-f85f-4140-b3fc-0281e5864c50.png" width="285" height="508" alt="CMD Injector About">
 <br/>
 <br/>
 <img src="https://user-images.githubusercontent.com/66063294/132209134-5827c904-c600-44b2-8583-da06d54a6ed2.png" width="285" height="508" alt="Token2Shell Home"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://user-images.githubusercontent.com/66063294/132209185-2221a780-3756-4516-b30c-e92522cc259d.png" width="285" height="508" alt="Token2Shell Server">
