@@ -17,12 +17,14 @@ A command prompt for Windows 10 Mobile.
 * Execution of CMD commands on phone bootup
 * Appx & Xap installer with sdcard installation supported
 * Screen capturer & screen recorder
-* Customize BCD & insatll boot app Developer Menu
+* Customize BCD & install boot app Developer Menu
 * Various tweaks collections
 * Much more
 
 
 ### Screenshots
+https://user-images.githubusercontent.com/66063294/194322054-97f2f0fb-e6b8-4a8c-b674-b4581ef75a68.mp4
+
 ![CMD Injector](https://user-images.githubusercontent.com/66063294/178474757-7c023789-7afe-47fa-98f3-13e2c7b18cfe.png)
 
 
