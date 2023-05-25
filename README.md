@@ -8,7 +8,6 @@ A command prompt for Windows 10 Mobile.
 
 ### Requirements
 * W10M build 10240 or higher.
-* Bootloader unlock (Except for `14393 & higher` build).
 * Interop unlock (Except for `non Lumia X50` devices).
 
 
@@ -18,6 +17,7 @@ A command prompt for Windows 10 Mobile.
 * Appx & Xap installer with sdcard installation supported
 * Screen capturer & screen recorder
 * Customize BCD & install boot app Developer Menu
+* Live wallpapers
 * Various tweaks collections
 * Much more
 
