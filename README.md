@@ -8,7 +8,7 @@ A command prompt for Windows 10 Mobile.
 
 ### Requirements
 * W10M build 10240 or higher.
-* Interop unlock.
+* Interop unlock (Except for `non Lumia X50` devices).
 
 
 ### Features
