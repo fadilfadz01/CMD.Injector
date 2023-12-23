@@ -14,12 +14,11 @@ A command prompt for Windows 10 Mobile.
 ### Features
 * Command Prompt console
 * Execution of CMD commands on phone bootup
-* Appx & Xap installer with sdcard installation supported
+* Signed/unsigned appx & xap installer with SD card installation supported
 * Screen capturer & screen recorder
 * Customize BCD & install boot app Developer Menu
-* Live wallpapers
-* Various tweaks collections
-* Much more
+* Live lockscreen, auto wallpaper switcher, auto theme switcher and various other tweaks collection
+* And much more
 
 
 ### Screenshots
@@ -38,6 +37,10 @@ A command prompt for Windows 10 Mobile.
 <td> <img src="https://github.com/fadilfadz01/CMD.Injector/assets/66063294/f88645e8-a899-47c4-802a-b13ebad24352" alt="Drawing" style="width: 160px;"/> </td>
 <td> </td>
 </tr></table>
+
+
+### Video
+[<img src="https://img.youtube.com/vi/BBAlEPMGyg8/hqdefault.jpg" width="450" height="300"/>](https://www.youtube.com/embed/BBAlEPMGyg8)
 
 
 ### Thanks
