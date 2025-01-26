@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+These sample files contain formatting information used by the TCPIP WMIv2 provider.
+
+Author - Chun-cheng Chen 12/14/2010
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+ 
+******************************************************************** -->
+
+<Types>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetRoute</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Publish</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Publish]($this.PSBase.CimInstanceProperties['Publish'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Publish'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Publish]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Protocol</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Protocol]($this.PSBase.CimInstanceProperties['Protocol'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Protocol'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Protocol]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Store</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Store]($this.PSBase.CimInstanceProperties['Store'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Store'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.Store]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AddressFamily</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.AddressFamily]($this.PSBase.CimInstanceProperties['AddressFamily'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AddressFamily'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetRoute.AddressFamily]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifIndex</Name>
+        <ReferencedMemberName>InterfaceIndex</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+  
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPAddress</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>PrefixOrigin</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.PrefixOrigin]($this.PSBase.CimInstanceProperties['PrefixOrigin'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['PrefixOrigin'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.PrefixOrigin]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SuffixOrigin</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.SuffixOrigin]($this.PSBase.CimInstanceProperties['SuffixOrigin'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['SuffixOrigin'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.SuffixOrigin]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Type</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.Type]($this.PSBase.CimInstanceProperties['Type'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Type'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.Type]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Store</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.Store]($this.PSBase.CimInstanceProperties['Store'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Store'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.Store]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AddressFamily</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.AddressFamily]($this.PSBase.CimInstanceProperties['AddressFamily'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AddressFamily'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.AddressFamily]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AddressState</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.AddressState]($this.PSBase.CimInstanceProperties['AddressState'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AddressState'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.AddressState]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptMethod>
+        <Name>ToString</Name>
+          <Script>
+            if($this.AddressFamily -eq "IPv4"){
+              $this.IPv4Address
+            }else{
+              $this.IPv6Address
+            }
+          </Script>
+      </ScriptMethod>
+      <AliasProperty>
+        <Name>ifIndex</Name>
+        <ReferencedMemberName>InterfaceIndex</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetNeighbor</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>State</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetNeighbor.State]($this.PSBase.CimInstanceProperties['State'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['State'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetNeighbor.State]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Store</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetNeighbor.Store]($this.PSBase.CimInstanceProperties['Store'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Store'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetNeighbor.Store]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AddressFamily</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetNeighbor.AddressFamily]($this.PSBase.CimInstanceProperties['AddressFamily'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AddressFamily'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetNeighbor.AddressFamily]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifIndex</Name>
+        <ReferencedMemberName>InterfaceIndex</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetCompartment</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>CompartmentType</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetCompartment.CompartmentType]($this.PSBase.CimInstanceProperties['CompartmentType'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['CompartmentType'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetCompartment.CompartmentType]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPInterface</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Store</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Store]($this.PSBase.CimInstanceProperties['Store'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Store'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Store]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AddressFamily</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.AddressFamily]($this.PSBase.CimInstanceProperties['AddressFamily'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AddressFamily'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.AddressFamily]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Forwarding</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Forwarding]($this.PSBase.CimInstanceProperties['Forwarding'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Forwarding'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Forwarding]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ClampMss</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ClampMss]($this.PSBase.CimInstanceProperties['ClampMss'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ClampMss'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ClampMss]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Advertising</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Advertising]($this.PSBase.CimInstanceProperties['Advertising'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Advertising'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Advertising]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NeighborUnreachabilityDetection</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.NeighborUnreachabilityDetection]($this.PSBase.CimInstanceProperties['NeighborUnreachabilityDetection'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['NeighborUnreachabilityDetection'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.NeighborUnreachabilityDetection]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RouterDiscovery</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.RouterDiscovery]($this.PSBase.CimInstanceProperties['RouterDiscovery'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['RouterDiscovery'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.RouterDiscovery]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NeighborDiscoverySupported</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.NeighborDiscoverySupported]($this.PSBase.CimInstanceProperties['NeighborDiscoverySupported'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['NeighborDiscoverySupported'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.NeighborDiscoverySupported]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ManagedAddressConfiguration</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ManagedAddressConfiguration]($this.PSBase.CimInstanceProperties['ManagedAddressConfiguration'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ManagedAddressConfiguration'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ManagedAddressConfiguration]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OtherStatefulConfiguration</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.OtherStatefulConfiguration]($this.PSBase.CimInstanceProperties['OtherStatefulConfiguration'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['OtherStatefulConfiguration'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.OtherStatefulConfiguration]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>WeakHostSend</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.WeakHostSend]($this.PSBase.CimInstanceProperties['WeakHostSend'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['WeakHostSend'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.WeakHostSend]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>WeakHostReceive</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.WeakHostReceive]($this.PSBase.CimInstanceProperties['WeakHostReceive'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['WeakHostReceive'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.WeakHostReceive]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>IgnoreDefaultRoutes</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.IgnoreDefaultRoutes]($this.PSBase.CimInstanceProperties['IgnoreDefaultRoutes'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['IgnoreDefaultRoutes'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.IgnoreDefaultRoutes]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AdvertiseDefaultRoute</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.AdvertiseDefaultRoute]($this.PSBase.CimInstanceProperties['AdvertiseDefaultRoute'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AdvertiseDefaultRoute'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.AdvertiseDefaultRoute]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ForceArpNdWolPattern</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ForceArpNdWolPattern]($this.PSBase.CimInstanceProperties['ForceArpNdWolPattern'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ForceArpNdWolPattern'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ForceArpNdWolPattern]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DirectedMacWolPattern</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.DirectedMacWolPattern]($this.PSBase.CimInstanceProperties['DirectedMacWolPattern'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['DirectedMacWolPattern'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.DirectedMacWolPattern]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EcnMarking</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.EcnMarking]($this.PSBase.CimInstanceProperties['EcnMarking'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['EcnMarking'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.EcnMarking]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Dhcp</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Dhcp]($this.PSBase.CimInstanceProperties['Dhcp'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Dhcp'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.Dhcp]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ConnectionState</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ConnectionState]($this.PSBase.CimInstanceProperties['ConnectionState'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ConnectionState'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.ConnectionState]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AutomaticMetric</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.AutomaticMetric]($this.PSBase.CimInstanceProperties['AutomaticMetric'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AutomaticMetric'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPInterface.AutomaticMetric]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifIndex</Name>
+        <ReferencedMemberName>InterfaceIndex</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>InterfaceAlias</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPv4Protocol</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>IcmpRedirects</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.IcmpRedirects]($this.PSBase.CimInstanceProperties['IcmpRedirects'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['IcmpRedirects'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.IcmpRedirects]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SourceRoutingBehavior</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.SourceRoutingBehavior]($this.PSBase.CimInstanceProperties['SourceRoutingBehavior'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['SourceRoutingBehavior'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.SourceRoutingBehavior]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DhcpMediaSense</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.DhcpMediaSense]($this.PSBase.CimInstanceProperties['DhcpMediaSense'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['DhcpMediaSense'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.DhcpMediaSense]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MediaSenseEventLog</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MediaSenseEventLog]($this.PSBase.CimInstanceProperties['MediaSenseEventLog'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MediaSenseEventLog'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MediaSenseEventLog]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MldLevel</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MldLevel]($this.PSBase.CimInstanceProperties['MldLevel'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MldLevel'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MldLevel]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MldVersion</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MldVersion]($this.PSBase.CimInstanceProperties['MldVersion'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MldVersion'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MldVersion]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MulticastForwarding</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MulticastForwarding]($this.PSBase.CimInstanceProperties['MulticastForwarding'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MulticastForwarding'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.MulticastForwarding]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>GroupForwardedFragments</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.GroupForwardedFragments]($this.PSBase.CimInstanceProperties['GroupForwardedFragments'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['GroupForwardedFragments'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.GroupForwardedFragments]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RandomizeIdentifiers</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.RandomizeIdentifiers]($this.PSBase.CimInstanceProperties['RandomizeIdentifiers'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['RandomizeIdentifiers'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.RandomizeIdentifiers]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AddressMaskReply</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.AddressMaskReply]($this.PSBase.CimInstanceProperties['AddressMaskReply'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AddressMaskReply'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv4Protocol.AddressMaskReply]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>IGMPLevel</Name>
+        <ReferencedMemberName>MldLevel</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>IGMPVersion</Name>
+        <ReferencedMemberName>MldVersion</ReferencedMemberName>
+      </AliasProperty>	  	  
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPv6Protocol</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>IcmpRedirects</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.IcmpRedirects]($this.PSBase.CimInstanceProperties['IcmpRedirects'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['IcmpRedirects'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.IcmpRedirects]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SourceRoutingBehavior</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.SourceRoutingBehavior]($this.PSBase.CimInstanceProperties['SourceRoutingBehavior'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['SourceRoutingBehavior'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.SourceRoutingBehavior]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DhcpMediaSense</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.DhcpMediaSense]($this.PSBase.CimInstanceProperties['DhcpMediaSense'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['DhcpMediaSense'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.DhcpMediaSense]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MediaSenseEventLog</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MediaSenseEventLog]($this.PSBase.CimInstanceProperties['MediaSenseEventLog'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MediaSenseEventLog'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MediaSenseEventLog]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MldLevel</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MldLevel]($this.PSBase.CimInstanceProperties['MldLevel'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MldLevel'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MldLevel]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MldVersion</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MldVersion]($this.PSBase.CimInstanceProperties['MldVersion'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MldVersion'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MldVersion]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MulticastForwarding</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MulticastForwarding]($this.PSBase.CimInstanceProperties['MulticastForwarding'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MulticastForwarding'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.MulticastForwarding]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>GroupForwardedFragments</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.GroupForwardedFragments]($this.PSBase.CimInstanceProperties['GroupForwardedFragments'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['GroupForwardedFragments'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.GroupForwardedFragments]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RandomizeIdentifiers</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.RandomizeIdentifiers]($this.PSBase.CimInstanceProperties['RandomizeIdentifiers'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['RandomizeIdentifiers'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.RandomizeIdentifiers]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AddressMaskReply</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.AddressMaskReply]($this.PSBase.CimInstanceProperties['AddressMaskReply'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AddressMaskReply'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.AddressMaskReply]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>UseTemporaryAddresses</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.UseTemporaryAddresses]($this.PSBase.CimInstanceProperties['UseTemporaryAddresses'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['UseTemporaryAddresses'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPv6Protocol.UseTemporaryAddresses]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTCPConnection</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>State</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPConnection.State]($this.PSBase.CimInstanceProperties['State'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['State'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPConnection.State]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AppliedSetting</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPConnection.AppliedSetting]($this.PSBase.CimInstanceProperties['AppliedSetting'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AppliedSetting'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPConnection.AppliedSetting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OffloadState</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPConnection.OffloadState]($this.PSBase.CimInstanceProperties['OffloadState'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['OffloadState'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPConnection.OffloadState]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+	</Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTransportFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Protocol</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTransportFilter.Protocol]($this.PSBase.CimInstanceProperties['Protocol'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Protocol'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTransportFilter.Protocol]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTCPSetting</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>CwndRestart</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.CwndRestart]($this.PSBase.CimInstanceProperties['CwndRestart'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['CwndRestart'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.CwndRestart]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MemoryPressureProtection</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.MemoryPressureProtection]($this.PSBase.CimInstanceProperties['MemoryPressureProtection'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['MemoryPressureProtection'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.MemoryPressureProtection]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CongestionProvider</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.CongestionProvider]($this.PSBase.CimInstanceProperties['CongestionProvider'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['CongestionProvider'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.CongestionProvider]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AutoTuningLevelLocal</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutoTuningLevelLocal]($this.PSBase.CimInstanceProperties['AutoTuningLevelLocal'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AutoTuningLevelLocal'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutoTuningLevelLocal]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EcnCapability</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.EcnCapability]($this.PSBase.CimInstanceProperties['EcnCapability'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['EcnCapability'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.EcnCapability]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Timestamps</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.Timestamps]($this.PSBase.CimInstanceProperties['Timestamps'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Timestamps'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.Timestamps]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ScalingHeuristics</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.ScalingHeuristics]($this.PSBase.CimInstanceProperties['ScalingHeuristics'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ScalingHeuristics'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.ScalingHeuristics]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AutoTuningLevelGroupPolicy</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutoTuningLevelGroupPolicy]($this.PSBase.CimInstanceProperties['AutoTuningLevelGroupPolicy'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AutoTuningLevelGroupPolicy'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutoTuningLevelGroupPolicy]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AutoTuningLevelEffective</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutoTuningLevelEffective]($this.PSBase.CimInstanceProperties['AutoTuningLevelEffective'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AutoTuningLevelEffective'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutoTuningLevelEffective]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AutomaticUseCustom</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutomaticUseCustom]($this.PSBase.CimInstanceProperties['AutomaticUseCustom'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AutomaticUseCustom'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.AutomaticUseCustom]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NonSackRttResiliency</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.NonSackRttResiliency]($this.PSBase.CimInstanceProperties['NonSackRttResiliency'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['NonSackRttResiliency'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.NonSackRttResiliency]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ForceWS</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.ForceWS]($this.PSBase.CimInstanceProperties['ForceWS'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ForceWS'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetTCPSetting.ForceWS]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetOffloadGlobalSetting</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>ReceiveSideScaling</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]($this.PSBase.CimInstanceProperties['ReceiveSideScaling'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ReceiveSideScaling'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ReceiveSegmentCoalescing</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]($this.PSBase.CimInstanceProperties['ReceiveSegmentCoalescing'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ReceiveSegmentCoalescing'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Chimney</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.ChimneyEnum]($this.PSBase.CimInstanceProperties['Chimney'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['Chimney'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.ChimneyEnum]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>TaskOffload</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]($this.PSBase.CimInstanceProperties['TaskOffload'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['TaskOffload'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NetworkDirect</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]($this.PSBase.CimInstanceProperties['NetworkDirect'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['NetworkDirect'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NetworkDirectAcrossIPSubnets</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.AllowedBlockedEnum]($this.PSBase.CimInstanceProperties['NetworkDirectAcrossIPSubnets'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['NetworkDirectAcrossIPSubnets'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.AllowedBlockedEnum]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PacketCoalescingFilter</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]($this.PSBase.CimInstanceProperties['PacketCoalescingFilter'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['PacketCoalescingFilter'].Value = [System.Byte][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetOffloadGlobalSetting.EnabledDisabledEnum]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+</Types>

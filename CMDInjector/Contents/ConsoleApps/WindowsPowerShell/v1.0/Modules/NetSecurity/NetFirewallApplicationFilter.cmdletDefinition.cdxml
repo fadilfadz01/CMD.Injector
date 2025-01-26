@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetApplicationFilter" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallApplicationFilter</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="AppPath">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Program" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Package">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetFirewallRuleFilterByApplication" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallRule"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="AppPath">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Program"/>
+            </Parameter>
+            <Parameter ParameterName="Package">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Package"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+</PowerShellMetadata>

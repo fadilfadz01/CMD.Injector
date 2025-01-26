@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp rescap uap3">
+  <Identity Name="CMDInjector" Publisher="CN=Fadil Fadz" Version="4.0.6.0" />
+  <mp:PhoneIdentity PhoneProductId="d8777939-5ea2-438d-bdf0-82c0f8156903" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>CMD Injector</DisplayName>
+    <PublisherDisplayName>Fadil Fadz</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="CMDInjector.App">
+      <uap:VisualElements DisplayName="CMD Injector" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="A command prompt for Windows 10 Mobile." BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="windows_silverlight_application">
+            <uap:DisplayName>CMD Injector Application</uap:DisplayName>
+            <uap:Logo>Assets\Icons\Extensions\XapExtensionFileLogo.png</uap:Logo>
+            <uap:InfoTip>Windows Application Package</uap:InfoTip>
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/xap">.xap</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="windows_universal_bundle_application">
+            <uap:DisplayName>CMD Injector Application</uap:DisplayName>
+            <uap:Logo>Assets\Icons\Extensions\AppxbundleExtensionFileLogo.png</uap:Logo>
+            <uap:InfoTip>Windows Application Package</uap:InfoTip>
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/appxbundle">.appxbundle</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="windows_application_manifest">
+            <uap:DisplayName>CMD Injector Application</uap:DisplayName>
+            <uap:InfoTip>Windows Application Manifest</uap:InfoTip>
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="text/xml">.xml</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="pacman_installer_log">
+            <uap:DisplayName>CMD Injector Package Log</uap:DisplayName>
+            <uap:Logo>Assets\Icons\Extensions\PmlogExtensionFileLogo.png</uap:Logo>
+            <uap:InfoTip>Pacman Installer Log</uap:InfoTip>
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="text/plain">.pmlog</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="pacman_manager_backup">
+            <uap:DisplayName>CMD Injector Package Backup</uap:DisplayName>
+            <uap:Logo>Assets\Icons\Extensions\PmbakExtensionFileLogo.png</uap:Logo>
+            <uap:InfoTip>Pacman Manager Backup</uap:InfoTip>
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="application/zip">.pmbak</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="cmdinjector" />
+        </uap:Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ThemeUpdater">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.WallpaperUpdater">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="documentsLibrary" />
+    <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="videosLibrary" />
+    <uap:Capability Name="removableStorage" />
+    <rescap:Capability Name="packageQuery" />
+    <rescap:Capability Name="packageManagement" />
+    <rescap:Capability Name="id_cap_runtime_config" />
+    <rescap:Capability Name="id_cap_oem_custom" />
+  </Capabilities>
+</Package>

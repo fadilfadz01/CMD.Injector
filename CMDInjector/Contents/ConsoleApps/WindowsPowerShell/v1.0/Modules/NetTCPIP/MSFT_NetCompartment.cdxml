@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/StandardCimv2/MSFT_NetCompartment" ClassVersion="1.0.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetCompartment</DefaultNoun>
+
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="CompartmentId">
+            <Type PSType="System.Uint32"/>
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+    </InstanceCmdlets>
+
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetCompartment.CompartmentType" UnderlyingType="System.Uint32">
+      <Value Name="Unspecified" Value="0" />
+      <Value Name="Native" Value="1" />
+      <Value Name="RoutingDomain" Value="2" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

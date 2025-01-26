@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="CMDInjector.Terminal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="RowMinHig" Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="TERMINAL" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}" Margin="10,0,0,0"/>
+            <TextBlock Text="Simple built-in command prompt." Margin="20,0,0,0"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Console:" FontSize="25" Margin="20,0,0,0"/>
+            <Border Grid.Row="1" BorderBrush="{ThemeResource AppAccentColor}" BorderThickness="2" Background="Black" Margin="25,5,25,0">
+            <ScrollViewer Name="ConsoleScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Tapped="ConsoleScroll_Tapped">
+                <Grid Name="ConsoleBoxGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="ConsoleBox" IsTextSelectionEnabled="True" FontFamily="ms-appx:///Assets/Fonts/consola.ttf#Consolas" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Name="TempBox" IsTextSelectionEnabled="True" FontFamily="ms-appx:///Assets/Fonts/consola.ttf#Consolas" Foreground="White" Visibility="Collapsed"/>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <TextBlock Name="DirLabel" IsTextSelectionEnabled="True" FontFamily="ms-appx:///Assets/Fonts/consola.ttf#Consolas" Foreground="White"/>
+                        <TextBox Name="TelnetCommand" Background="Black" FontFamily="ms-appx:///Assets/Fonts/consola.ttf#Consolas" Foreground="White" IsSpellCheckEnabled="False" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsTextPredictionEnabled="False" BorderBrush="Transparent" BorderThickness="0" Padding="0,0,0,0" KeyDown="TelnetCommand_KeyDown">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="Black"/>
+                                <SolidColorBrush x:Key="TextControlForegroundFocused" Color="White"/>
+                                <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="Black"/>
+                                <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="White"/>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                </Grid>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="2" Name="ConBtnGrid" HorizontalAlignment="Stretch">
+            <Button Name="CommandBtn" Content="&#xE765;" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="100" Click="CommandBtn_Click"/>
+            <TextBox Name="TelnetCommandBox" FontSize="15" VerticalAlignment="Center" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" HorizontalAlignment="Stretch" Margin="10,0,50,0" TextChanged="TelnetCommandBox_TextChanged" PlaceholderText="Enter command here" TextWrapping="NoWrap"/>
+            <Button Name="CommandSendBtn" Content="&#xE751;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Right" Margin="0,0,10,0" Height="30" Click="CommandSendBtn_Click" IsEnabled="False"/>
+        </Grid>
+    </Grid>
+</Page>

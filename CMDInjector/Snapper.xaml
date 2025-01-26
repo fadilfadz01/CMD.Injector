@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="CMDInjector.Snapper"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="SNAPPER" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="Advanced screen capturer &amp; recorder." Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="280"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="Screen Capturer:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Amount of shots" FontSize="18" Margin="25,0,0,0"/>
+                    <TextBox Name="AmountBox" InputScope="Digits" PlaceholderText="1 - 999" MaxLength="3" Width="100" HorizontalAlignment="Left" Margin="40,0,0,0" TextChanged="AmountBox_TextChanged"/>
+                    <TextBlock Text="Delay between shots" FontSize="18" Margin="25,10,0,0"/>
+                    <TextBox Name="DelayBox" InputScope="Digits" PlaceholderText="1 - 60" MaxLength="2" Width="100" HorizontalAlignment="Left" Margin="40,0,0,0" TextChanged="AmountBox_TextChanged"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,0,0">
+                    <Button Name="CaptureBtn" Content="Start Capture" MinWidth="100" IsEnabled="False" Margin="0,10,20,0" Click="CaptureBtn_Click"/>
+                    <Button Name="OpenShortsBtn" Content="Open Shots" MinWidth="100" Margin="0,10,0,0" Click="OpenShortsBtn_Click"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,10,0,0">
+                    <TextBlock Text="Screen Recorder:" FontSize="25" Margin="20,10,0,0"/>
+                    <TextBlock Text="Frame rate" FontSize="18" Margin="25,0,0,0"/>
+                    <TextBox Name="FrameRateBox" InputScope="Digits" PlaceholderText="1 - 30" Text="7" MaxLength="2" Width="100" HorizontalAlignment="Left" Margin="40,0,0,0" TextChanged="FrameRateBox_TextChanged"/>
+                    <TextBlock Text="Bit rate" FontSize="18" Margin="25,10,0,0"/>
+                    <TextBox Name="BitRateBox" InputScope="Digits" PlaceholderText="1 - 9999" Text="3000" MaxLength="4" Width="100" HorizontalAlignment="Left" Margin="40,0,0,0" TextChanged="FrameRateBox_TextChanged"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0">
+                        <Button Name="RecordBtn" Content="Start Record" MinWidth="100" Margin="0,10,20,0" Click="RecordBtn_Click"/>
+                        <Button Name="OpenVideosBtn" Content="Open Clips" MinWidth="100" Margin="0,10,0,0" Click="OpenVideosBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

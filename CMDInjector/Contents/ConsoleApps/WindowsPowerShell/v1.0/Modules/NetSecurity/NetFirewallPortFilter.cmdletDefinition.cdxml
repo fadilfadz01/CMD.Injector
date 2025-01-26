@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetProtocolPortFilter" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallPortFilter</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="Protocol">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DynamicTransport">
+            <Type PSType="NetSecurity.DynamicTransport"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="DynamicTarget" CmdletParameterSets="ByQuery" Aliases="DynamicTransport"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetFirewallRuleFilterByProtocolPort" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallRule"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleFilterByProtocolPort" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetConSecRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecRule"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="Protocol">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Protocol"/>
+            </Parameter>
+            <Parameter ParameterName="LocalPort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalPort"/>
+            </Parameter>
+            <Parameter ParameterName="RemotePort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemotePort"/>
+            </Parameter>
+            <Parameter ParameterName="IcmpType">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="IcmpType"/>
+            </Parameter>
+            <Parameter ParameterName="DynamicTransport">
+              <Type PSType="NetSecurity.DynamicTransport"/>
+              <CmdletParameterMetadata Aliases="DynamicTransport" PSName="DynamicTarget"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.DynamicTransport" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="ProximityApps" Value="1"/>
+      <Value Name="ProximitySharing" Value="2"/>
+      <Value Name="WifiDirectPrinting" Value="4"/>
+      <Value Name="WifiDirectDisplay" Value="8"/>
+      <Value Name="WifiDirectDevices" Value="16"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

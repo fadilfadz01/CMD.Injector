@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Types>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClient</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Suffix</Name>
+        <ReferencedMemberName>ConnectionSpecificSuffix</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>SuffixSearchList</Name>
+        <ReferencedMemberName>ConnectionSpecificSuffixSearchList</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientCache</Name>
+    <Members>
+      <AliasProperty>
+        <Name>TTL</Name>
+        <ReferencedMemberName>TimeToLive</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientServerAddress</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Address</Name>
+        <ReferencedMemberName>ServerAddresses</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+</Types>

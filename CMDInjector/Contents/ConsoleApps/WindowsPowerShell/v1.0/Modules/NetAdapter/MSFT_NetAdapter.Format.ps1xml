@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapter.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapter cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>Default</Name>
+    <ViewSelectedBy>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter</TypeName>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+         <label>Name</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>InterfaceDescription</label>
+          <Width>39</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ifIndex</label>
+          <Width>7</Width>
+          <Alignment>Left</Alignment>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>Status</label>
+          <Width>12</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>MacAddress</label>
+          <Width>17</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>LinkSpeed</label>
+          <Width>14</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterInstanceID $_.InterfaceDescription 39
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>InterfaceIndex</PropertyName>
+              <Alignment>Right</Alignment>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>Status</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>MacAddress</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-LinkSpeed $_.TransmitLinkSpeed
+              </ScriptBlock>
+              <Alignment>Right</Alignment>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  <View>
+    <Name>MSFT_NetAdapter_Listview</Name>
+    <ViewSelectedBy>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter</TypeName>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter</TypeName>
+    </ViewSelectedBy>
+    <ListControl>
+      <ListEntries>
+        <ListEntry>
+          <ListItems>
+            <ListItem>
+              <label>Name</label>
+              <PropertyName>Name</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>InterfaceDescription</label>
+              <PropertyName>InterfaceDescription</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>InterfaceIndex</label>
+              <PropertyName>InterfaceIndex</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>MacAddress</label>
+              <PropertyName>MacAddress</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>MediaType</label>
+              <PropertyName>MediaType</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>PhysicalMediaType</label>
+              <PropertyName>PhysicalMediaType</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>InterfaceOperationalStatus</label>
+              <PropertyName>ifOperStatus</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>AdminStatus</label>
+              <PropertyName>AdminStatus</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>LinkSpeed(Mbps)</label>
+              <ItemSelectionCondition>
+                <ScriptBlock>$_.TransmitLinkSpeed -lt 1000000000</ScriptBlock>
+              </ItemSelectionCondition>
+              <ScriptBlock>
+                Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+                $val = $_.TransmitLinkSpeed / 1000000
+                Format-LinkSpeed $val 1 $false
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <ItemSelectionCondition>
+                <ScriptBlock>$_.TransmitLinkSpeed -ge 1000000000</ScriptBlock>
+              </ItemSelectionCondition>
+              <label>LinkSpeed(Gbps)</label>
+              <ScriptBlock>
+                Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+                $val = $_.TransmitLinkSpeed / 1000000000
+                Format-LinkSpeed $val 1 $false
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>MediaConnectionState</label>
+              <PropertyName>MediaConnectionState</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>ConnectorPresent</label>
+              <PropertyName>ConnectorPresent</PropertyName>
+            </ListItem>
+            <ListItem>
+              <ItemSelectionCondition>
+                <ScriptBlock>$_.VlanID -ne $null</ScriptBlock>
+              </ItemSelectionCondition>
+              <PropertyName>VlanID</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>DriverInformation</label>
+              <PropertyName>DriverInformation</PropertyName>
+            </ListItem>
+          </ListItems>
+        </ListEntry>
+      </ListEntries>
+    </ListControl>
+  </View>
+  <View>
+    <Name>Names</Name>
+    <ViewSelectedBy>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter</TypeName>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ifDesc</label>
+          <Width>35</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ifIndex</label>
+          <Width>7</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>NetLuid</label>
+          <Width>15</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DeviceID</label>
+          <Width>33</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterInstanceID $_.InterfaceDescription 35
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>ifIndex</PropertyName>
+              <FormatString>{0,7}</FormatString>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>NetLuid</PropertyName>
+              <FormatString>0x{0:X}</FormatString>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DeviceID</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  <View>
+    <Name>Driver</Name>
+    <ViewSelectedBy>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter</TypeName>
+     <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>InterfaceDescription</label>
+          <Width>40</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DriverFileName</label>
+          <Width>15</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DriverDate</label>
+          <Width>10</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DriverVersion</label>
+          <Width>13</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>NdisVersion</label>
+          <Width>11</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterInstanceID $_.InterfaceDescription 40
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DriverFileName</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DriverDate</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DriverVersion</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>NdisVersion</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

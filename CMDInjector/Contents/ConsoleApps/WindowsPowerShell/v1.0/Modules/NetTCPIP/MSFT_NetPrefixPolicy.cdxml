@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetPrefixPolicy" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetPrefixPolicy</DefaultNoun>
+
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Prefix">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Precedence">
+            <Type PSType="System.UInt32" />
+            <RegularQuery>
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Label">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+    </InstanceCmdlets>
+  </Class>
+
+</PowerShellMetadata>

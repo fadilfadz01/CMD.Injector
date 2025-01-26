@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <ViewDefinitions>
+
+    <View>
+      <Name>DnsClientTableView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClient</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>InterfaceAlias</Label>
+            <Width>28</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>InterfaceIndex</Label>
+            <Width>9</Width>
+            <Alignment>Left</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ConnectionSpecificSuffix</Label>
+            <Width>24</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ConnectionSpecificSuffixSearchList</Label>
+            <Width>24</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RegisterThisConnectionsAddress</Label>
+            <Width>16</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>UseSuffixWhenRegistering</Label>
+            <Width>13</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <ScriptBlock>
+                  <!-- InterfaceAlias: fit into column width, preserving number at the end -->
+                  $alias = $_.InterfaceAlias
+                  $width = 28
+                  $out = $alias
+                  if ($alias.Length -gt $width)
+                  {
+                      $idpresent = $alias -match "(\d+$)"
+                      if ($idpresent -and ($width -gt ($matches[0].length + 3)))
+                      {
+                          $base = $alias.substring(0, $width - ($matches[0].length + 3))
+                          $out = $base + "..." + $matches[0]
+                      }
+                  }
+                  return $out
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ConnectionSpecificSuffix</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ConnectionSpecificSuffixSearchList</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RegisterThisConnectionsAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>UseSuffixWhenRegistering</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>DnsClientListView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClient</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>InterfaceAlias</Label>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>InterfaceIndex</Label>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>ConnectionSpecificSuffix</Label>
+                <PropertyName>ConnectionSpecificSuffix</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>ConnectionSpecificSuffixSearchList</Label>
+                <PropertyName>ConnectionSpecificSuffixSearchList</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>RegisterThisConnectionsAddress</Label>
+                <PropertyName>RegisterThisConnectionsAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>UseSuffixWhenRegistering</Label>
+                <PropertyName>UseSuffixWhenRegistering</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>DnsClientCacheTableView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientCache</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Entry</Label>
+            <Width>25</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RecordName</Label>
+            <Width>25</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RecordType</Label>
+            <Width>6</Width>
+            <Alignment>Left</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Status</Label>
+            <Width>9</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Section</Label>
+            <Width>7</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>TimeToLive</Label>
+            <Width>6</Width>
+            <Alignment>Left</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Data Length</Label>
+            <Width>6</Width>
+            <Alignment>Left</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Data</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Entry</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  $type = $_.Type
+                  $typefmt = switch ($type)
+                  {
+                      0       {"ZERO"}
+                      1       {"A"}
+                      2       {"NS"}
+                      5       {"CNAME"}
+                      6       {"SOA"}
+                      12      {"PTR"}
+                      15      {"MX"}
+                      16      {"TEXT"}
+                      24      {"SIG"}
+                      25      {"KEY"}
+                      28      {"AAAA"}
+                      30      {"NXT"}
+                      33      {"SRV"}
+                      35      {"NAPTR"}
+                      37      {"CERT"}
+                      39      {"DNAME"}
+                      41      {"OPT"}
+                      43      {"DS"}
+                      46      {"RRSIG"}
+                      47      {"NSEC"}
+                      48      {"DNSKEY"}
+                      49      {"DHCID"}
+                      50      {"NSEC3"}
+                      51      {"NSEC3PARAM"}
+                      255     {""}
+                      default {$type}
+                  }
+                  return $typefmt
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  $status = $_.Status
+                  $statusfmt = switch ($status)
+                  {
+                      0       {"Success"}
+                      1460    {"Timeout"}
+                      9002    {"ServFail"}
+                      9003    {"NotExist"}
+                      9501    {"NoRecords"}
+                      default {$status}
+                  }
+                  return $statusfmt
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  $section = $_.Section
+                  $sectionfmt = switch ($section)
+                  {
+                      0       {""}
+                      1       {"Answer"}
+                      2       {"Authority"}
+                      3       {"Additional"}
+                      default {$section}
+                  }
+                  return $sectionfmt
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  $ttl = $_.TimeToLive
+                  $ttlfmt = switch ($ttl)
+                  {
+                      0       {""}
+                      default {$ttl}
+                  }
+                  return $ttlfmt
+                </ScriptBlock>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  $length = $_.DataLength
+                  $lengthfmt = switch ($length)
+                  {
+                      0       {""}
+                      default {$length}
+                  }
+                  return $lengthfmt
+                </ScriptBlock>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Data</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>DnsClientCacheListView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientCache</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>Entry</Label>
+                <PropertyName>Entry</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>RecordName</Label>
+                <PropertyName>Name</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>RecordType</Label>
+                <ScriptBlock>
+                  $type = $_.Type
+                  $typefmt = switch ($type)
+                  {
+                      0       {"ZERO"}
+                      1       {"A"}
+                      2       {"NS"}
+                      5       {"CNAME"}
+                      6       {"SOA"}
+                      12      {"PTR"}
+                      15      {"MX"}
+                      16      {"TEXT"}
+                      24      {"SIG"}
+                      25      {"KEY"}
+                      28      {"AAAA"}
+                      30      {"NXT"}
+                      33      {"SRV"}
+                      35      {"NAPTR"}
+                      37      {"CERT"}
+                      39      {"DNAME"}
+                      41      {"OPT"}
+                      43      {"DS"}
+                      46      {"RRSIG"}
+                      47      {"NSEC"}
+                      48      {"DNSKEY"}
+                      49      {"DHCID"}
+                      50      {"NSEC3"}
+                      51      {"NSEC3PARAM"}
+                      255     {""}
+                      default {$type}
+                  }
+                  return $typefmt
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>Status</Label>
+                <ScriptBlock>
+                  $status = $_.Status
+                  $statusfmt = switch ($status)
+                  {
+                      0       {"Success"}
+                      1460    {"Timeout"}
+                      9002    {"ServFail"}
+                      9003    {"NotExist"}
+                      9501    {"NoRecords"}
+                      default {$status}
+                  }
+                  return $statusfmt
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>Section</Label>
+                <ScriptBlock>
+                  $section = $_.Section
+                  $sectionfmt = switch ($section)
+                  {
+                      0       {""}
+                      1       {"Answer"}
+                      2       {"Authority"}
+                      3       {"Additional"}
+                      default {$section}
+                  }
+                  return $sectionfmt
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>TimeToLive</Label>
+                <ScriptBlock>
+                  $ttl = $_.TimeToLive
+                  $ttlfmt = switch ($ttl)
+                  {
+                      0       {""}
+                      default {$ttl}
+                  }
+                  return $ttlfmt
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>DataLength</Label>
+                <ScriptBlock>
+                  $length = $_.DataLength
+                  $lengthfmt = switch ($length)
+                  {
+                      0       {""}
+                      default {$length}
+                  }
+                  return $lengthfmt
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>Data</Label>
+                <PropertyName>Data</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>DnsClientGlobalSettingListView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientGlobalSetting</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>UseSuffixSearchList</Label>
+                <PropertyName>UseSuffixSearchList</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>SuffixSearchList</Label>
+                <PropertyName>SuffixSearchList</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>UseDevolution</Label>
+                <PropertyName>UseDevolution</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>DevolutionLevel</Label>
+                <PropertyName>DevolutionLevel</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+    <View>
+      <Name>DnsClientGlobalSettingTableView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientGlobalSetting</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>UseSuffixSearchList</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SuffixSearchList</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>UseDevolution</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>DevolutionLevel</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>UseSuffixSearchList</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SuffixSearchList</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>UseDevolution</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DevolutionLevel</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>DnsClientServerAddressTableView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientServerAddress</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>InterfaceAlias</Label>
+            <Width>28</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>InterfaceIndex</Label>
+            <Width>9</Width>
+            <Alignment>Left</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>AddressFamily</Label>
+            <Width>7</Width>
+            <Alignment>Left</Alignment>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ServerAddresses</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <ScriptBlock>
+                  <!-- InterfaceAlias: fit into column width, preserving number at the end -->
+                  $alias = $_.InterfaceAlias
+                  $width = 28
+                  $out = $alias
+                  if ($alias.Length -gt $width)
+                  {
+                      $idpresent = $alias -match "(\d+$)"
+                      if ($idpresent -and ($width -gt ($matches[0].length + 3)))
+                      {
+                          $base = $alias.substring(0, $width - ($matches[0].length + 3))
+                          $out = $base + "..." + $matches[0]
+                      }
+                  }
+                  return $out
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                  $family = $_.AddressFamily
+                  $familyfmt = switch ($family)
+                  {
+                      2       {"IPv4"}
+                      23      {"IPv6"}
+                      default {$family}
+                  }
+                  return $familyfmt
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ServerAddresses</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>DnsClientServerAddressListView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_DNSClientServerAddress</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>InterfaceAlias</Label>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>InterfaceIndex</Label>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>AddressFamily</Label>
+                <ScriptBlock>
+                  $family = $_.AddressFamily
+                  $familyfmt = switch ($family)
+                  {
+                      2       {"IPv4"}
+                      23      {"IPv6"}
+                      default {$family}
+                  }
+                  return $familyfmt
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>ServerAddresses</Label>
+                <PropertyName>ServerAddresses</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+  </ViewDefinitions>
+</Configuration>

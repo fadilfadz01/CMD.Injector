@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="CMDInjector.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="ABOUT" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Name="versionText" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="100"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="Developer:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Fadil Fadz (@fadilfadz01)" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock FontSize="15" Margin="25,0,0,0" Foreground="{ThemeResource AppAccentColor}" Width="175" HorizontalAlignment="Left">
+                        <Hyperlink NavigateUri="https://t.me/fadilfadz01">Telegram</Hyperlink>
+                        <Hyperlink NavigateUri="https://github.com/fadilfadz01">GitHub</Hyperlink>
+                        <Hyperlink NavigateUri="https://www.youtube.com/channel/UCe-pdxB7iM6i__rIkRf7Kkg">YouTube</Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,10,0,0">
+                    <TextBlock Text="Donate:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Want to thank me?" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock FontSize="15" Margin="25,0,0,0" Foreground="{ThemeResource AppAccentColor}" Width="175" HorizontalAlignment="Left">
+                        <Hyperlink NavigateUri="https://www.paypal.me/fadilfadz01">Buy me a coffee</Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,10,0,0">
+                    <TextBlock Text="Privacy:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Does CMD Injector collect any personal information or data?" FontSize="15" Margin="25,0,0,0" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="15" Margin="25,0,5,0" TextWrapping="Wrap">
+                        No, not at all. However, the App reads the device information from the registry to identify the device model for the tweaks purpose. Furthermore, to know about the capabilities used in the App and their usage, you can check out the
+                        <Hyperlink x:Name="PermissionHelp" Click="PermissionHelp_Click">Permissions</Hyperlink>.
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,10,0,0">
+                    <TextBlock Text="Credits:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="@Microsoft - Telnet server &amp; CMD components" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@gus33000 - NDTK &amp; SBRC libraries" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Empyreal96 - Application logo" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Tom-Janssens - MinimalisticTelnet" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@GoodDayToDie - NativeAccess library" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@basharastifan - Images2Video library" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@the_r4k - Security Manager driver patch" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Icons8 - Application menu icons" FontSize="15" Margin="25,0,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Margin="0,10,0,0">
+                    <TextBlock Text="Thanks:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="@Heathcliff74 - WPinternals" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@gus33000 - Interop Tools" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@basharastifan - Windows Universal Tool" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Lasitha_S - W10M repository" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Empyreal96 - WP Device Portal" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Slendeyyy - Loopback exemption solution" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@mediaexplorer - TelnetUWP" FontSize="15" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Windows10Phone admins - General help &amp; support" FontSize="15" Margin="25,0,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Margin="0,10,0,0">
+                    <TextBlock Text="Special Thanks:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="@gus33000 and @basharastifan for help me to create this application in the beginning." FontSize="15" Margin="25,0,5,0" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0">
+                    <Button Name="UpdateBtn" Content="Check For Update" MinWidth="100" Click="UpdateBtn_Click"/>
+                    <Button Name="ChangelogBtn" Content="Changelog" MinWidth="100" Margin="10,0,0,0" Click="ChangelogBtn_Click"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

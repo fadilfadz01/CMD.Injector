@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/StandardCimv2/MSFT_NetEventProvider" ClassVersion="1.0.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetEventProvider</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetEventSession_Provider" ResultRole="PartComponent" SourceRole="GroupComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventSession" />
+              <CmdletParameterMetadata PSName="AssociatedEventSession" ValueFromPipeline = "true"  CmdletParameterSets="BySessionOfTheProvider"/> 
+            </AssociatedInstance>
+          </Association> 
+          <Association Association="MSFT_NetEventCaptureTarget_CaptureProvider" ResultRole="GroupComponent" SourceRole="PartComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventPacketCaptureTarget" />
+              <CmdletParameterMetadata PSName="AssociatedCaptureTarget" ValueFromPipeline = "true"  CmdletParameterSets="ByTargetOfTheProvider"/> 
+            </AssociatedInstance>
+          </Association> 
+        </QueryableAssociations>
+      </GetCmdletParameters>
+
+      <GetCmdlet>
+        <CmdletMetadata Verb="Get" />
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryableAssociations>
+            <Association Association="MSFT_NetEventSession_Provider" ResultRole="PartComponent" SourceRole="GroupComponent" >
+              <AssociatedInstance>
+                <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventSession" />
+                <CmdletParameterMetadata PSName="AssociatedEventSession" ValueFromPipeline = "true"  CmdletParameterSets="BySessionOfTheProvider"/> 
+              </AssociatedInstance>
+            </Association> 
+            <Association Association="MSFT_NetEventCaptureTarget_CaptureProvider" ResultRole="GroupComponent" SourceRole="PartComponent" >
+              <AssociatedInstance>
+                <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventPacketCaptureTarget" />
+                <CmdletParameterMetadata PSName="AssociatedCaptureTarget" ValueFromPipeline = "true"  CmdletParameterSets="ByTargetOfTheProvider"/> 
+              </AssociatedInstance>
+            </Association> 
+          </QueryableAssociations>
+          <QueryOptions>
+            <Option OptionName="ShowInstalled">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </GetCmdlet>
+
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High" />
+        <Method MethodName="cim:DeleteInstance" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium" />
+        <Method MethodName="cim:ModifyInstance">
+         <Parameters>
+            <Parameter ParameterName="Level">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" Position="2">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter> 
+            <Parameter ParameterName="MatchAnyKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="3">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MatchAllKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="4">
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>    
+    </InstanceCmdlets>    
+    <StaticCmdlets>
+        <Cmdlet>
+        <CmdletMetadata Verb="Add" ConfirmImpact="High"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="Name">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="SessionName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="1">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="Level">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" Position="2">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter> 
+            <Parameter ParameterName="MatchAnyKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="3">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MatchAllKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="4">
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+    </Method>
+     </Cmdlet>
+   </StaticCmdlets>
+    
+  </Class>
+</PowerShellMetadata>

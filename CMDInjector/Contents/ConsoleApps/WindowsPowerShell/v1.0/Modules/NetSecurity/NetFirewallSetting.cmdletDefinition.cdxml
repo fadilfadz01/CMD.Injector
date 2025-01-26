@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetSecuritySettingData" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallSetting</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="Exemptions">
+              <Type PSType="NetSecurity.TrafficExemption"/>
+              <CmdletParameterMetadata PSName="Exemptions"/>
+            </Parameter>
+            <Parameter ParameterName="EnableStatefulFtp">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="EnableStatefulFtp"/>
+            </Parameter>
+            <Parameter ParameterName="EnableStatefulPptp">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="EnableStatefulPptp"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteMachineTransportAuthorizationList">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteMachineTransportAuthorizationList"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteMachineTunnelAuthorizationList">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteMachineTunnelAuthorizationList"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteUserTransportAuthorizationList">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteUserTransportAuthorizationList"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteUserTunnelAuthorizationList">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteUserTunnelAuthorizationList"/>
+            </Parameter>
+            <Parameter ParameterName="RequireFullAuthSupport">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="RequireFullAuthSupport"/>
+            </Parameter>
+            <Parameter ParameterName="CertValidationLevel">
+              <Type PSType="NetSecurity.CRLCheck"/>
+              <CmdletParameterMetadata PSName="CertValidationLevel"/>
+            </Parameter>
+            <Parameter ParameterName="AllowIPsecThroughNAT">
+              <Type PSType="NetSecurity.IPsecThroughNAT"/>
+              <CmdletParameterMetadata PSName="AllowIPsecThroughNAT"/>
+            </Parameter>
+            <Parameter ParameterName="MaxSAIdleTimeSeconds">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxSAIdleTimeSeconds"/>
+            </Parameter>
+            <Parameter ParameterName="KeyEncoding">
+              <Type PSType="NetSecurity.KeyEncoding"/>
+              <CmdletParameterMetadata PSName="KeyEncoding"/>
+            </Parameter>
+            <Parameter ParameterName="EnablePacketQueuing">
+              <Type PSType="NetSecurity.PacketQueuing"/>
+              <CmdletParameterMetadata PSName="EnablePacketQueuing"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.TrafficExemption" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="NeighborDiscovery" Value="1"/>
+      <Value Name="Icmp" Value="2"/>
+      <Value Name="RouterDiscovery" Value="4"/>
+      <Value Name="Dhcp" Value="8"/>
+      <Value Name="NotConfigured" Value="4294967295"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.GpoBoolean" UnderlyingType="uint16">
+      <Value Name="False" Value="0"/>
+      <Value Name="True" Value="1"/>
+      <Value Name="NotConfigured" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Profile" UnderlyingType="uint16" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="Public" Value="4"/>
+      <Value Name="Private" Value="2"/>
+      <Value Name="Domain" Value="1"/>
+      <Value Name="NotApplicable" Value="65535"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.CRLCheck" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="AttemptCrlCheck" Value="1"/>
+      <Value Name="RequireCrlCheck" Value="2"/>
+      <Value Name="NotConfigured" Value="65535"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.IPsecThroughNAT" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="Server" Value="1"/>
+      <Value Name="Both" Value="2"/>
+      <Value Name="NotConfigured" Value="65535"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.KeyEncoding" UnderlyingType="uint16">
+      <Value Name="UTF16" Value="0"/>
+      <Value Name="UTF8" Value="1"/>
+      <Value Name="NotConfigured" Value="65535"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.PacketQueuing" UnderlyingType="uint16" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="Inbound" Value="1"/>
+      <Value Name="Forward" Value="2"/>
+      <Value Name="NotConfigured" Value="65535"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

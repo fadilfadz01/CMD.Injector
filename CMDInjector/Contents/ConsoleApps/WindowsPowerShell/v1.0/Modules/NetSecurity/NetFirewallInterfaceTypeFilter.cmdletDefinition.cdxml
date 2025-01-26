@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetInterfaceTypeFilter" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallInterfaceTypeFilter</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="InterfaceType">
+            <Type PSType="NetSecurity.InterfaceType"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetFirewallRuleFilterByInterfaceType" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallRule"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleFilterByInterfaceType" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetConSecRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecRule"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="InterfaceType">
+              <Type PSType="NetSecurity.InterfaceType"/>
+              <CmdletParameterMetadata PSName="InterfaceType"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.InterfaceType" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="Wired" Value="1"/>
+      <Value Name="Wireless" Value="2"/>
+      <Value Name="RemoteAccess" Value="4"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

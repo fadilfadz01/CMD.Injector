@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetTCPConnection" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetTCPConnection</DefaultNoun>
+
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="LocalAddress">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Aliases="IPAddress" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="LocalPort">
+            <Type PSType="System.UInt16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" Position="1" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RemoteAddress">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RemotePort">
+            <Type PSType="System.UInt16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="State">
+            <Type PSType="NetTCPConnection.State" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AppliedSetting">
+            <Type PSType="NetTCPConnection.AppliedSetting" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="OwningProcess">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="CreationTime">
+            <Type PSType="System.DateTime" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="OffloadState">
+            <Type PSType="NetTCPConnection.OffloadState" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+    </InstanceCmdlets>
+
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetTCPConnection.State" UnderlyingType="System.Byte">
+      <Value Name="Closed" Value="1" />
+      <Value Name="Listen" Value="2" />
+      <Value Name="SynSent" Value="3" />
+      <Value Name="SynReceived" Value="4" />
+      <Value Name="Established" Value="5" />
+      <Value Name="FinWait1" Value="6" />
+      <Value Name="FinWait2" Value="7" />
+      <Value Name="CloseWait" Value="8" />
+      <Value Name="Closing" Value="9" />
+      <Value Name="LastAck" Value="10" />
+      <Value Name="TimeWait" Value="11" />
+      <Value Name="DeleteTCB" Value="12" />
+      <Value Name="Bound" Value="100" />
+    </Enum>
+    <Enum EnumName="NetTCPConnection.AppliedSetting" UnderlyingType="System.Byte">
+      <Value Name="Internet" Value="0" />
+      <Value Name="Datacenter" Value="1" />
+      <Value Name="Compat" Value="2" />
+      <Value Name="DatacenterCustom" Value="3" />
+      <Value Name="InternetCustom" Value="4" />
+    </Enum>
+    <Enum EnumName="NetTCPConnection.OffloadState" UnderlyingType="System.Byte">
+      <Value Name="InHost" Value="0" />
+      <Value Name="Offloading" Value="1" />
+      <Value Name="Offloaded" Value="2" />
+      <Value Name="Uploading" Value="3" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

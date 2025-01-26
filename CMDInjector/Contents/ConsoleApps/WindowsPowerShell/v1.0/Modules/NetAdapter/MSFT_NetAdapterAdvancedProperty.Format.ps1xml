@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterAdvancedProperty.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterAdvancedProperty cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterAdvProperty_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterAdvancedPropertySettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterAdvancedPropertySettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DisplayName</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DisplayValue</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>RegistryKeyword</label>
+          <Width>15</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>RegistryValue</label>
+          <Width>15</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              if ($_.DisplayName -ne $null)
+              {
+                $out = $_.DisplayName
+              }
+              else
+              {
+                $out = "--"
+              }
+              $out
+            </ScriptBlock>
+
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              if ($_.DisplayValue -ne $null)
+              {
+                $out = $_.DisplayValue
+              }
+              else
+              {
+                $out = "--"
+              }
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>RegistryKeyword</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              if (($_.RegistryValue) -and ($_.RegistryValue.length -ge 1))
+              {
+                if ($_.RegistryValue.length -eq 1)
+                {
+                  $out = "{$($_.RegistryValue[0])}"
+                }
+                else
+                {
+                  $out = "{'"+($_.RegistryValue -join "', '")+"'}"
+                }
+              }
+              else
+              {
+                $out = "{--}"
+              }
+              $out;
+            </ScriptBlock>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  <View>
+    <Name>Advanced</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterAdvancedPropertySettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterAdvancedPropertySettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DisplayName</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>Value</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ValidValues</label>
+          <Width>26</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DefaultDisplayValue</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DisplayName</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DisplayValue</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              $out = if ($_.DisplayParameterType -eq 5)
+              {
+                $_.ValidDisplayValues
+              }
+              if  (($_.DisplayParameterType -eq 1) -or
+                   ($_.DisplayParameterType -eq 2) -or
+                   ($_.DisplayParameterType -eq 3) -or
+                   ($_.DisplayParameterType -eq 4))
+              {
+                "Min $($_.NumericParameterMinValue), Max $($_.NumericParameterMaxValue), "
+                "Step $($_.NumericParameterStepValue)"
+
+              }
+              if ($_.DisplayParameterType -eq 6)
+              {
+                ""
+              }
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DefaultDisplayValue</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  <View>
+    <Name>MSFT_NetAsapterAdvProperty_ListView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterAdvancedPropertySettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterAdvancedPropertySettingData</TypeName>
+    </ViewSelectedBy>
+    <ListControl>
+      <ListEntries>
+        <ListEntry>
+          <ListItems>
+            <ListItem>
+              <label>Name</label>
+              <PropertyName>Name</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>InterfaceDescription</label>
+              <PropertyName>InterfaceDescription</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>DisplayName</label>
+              <PropertyName>DisplayName</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>DisplayValue</label>
+              <PropertyName>DisplayValue</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>DefaultDisplayValue</label>
+              <PropertyName>DefaultDisplayValue</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>ValidDisplayValues</label>
+              <PropertyName>ValidDisplayValues</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>RegistryKeyword</label>
+              <PropertyName>RegistryKeyword</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>RegistryValue</label>
+              <PropertyName>RegistryValue</PropertyName>
+            </ListItem>
+          </ListItems>
+        </ListEntry>
+      </ListEntries>
+    </ListControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

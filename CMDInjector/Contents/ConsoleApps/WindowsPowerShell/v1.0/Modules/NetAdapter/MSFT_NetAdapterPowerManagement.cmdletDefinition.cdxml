@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetAdapterPowerManagementSettingData" ClassVersion="1.0.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetAdapterPowerManagement</DefaultNoun>
+      <InstanceCmdlets>
+          <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+              <QueryableProperties>
+                  <Property PropertyName="Name">
+                      <Type PSType ="string"/>
+                      <RegularQuery AllowGlobbing="true">
+                          <CmdletParameterMetadata PSName="Name" Position="0" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+                      </RegularQuery>
+                  </Property>
+                  <Property PropertyName="InterfaceDescription">
+                      <Type PSType ="string"/>
+                      <RegularQuery AllowGlobbing="true" >
+                          <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+                      </RegularQuery>
+                  </Property>
+              </QueryableProperties>
+              <QueryOptions>
+                  <Option OptionName="IncludeHidden">
+                      <Type PSType="System.Management.Automation.SwitchParameter" />
+                  </Option>
+              </QueryOptions>
+          </GetCmdletParameters>
+          <Cmdlet>
+              <CmdletMetadata Verb="Set" ConfirmImpact="Low"/>
+              <Method MethodName="cim:ModifyInstance">
+                <Parameters>
+                  <Parameter ParameterName="ArpOffload">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="D0PacketCoalescing">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="DeviceSleepOnDisconnect">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="NSOffload">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="RsnRekeyOffload">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="SelectiveSuspend">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="WakeOnMagicPacket">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="WakeOnPattern">
+                    <Type PSType="NetAdapterPowerManagement.Setting" />
+                    <CmdletParameterMetadata>
+                      <ValidateNotNull />
+                      <ValidateNotNullOrEmpty />
+                      <ValidateSet>
+                        <AllowedValue>Enabled</AllowedValue>
+                        <AllowedValue>Disabled</AllowedValue>
+                      </ValidateSet>
+                    </CmdletParameterMetadata>
+                  </Parameter>
+                  <Parameter ParameterName="cim:OperationOption:NoRestart">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata PSName="NoRestart" />
+                  </Parameter>
+                </Parameters>
+              </Method>
+              <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+                  <QueryableProperties>
+                      <Property PropertyName="Name">
+                          <Type PSType ="string"/>
+                          <RegularQuery AllowGlobbing="true">
+                              <CmdletParameterMetadata PSName="Name" IsMandatory="true" Position="0" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+                          </RegularQuery>
+                      </Property>
+                      <Property PropertyName="InterfaceDescription">
+                          <Type PSType ="string"/>
+                          <RegularQuery AllowGlobbing="true" >
+                              <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+                          </RegularQuery>
+                      </Property>
+                  </QueryableProperties>
+                  <QueryOptions>
+                      <Option OptionName="IncludeHidden">
+                          <Type PSType="System.Management.Automation.SwitchParameter" />
+                      </Option>
+                  </QueryOptions>
+              </GetCmdletParameters>
+          </Cmdlet>
+
+          <Cmdlet>
+              <CmdletMetadata Verb="Enable" ConfirmImpact="Low"/>
+              <Method MethodName="Enable">
+                <Parameters>
+                  <Parameter ParameterName="ArpOffload">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="D0PacketCoalescing">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="DeviceSleepOnDisconnect">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="NSOffload">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="RsnRekeyOffload">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="SelectiveSuspend">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="WakeOnMagicPacket">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="WakeOnPattern">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="CmdletOutput">
+                    <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+                    <CmdletOutputMetadata />
+                  </Parameter>
+                  <Parameter ParameterName="cim:OperationOption:NoRestart">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata PSName="NoRestart" />
+                  </Parameter>
+                  <Parameter ParameterName="cim:OperationOption:PassThru">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata PSName="PassThru" />
+                  </Parameter>
+                </Parameters>
+              </Method>
+              <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+                  <QueryableProperties>
+                      <Property PropertyName="Name">
+                          <Type PSType ="string"/>
+                          <RegularQuery AllowGlobbing="true">
+                              <CmdletParameterMetadata PSName="Name" IsMandatory="true" Position="0" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+                          </RegularQuery>
+                      </Property>
+                      <Property PropertyName="InterfaceDescription">
+                          <Type PSType ="string"/>
+                          <RegularQuery AllowGlobbing="true" >
+                              <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+                          </RegularQuery>
+                      </Property>
+                  </QueryableProperties>
+                  <QueryOptions>
+                      <Option OptionName="IncludeHidden">
+                          <Type PSType="System.Management.Automation.SwitchParameter" />
+                      </Option>
+                  </QueryOptions>
+              </GetCmdletParameters>
+          </Cmdlet>
+
+          <Cmdlet>
+              <CmdletMetadata Verb="Disable" ConfirmImpact="Low"/>
+              <Method MethodName="Disable">
+                <Parameters>
+                  <Parameter ParameterName="ArpOffload">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="D0PacketCoalescing">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="DeviceSleepOnDisconnect">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="NSOffload">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="RsnRekeyOffload">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="SelectiveSuspend">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="WakeOnMagicPacket">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="WakeOnPattern">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata/>
+                  </Parameter>
+                  <Parameter ParameterName="CmdletOutput">
+                    <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+                    <CmdletOutputMetadata />
+                  </Parameter>
+                  <Parameter ParameterName="cim:OperationOption:NoRestart">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata PSName="NoRestart" />
+                  </Parameter>
+                  <Parameter ParameterName="cim:OperationOption:PassThru">
+                    <Type PSType="System.Management.Automation.SwitchParameter" />
+                    <CmdletParameterMetadata PSName="PassThru" />
+                  </Parameter>
+                </Parameters>
+              </Method>
+              <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+                  <QueryableProperties>
+                      <Property PropertyName="Name">
+                          <Type PSType ="string"/>
+                          <RegularQuery AllowGlobbing="true">
+                              <CmdletParameterMetadata PSName="Name" IsMandatory="true" Position="0" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+                          </RegularQuery>
+                      </Property>
+                      <Property PropertyName="InterfaceDescription">
+                          <Type PSType ="string"/>
+                          <RegularQuery AllowGlobbing="true" >
+                              <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+                          </RegularQuery>
+                      </Property>
+                  </QueryableProperties>
+                  <QueryOptions>
+                      <Option OptionName="IncludeHidden">
+                          <Type PSType="System.Management.Automation.SwitchParameter" />
+                      </Option>
+                  </QueryOptions>
+              </GetCmdletParameters>
+          </Cmdlet>
+      </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetAdapterPowerManagement.Setting" UnderlyingType="uint32">
+      <Value Value="0" Name="Unsupported" />
+      <Value Value="1" Name="Disabled" />
+      <Value Value="2" Name="Enabled" />
+      <Value Value="3" Name="Inactive" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

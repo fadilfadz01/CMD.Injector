@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetMainModeSA" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetIPsecMainModeSA</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByName" IsMandatory="true" Position="0" Aliases="ID"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetSAAssociation" ResultRole="Antecedent" SourceRole="Dependent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetQuickModeSA"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecQuickModeSA" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecQuickModeSA"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:DeleteInstance"/>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.EffectiveKeyModule" UnderlyingType="uint32">
+      <Value Name="IkeV1" Value="0"/>
+      <Value Name="AuthIP" Value="1"/>
+      <Value Name="IkeV2" Value="2"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Types>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/Cimv2/Win32_PnPEntity</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Class</Name>
+        <ReferencedMemberName>PNPClass</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>FriendlyName</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InstanceId</Name>
+        <ReferencedMemberName>DeviceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Problem</Name>
+        <ReferencedMemberName>ConfigManagerErrorCode</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>ConfigManagerErrorCode</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.PnpDevice.Problem]($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ProblemDescription</Name>
+        <GetScriptBlock>
+          Microsoft.PowerShell.Utility\Import-LocalizedData  LocalizedData -filename PnpDevice.Resource.psd1
+          switch([Microsoft.PowerShell.Cmdletization.GeneratedTypes.PnpDevice.Problem]($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+          {
+            CM_PROB_NONE
+            {
+              $str = $LocalizedData.IDS_PROB_NOPROBLEM
+            }
+            CM_PROB_NOT_CONFIGURED
+            {
+              $str = $LocalizedData.IDS_PROB_NOT_CONFIGURED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DEVLOADER_FAILED
+            {
+              $str = $LocalizedData.IDS_PROB_DEVLOADERFAILED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_OUT_OF_MEMORY
+            {
+              $str = $LocalizedData.IDS_PROB_OUT_OF_MEMORY -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_ENTRY_IS_WRONG_TYPE
+            {
+              $str = $LocalizedData.IDS_PROB_WRONG_TYPE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_LACKED_ARBITRATOR
+            {
+              $str = $LocalizedData.IDS_PROB_LACKEDARBITRATOR -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_BOOT_CONFIG_CONFLICT
+            {
+              $str = $LocalizedData.IDS_PROB_BOOT_CONFIG_CONFLICT -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_FAILED_FILTER
+            {
+              $str = $LocalizedData.IDS_PROB_FAILED_FILTER -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DEVLOADER_NOT_FOUND
+            {
+              $str = $LocalizedData.IDS_PROB_DEVLOADER_NOT_FOUND -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_INVALID_DATA
+            {
+              $str = $LocalizedData.IDS_PROB_INVALID_DATA -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_FAILED_START
+            {
+              $str = $LocalizedData.IDS_PROB_FAILED_START -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_LIAR
+            {
+              $str = $LocalizedData.IDS_PROB_LIAR -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_NORMAL_CONFLICT
+            {
+              $str = $LocalizedData.IDS_PROB_NORMAL_CONFLICT -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_NOT_VERIFIED
+            {
+              $str = $LocalizedData.IDS_PROB_NOT_VERIFIED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_NEED_RESTART
+            {
+              $str = $LocalizedData.IDS_PROB_NEEDRESTART -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_REENUMERATION
+            {
+              $str = $LocalizedData.IDS_PROB_REENUMERATION -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_PARTIAL_LOG_CONF
+            {
+              $str = $LocalizedData.IDS_PROB_PARTIALCONFIG -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_UNKNOWN_RESOURCE
+            {
+              $str = $LocalizedData.IDS_PROB_UNKNOWN_RESOURCE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_REINSTALL
+            {
+              $str = $LocalizedData.IDS_PROB_REINSTALL -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_REGISTRY
+            {
+              $str = $LocalizedData.IDS_PROB_REGISTRY -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_WILL_BE_REMOVED
+            {
+              $str = $LocalizedData.IDS_PROB_WILL_BE_REMOVED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DISABLED
+            {
+              $str = $LocalizedData.IDS_PROB_DISABLED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DEVICE_NOT_THERE
+            {
+              $str = $LocalizedData.IDS_DEVICE_NOT_THERE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_MOVED
+            {
+              $str = $LocalizedData.IDS_PROB_MOVED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_TOO_EARLY
+            {
+              $str = $LocalizedData.IDS_PROB_TOO_EARLY -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_NO_VALID_LOG_CONF
+            {
+              $str = $LocalizedData.IDS_PROB_NO_VALID_LOG_CONF -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_FAILED_INSTALL
+            {
+              $str = $LocalizedData.IDS_PROB_FAILEDINSTALL -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_HARDWARE_DISABLED
+            {
+              $str = $LocalizedData.IDS_PROB_HARDWAREDISABLED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_CANT_SHARE_IRQ
+            {
+              $str = $LocalizedData.IDS_PROB_CANT_SHARE_IRQ -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_FAILED_ADD
+            {
+              $str = $LocalizedData.IDS_PROB_FAILED_ADD -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DISABLED_SERVICE
+            {
+              $str = $LocalizedData.IDS_PROB_DISABLED_SERVICE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_TRANSLATION_FAILED
+            {
+              $str = $LocalizedData.IDS_PROB_TRANSLATION_FAILED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_NO_SOFTCONFIG
+            {
+              $str = $LocalizedData.IDS_PROB_NO_SOFTCONFIG -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_BIOS_TABLE
+            {
+              $str = $LocalizedData.IDS_PROB_BIOS_TABLE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_IRQ_TRANSLATION_FAILED
+            {
+              $str = $LocalizedData.IDS_PROB_IRQ_TRANSLATION_FAILED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_FAILED_DRIVER_ENTRY
+            {
+              $str = $LocalizedData.IDS_PROB_FAILED_DRIVER_ENTRY -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DRIVER_FAILED_PRIOR_UNLOAD
+            {
+              $str = $LocalizedData.IDS_PROB_DRIVER_FAILED_PRIOR_UNLOAD -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DRIVER_FAILED_LOAD
+            {
+              $str = $LocalizedData.IDS_PROB_DRIVER_FAILED_LOAD -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DRIVER_SERVICE_KEY_INVALID
+            {
+              $str = $LocalizedData.IDS_PROB_DRIVER_SERVICE_KEY_INVALID -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_LEGACY_SERVICE_NO_DEVICES
+            {
+              $str = $LocalizedData.IDS_PROB_LEGACY_SERVICE_NO_DEVICES -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DUPLICATE_DEVICE
+            {
+              $str = $LocalizedData.IDS_PROB_DUPLICATE_DEVICE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_FAILED_POST_START
+            {
+              $str = $LocalizedData.IDS_PROB_FAILED_POST_START -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_HALTED
+            {
+              $str = $LocalizedData.IDS_PROB_HALTED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_PHANTOM
+            {
+              $str = $LocalizedData.IDS_PROB_PHANTOM -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_SYSTEM_SHUTDOWN
+            {
+              $str = $LocalizedData.IDS_PROB_SYSTEM_SHUTDOWN -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_HELD_FOR_EJECT
+            {
+              $str = $LocalizedData.IDS_PROB_HELD_FOR_EJECT -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_DRIVER_BLOCKED
+            {
+              $str = $LocalizedData.IDS_PROB_DRIVER_BLOCKED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_REGISTRY_TOO_LARGE
+            {
+              $str = $LocalizedData.IDS_PROB_REGISTRY_TOO_LARGE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_SETPROPERTIES_FAILED
+            {
+              $str = $LocalizedData.IDS_PROB_SETPROPERTIES_FAILED -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_WAITING_ON_DEPENDENCY
+            {
+              $str = $LocalizedData.IDS_PROB_WAITING_ON_DEPENDENCY -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_UNSIGNED_DRIVER
+            {
+              $str = $LocalizedData.IDS_PROB_UNSIGNED_DRIVER -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            CM_PROB_USED_BY_DEBUGGER
+            {
+              $str = $LocalizedData.IDS_PROB_USED_BY_DEBUGGER -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+            Default
+            {   
+              $str = $LocalizedData.IDS_PROB_UNKNOWN_WITHCODE -f ($LocalizedData.IDS_PROB_CODE -f ($this.PSBase.CimInstanceProperties['ConfigManagerErrorCode'].Value))
+            }
+          }
+          return $str
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/Cimv2/Win32_PnPDeviceProperty</Name>
+    <Members>
+      <AliasProperty>
+        <Name>InstanceId</Name>
+        <ReferencedMemberName>DeviceID</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Type</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.PnpDeviceProperty.Type]($this.PSBase.CimInstanceProperties['Type'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+</Types>

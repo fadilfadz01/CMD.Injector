@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_DNSClientGlobalSetting" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>DnsClientGlobalSetting</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters />
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Low"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="SuffixSearchList">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="UseDevolution">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DevolutionLevel">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+</PowerShellMetadata>

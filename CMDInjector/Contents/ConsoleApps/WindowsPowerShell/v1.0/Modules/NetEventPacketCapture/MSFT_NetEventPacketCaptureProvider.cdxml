@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/StandardCimv2/MSFT_NetEventPacketCaptureProvider" ClassVersion="1.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetEventPacketCaptureProvider</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="BySessionName">
+        <QueryableProperties>
+          <Property PropertyName="SessionName">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="BySessionName"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetEventSession_Provider" ResultRole="PartComponent" SourceRole="GroupComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventSession" />
+              <CmdletParameterMetadata PSName="AssociatedEventSession" ValueFromPipeline = "true"  CmdletParameterSets="BySessionOfTheProvider"/> 
+            </AssociatedInstance>
+          </Association> 
+          <Association Association="MSFT_NetEventCaptureTarget_CaptureProvider" ResultRole="GroupComponent" SourceRole="PartComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventPacketCaptureTarget" />
+              <CmdletParameterMetadata PSName="AssociatedCaptureTarget" ValueFromPipeline = "true"  CmdletParameterSets="ByTargetOfTheProvider"/> 
+            </AssociatedInstance>
+          </Association> 
+        </QueryableAssociations>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High" />
+        <Method MethodName="cim:DeleteInstance" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="SessionName">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="BySessionName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium" />
+        <Method MethodName="cim:ModifyInstance">
+         <Parameters>
+            <Parameter ParameterName="Level">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" Position="0">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter> 
+            <Parameter ParameterName="MatchAnyKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="1">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MatchAllKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="2">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CaptureType">
+              <Type PSType="NetEventPacketCapture.CaptureType" />
+              <CmdletParameterMetadata IsMandatory="false" Position="3">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MultiLayer">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" Position="4">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="LinkLayerAddress">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="5">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="EtherType">
+              <Type PSType="System.UInt16[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="6">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="IpAddresses">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="7">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="IpProtocols">
+              <Type PSType="System.Byte[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="8">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="TruncationLength">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" Position="9">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="VmCaptureDirection">
+              <Type PSType="NetEventPacketCapture.VmCaptureDirection" />
+              <CmdletParameterMetadata IsMandatory="false" Position="10">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+         </Parameters>
+        </Method>
+      </Cmdlet>    
+    </InstanceCmdlets>    
+    <StaticCmdlets>
+        <Cmdlet>
+        <CmdletMetadata Verb="Add" ConfirmImpact="High"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="SessionName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="Level">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" Position="1">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter> 
+            <Parameter ParameterName="MatchAnyKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="2">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MatchAllKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="3">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CaptureType" DefaultValue="BothPhysicalAndSwitch">
+              <Type PSType="NetEventPacketCapture.CaptureType" />
+              <CmdletParameterMetadata IsMandatory="false" Position="4">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MultiLayer">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" Position="5">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="LinkLayerAddress">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="6">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="EtherType">
+              <Type PSType="System.UInt16[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="7">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="IpAddresses">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="8">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="IpProtocols">
+              <Type PSType="System.Byte[]" />
+              <CmdletParameterMetadata IsMandatory="false" Position="9">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="TruncationLength">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" Position="10">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="VmCaptureDirection" DefaultValue="IngressAndEgress">
+              <Type PSType="NetEventPacketCapture.VmCaptureDirection" />
+              <CmdletParameterMetadata IsMandatory="false" Position="11">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+    </Method>
+     </Cmdlet>
+   </StaticCmdlets>
+    
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetEventPacketCapture.CaptureType" UnderlyingType="System.Byte">
+      <Value Name="Physical"  Value="0" />
+      <Value Name="Switch"  Value="1" />
+      <Value Name="BothPhysicalAndSwitch"  Value="2" />
+    </Enum>
+    <Enum EnumName="NetEventPacketCapture.VmCaptureDirection" UnderlyingType="System.Byte">
+      <Value Name="Ingress"  Value="0" />
+      <Value Name="Egress"  Value="1" />
+      <Value Name="IngressAndEgress"  Value="2" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

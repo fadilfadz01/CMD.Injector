@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterEncapsulatedPacketTaskOffload.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterEncapsulatedPacketTaskOffload cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterEncapsulatedPacketTaskOffload_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>NVGRE Enabled</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>VXLAN Enabled</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <PropertyName>Name</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>NvgreEncapsulatedPacketTaskOffloadEnabled</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>VxlanEncapsulatedPacketTaskOffloadEnabled</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  <View>
+    <Name>MSFT_NetAsapterEncapsulatedPacketTaskOffload_ListView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData</TypeName>
+    </ViewSelectedBy>
+    <ListControl>
+      <ListEntries>
+        <ListEntry>
+          <ListItems>
+            <ListItem>
+              <PropertyName>Name</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>InterfaceDescription</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>NVGRE Enabled</label>
+              <PropertyName>NvgreEncapsulatedPacketTaskOffloadEnabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>NVGRE Transmit Checksum Offload</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre.TransmitChecksumOffloadSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>NVGRE Receive Checksum Offload</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre.ReceiveChecksumOffloadSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>NVGRE LSO</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre.LsoV2Supported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>NVGRE RSS</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre.RssSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>NVGRE VMQ</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre.VmqSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN Enabled</label>
+              <PropertyName>VxlanEncapsulatedPacketTaskOffloadEnabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN Transmit Checksum Offload</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan.TransmitChecksumOffloadSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN Receive Checksum Offload</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan.ReceiveChecksumOffloadSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN LSO</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan.LsoV2Supported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN RSS</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan.RssSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN VMQ</label>
+              <ScriptBlock>
+                [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterEncapsulatedPacketTaskOffload.OffloadType]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan.VmqSupported
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN UDP Port Configurable</label>
+              <ScriptBlock>
+                [System.Boolean]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan.IsVxlanUDPPortConfigurable
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>VXLAN UDP Port Number</label>
+              <ScriptBlock>
+                [System.UInt16]$_.EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan.VxlanUDPPortNumber
+              </ScriptBlock>
+            </ListItem>
+          </ListItems>
+        </ListEntry>
+      </ListEntries>
+    </ListControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

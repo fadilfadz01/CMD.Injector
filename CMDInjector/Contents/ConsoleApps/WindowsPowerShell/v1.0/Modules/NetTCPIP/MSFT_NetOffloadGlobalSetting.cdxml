@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetOffloadGlobalSetting" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetOffloadGlobalSetting</DefaultNoun>
+
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="ReceiveSideScaling">
+            <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ReceiveSegmentCoalescing">
+            <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Chimney">
+            <Type PSType="NetOffloadGlobalSetting.ChimneyEnum" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="TaskOffload">
+            <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NetworkDirect">
+            <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NetworkDirectAcrossIPSubnets">
+            <Type PSType="NetOffloadGlobalSetting.AllowedBlockedEnum" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PacketCoalescingFilter">
+            <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="ReceiveSideScaling">
+              <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ReceiveSegmentCoalescing">
+              <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="Chimney">
+              <Type PSType="NetOffloadGlobalSetting.ChimneyEnum" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="TaskOffload">
+              <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="NetworkDirect">
+              <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="NetworkDirectAcrossIPSubnets">
+              <Type PSType="NetOffloadGlobalSetting.AllowedBlockedEnum" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PacketCoalescingFilter">
+              <Type PSType="NetOffloadGlobalSetting.EnabledDisabledEnum" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters />
+      </Cmdlet>      
+    </InstanceCmdlets>
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetOffloadGlobalSetting.EnabledDisabledEnum" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetOffloadGlobalSetting.ChimneyEnum" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+      <Value Name="Automatic" Value="2" />
+    </Enum>
+    <Enum EnumName="NetOffloadGlobalSetting.AllowedBlockedEnum" UnderlyingType="System.Byte">
+      <Value Name="Blocked" Value="0" />
+      <Value Name="Allowed" Value="1" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

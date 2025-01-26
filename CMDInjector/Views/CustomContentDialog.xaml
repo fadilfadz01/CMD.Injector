@@ -1,0 +1,23 @@
+﻿<ContentDialog
+x:Class="CMDInjector.CustomContentDialog"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:local="using:CMDInjector"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+Name="dialog"
+BorderBrush="{ThemeResource AppAccentColor}">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Name="TitleBox" FontSize="20"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Grid.Row="0" Content="App" Name="Btn1" Click="Btn1_Click" Width="100" Margin="10"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="Data" Name="Btn2" Click="Btn2_Click" Width="100" Margin="10"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Grid.Row="1" Content="App + Data" Name="Btn3" Click="Btn3_Click" Width="100" Margin="10"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="Cancel" Name="Btn4" Click="Btn4_Click" Width="100" Margin="10"/>
+        </StackPanel>
+    </StackPanel>
+</ContentDialog>

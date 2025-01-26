@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetAdapter" ClassVersion="1.0.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetAdapter</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType ="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Name" Position="0" Aliases="ifAlias InterfaceAlias" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceDescription">
+            <Type PSType ="string"/>
+            <RegularQuery AllowGlobbing="true" >
+              <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceIndex">
+            <Type PSType ="System.UInt32"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="InterfaceIndex" IsMandatory="true" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByIfIndex" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryOptions>
+          <Option OptionName="IncludeHidden">
+            <Type PSType="System.Management.Automation.SwitchParameter" />
+          </Option>
+          <Option OptionName="Physical">
+            <Type PSType="System.Management.Automation.SwitchParameter" />
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+       <CmdletMetadata Verb="Enable" ConfirmImpact="Medium"/>
+        <Method MethodName="Enable">
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="PassThru" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" IsMandatory="true" Position="0" Aliases="ifAlias InterfaceAlias" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+       <CmdletMetadata Verb="Disable" ConfirmImpact="High"/>
+        <Method MethodName="Disable">
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="PassThru" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" Aliases="ifAlias InterfaceAlias" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+       <CmdletMetadata Verb="Restart" ConfirmImpact="Medium"/>
+        <Method MethodName="Restart">
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="PassThru" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" Aliases="ifAlias InterfaceAlias" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+       <CmdletMetadata Verb="Rename" ConfirmImpact="Medium"/>
+        <Method MethodName="Rename">
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="PassThru" />
+            </Parameter>
+            <Parameter ParameterName="NewName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" Position="1">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" Aliases="ifAlias InterfaceAlias" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+       <CmdletMetadata Verb="Set" ConfirmImpact="High"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="NetworkAddresses">
+              <Type PSType="System.String[]" />
+            </Parameter>
+            <Parameter ParameterName="VlanID">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+                <ValidateRange Min="0" Max="4094" />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:MacAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata PSName="MacAddress" Aliases="LinkLayerAddress" />
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:NoRestart">
+              <Type PSType="System.Management.Automation.SwitchParameter"/>
+              <CmdletParameterMetadata PSName="NoRestart"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" Aliases="ifAlias InterfaceAlias" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetAdapter.IF_OPER_STATUS" UnderlyingType="uint32">
+      <Value Name="Up" Value="1" />
+      <Value Name="Down" Value="2" />
+      <Value Name="Testing" Value="3" />
+      <Value Name="Unknown" Value="4" />
+      <Value Name="Dormant" Value="5" />
+      <Value Name="NotPresent" Value="6" />
+      <Value Name="LowerLayerDown" Value="7" />
+    </Enum>
+    <Enum EnumName="NetAdapter.NET_IF_ADMIN_STATUS" UnderlyingType="uint32">
+      <Value Name="Up" Value="1" />
+      <Value Name="Down" Value="2" />
+      <Value Name="Testing" Value="3" />
+    </Enum>
+    <Enum EnumName="NetAdapter.NET_IF_MEDIA_CONNECT_STATE" UnderlyingType="uint32">
+      <Value Name="Unknown" Value="0" />
+      <Value Name="Connected" Value="1" />
+      <Value Name="Disconnected" Value="2" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

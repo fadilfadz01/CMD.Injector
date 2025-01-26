@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+Type information used by the NetAdapter WMIv2 provider.
+
+Copyright (c) 2011 Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+
+<Types>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter</Name>
+    <Members>
+       <ScriptProperty>
+        <Name>MacAddress</Name>
+        <GetScriptBlock>
+          $out = ""
+          if (($this.NetworkAddresses -ne $null) -and
+              ($this.NetworkAddresses.length -ge 1))
+          {
+            $MacAddress = $this.NetworkAddresses[0];
+          }
+          if($MacAddress -ne $null)
+          {
+              for($i = 0; $i -lt $MacAddress.Length; )
+              {
+                  $out += $MacAddress[$i++];
+                  if($i -eq $MacAddress.Length)
+                  {
+                    break;
+                  }
+                  $out += $MacAddress[$i++];
+                  if ($i -lt $MacAddress.Length)
+                  {
+                    $out += '-';
+                  }
+              }
+          }
+          $out
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $MacAddress = $newValue -replace '(:|-)'
+          $this.NetworkAddresses = $MacAddress
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>
+          $NetAdapter = $this;
+          $out = switch ($NetAdapter.InterfaceOperationalStatus)
+          {
+            1 {"Up"}
+            3 {"Testing"}
+            4 {"Unknown"}
+            5 {"Dormant"}
+            6 {"Not Present"}
+            7 {"Lower Layer Down"}
+          }
+          if ($NetAdapter.InterfaceOperationalStatus -eq 2)
+          {
+            if ($NetAdapter.InterfaceAdminStatus -eq 2)
+            {
+              $out = "Disabled"
+            }
+            else
+            {
+              $first = $true;
+              if ($NetAdapter.OperationalStatusDownDefaultPortNotAuthenticated)
+              {
+                $out = "Not Authenticated"
+                $first = $false;
+              }
+              if ($NetAdapter.OperationalStatusDownMediaDisconnected)
+              {
+                if (-not $first) {$out += ", "}
+                $out += "Disconnected"
+                $first = $false;
+              }
+
+              if ($NetAdapter.OperationalStatusDownLowPowerState)
+              {
+                if (-not $first) {$out += ", "}
+                $out += "Low Power State"
+                $first = $false;
+              }
+            }
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>LinkSpeed</Name>
+        <GetScriptBlock>
+          Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+          Format-LinkSpeed $this.TransmitLinkSpeed
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MediaType</Name>
+        <GetScriptBlock>
+          $out = switch ($this.NdisMedium)
+          {
+            0 {"802.3"}
+            3 {"WAN"}
+            9 {"Wireless WAN"}
+            12 {"Connection Oriented WAN"}
+            15 {"Tunnel"}
+            16 {"Native 802.11"}
+            17 {"Loopback"}
+            18 {"WiMAX"}
+            19 {"IP"}
+            default {"Unknown"}
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PhysicalMediaType</Name>
+        <GetScriptBlock>
+          $out = switch ($this.NdisPhysicalMedium)
+          {
+            0 {"Unspecified"}
+            1 {"Wireless LAN"}
+            2 {"Cable Modem"}
+            8 {"Wireless WAN"}
+            9 {"Native 802.11"}
+            10 {"BlueTooth"}
+            11 {"Infiniband"}
+            12 {"WiMAX"}
+            13 {"UWB"}
+            14 {"802.3"}
+            16 {"IRDA"}
+            17 {"Wired WAN"}
+            18 {"Wired Connection Oriented WAN"}
+            19 {"Other"}
+            default {"Unknown"}
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AdminStatus</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapter.NET_IF_ADMIN_STATUS][System.UInt32]$this.InterfaceAdminStatus
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MediaConnectionState</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapter.NET_IF_MEDIA_CONNECT_STATE][System.UInt32]$this.MediaConnectState
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DriverInformation</Name>
+        <GetScriptBlock>
+          $out="Driver Date $($this.DriverDate) Version $($this.DriverVersionString)"
+          if ($this.DriverMajorNdisVersion -ne $null)
+          {
+            $out +=" NDIS $($this.DriverMajorNdisVersion).$($this.DriverMinorNdisVersion)"
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DriverFileName</Name>
+        <GetScriptBlock>
+          (Split-Path $this.DriverName -Leaf)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NdisVersion</Name>
+        <GetScriptBlock>
+          $out = if ($this.DriverMajorNdisVersion)
+          {
+            "$($this.DriverMajorNdisVersion).$($this.DriverMinorNdisVersion)"
+          }
+          else
+          {
+            $out = "Unknown"
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ifOperStatus</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapter.IF_OPER_STATUS][System.UInt32]$this.InterfaceOperationalStatus
+        </GetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifIndex</Name>
+        <ReferencedMemberName>InterfaceIndex</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifName</Name>
+        <ReferencedMemberName>InterfaceName</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>DriverVersion</Name>
+        <ReferencedMemberName>DriverVersionString</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>LinkLayerAddress</Name>
+        <ReferencedMemberName>MacAddress</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterHardwareInfoSettingData</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>SriovSupport</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterSriov.SriovSupport]($this.PSBase.CimInstanceProperties['SriovSupport'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PcieLinkSpeed</Name>
+        <GetScriptBlock>
+          $out = switch ($this.PciExpressCurrentLinkSpeedEncoded)
+          {
+            1 {"2.5 GT/s"}
+            2 {"5.0 GT/s"}
+            3 {"8.0 GT/s"}
+            default {"Unknown"}
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PcieMaxLinkSpeed</Name>
+        <GetScriptBlock>
+          $out = switch ($this.PciExpressMaxLinkSpeedEncoded)
+          {
+            1 {"2.5 GT/s"}
+            2 {"5.0 GT/s"}
+            3 {"8.0 GT/s"}
+            default {"Unknown"}
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Version</Name>
+        <GetScriptBlock>
+          $out= switch ($this.PciExpressVersion)
+          {
+            1 {"1.0"}
+            2 {"1.1"}
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DeviceType</Name>
+        <GetScriptBlock>
+          $out= switch ($this.PciDeviceType)
+          {
+            0 {"Conventional PCI"}
+            1 {"PCI-X"}
+            2 {"PCI Express endpoint"}
+            3 {"PCI Express legacy endpoint"}
+            4 {"PCI Express Root Complex integrated endpoint"}
+            5 {"PCI Express treated as PCI"}
+            default {"Unknown"}
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CurrentSpeedAndMode</Name>
+        <GetScriptBlock>
+          $out = if ($this.PciDeviceType -eq 0)
+          {
+            switch ($this.PciCurrentSpeedAndMode)
+            {
+              0 {"Conventional PCI 33MHz"}
+              1 {"Conventional PCI 66MHz"}
+              default {"Unknown"}
+            }
+          }
+          else
+          {
+            if ($this.PciDeviceType -eq 1)
+            {
+              switch ($this.PciXCurrentSpeedAndMode)
+              {
+                0 {"PCI-X Mode conventional PCI"}
+                1 {"PCI-X Mode1 66MHz"}
+                2 {"PCI-X Mode1 100MHz"}
+                3 {"PCI-X Mode1 133MHz"}
+                5 {"PCI-X Mode1 ECC 66MHz"}
+                6 {"PCI-X Mode1 ECC 100MHz"}
+                7 {"PCI-X Mode1 ECC 133MHz"}
+                9 {"PCI-X Mode2 266 66MHz"}
+                10 {"PCI-X Mode2 266 100MHz"}
+                11 {"PCI-X Mode2 266 133MHz"}
+                13 {"PCI-X Mode2 533 66MHz"}
+                14 {"PCI-X Mode2 533 100MHz"}
+                15 {"PCI-X Mode2 533 133MHz"}
+                default {"Unknown"}
+              }
+
+            }
+            else
+            {
+              "NA"
+            }
+          }
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Segment</Name>
+        <ReferencedMemberName>SegmentNumber</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Bus</Name>
+        <ReferencedMemberName>BusNumber</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Device</Name>
+        <ReferencedMemberName>DeviceNumber</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Function</Name>
+        <ReferencedMemberName>FunctionNumber</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Slot</Name>
+        <ReferencedMemberName>SlotNumber</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>PcieLinkWidth</Name>
+        <ReferencedMemberName>PciExpressCurrentLinkWidth</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterAdvancedPropertySettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ValueName</Name>
+        <ReferencedMemberName>RegistryKeyword</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ValueData</Name>
+        <ReferencedMemberName>RegistryValue</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterBindingSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterRssSettingData</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Profile</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterRss.Profile]($this.PSBase.CimInstanceProperties['Profile'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>  
+          param($newValue)  
+          $this.PSBase.CimInstanceProperties['Profile'].Value = [System.UInt32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterRss.Profile]$newValue  
+        </SetScriptBlock>  
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterVmqSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterVmqQueueSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterSriovSettingData</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>SriovSupport</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterSriov.SriovSupport]($this.PSBase.CimInstanceProperties['SriovSupport'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterSriovVfSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterVPortSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>QPairs</Name>
+        <ReferencedMemberName>NumQueuePairs</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ITR</Name>
+        <ReferencedMemberName>InterruptModeration</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>FID</Name>
+        <ReferencedMemberName>FunctionID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ProcMask</Name>
+        <ReferencedMemberName>ProcessorAffinityMask</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>State</Name>
+        <ReferencedMemberName>VPortState</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>VPortID</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterStatisticsSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterLsoSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Version</Name>
+        <ReferencedMemberName>MaximumLsoVersionSupported</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterChecksumOffloadSettingData</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>IpIPv4Enabled</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]($this.PSBase.CimInstanceProperties['IpIPv4Enabled'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['IpIPv4Enabled'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>TcpIPv4Enabled</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]($this.PSBase.CimInstanceProperties['TcpIPv4Enabled'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['TcpIPv4Enabled'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>TcpIPv6Enabled</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]($this.PSBase.CimInstanceProperties['TcpIPv6Enabled'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['TcpIPv6Enabled'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>UdpIPv4Enabled</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]($this.PSBase.CimInstanceProperties['UdpIPv4Enabled'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['UdpIPv4Enabled'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>UdpIPv6Enabled</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]($this.PSBase.CimInstanceProperties['UdpIPv6Enabled'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['UdpIPv6Enabled'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterChecksumOffload.Direction]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterQosSettingData</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Name</Name>
+        <GetScriptBlock>
+          [System.String]($this.PSBase.CimInstanceProperties['Name'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+          [System.Boolean]($this.PSBase.CimInstanceProperties['Enabled'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Capabilities</Name>
+        <GetScriptBlock>
+          $hwCaps = $this.PSBase.CimInstanceProperties['HardwareCapabilities'].Value
+          $curCaps = $this.PSBase.CimInstanceProperties['CurrentCapabilities'].Value
+
+          $template = "{0,-21} {1,-12} {2,-12}`n"
+          $out  = ""
+          $out += $template -f "", "Hardware", "Current"
+          $out += $template -f "", "--------", "-------"
+
+          $template = "{0,-19} : {1,-12} {2,-12}`n"
+          $out += $template -f "MacSecBypass", $hwCaps.MacSecBypass, $curCaps.MacSecBypass
+          $out += $template -f "DcbxSupport", $hwCaps.DcbxSupport, $curCaps.DcbxSupport
+          $out += $template -f "NumTCs(Max/ETS/PFC)", $hwCaps.NumTCs, $curCaps.NumTCs
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>HardwareCapabilities</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['HardwareCapabilities'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CurrentCapabilities</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['CurrentCapabilities'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OperationalTrafficClasses</Name>
+        <GetScriptBlock>
+          import-module netadapter\msft_netadapterqos.format.helper.psm1
+
+          $settings = $this.PSBase.CimInstanceProperties['OperationalSettings'].Value
+          $out = ""
+
+          if ($settings -and $settings.TransmissionSelectionEnabled) {
+            $out = Format-NetAdapterQosTrafficClass $settings
+          }
+
+          if (!$out[0]) {
+            $out = "Not Available"
+          }
+
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OperationalFlowControl</Name>
+        <GetScriptBlock>
+          import-module netadapter\msft_netadapterqos.format.helper.psm1
+
+          $settings = $this.PSBase.CimInstanceProperties['OperationalSettings'].Value
+          $out = ""
+
+          if ($settings -and $settings.FlowControlEnabled) {
+            $out = Format-NetAdapterQosFlowControl $settings
+          }
+
+          if (!$out[0]) {
+            $out = "Not Available"
+          }
+
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OperationalClassifications</Name>
+        <GetScriptBlock>
+          import-module netadapter\msft_netadapterqos.format.helper.psm1
+
+          $settings = $this.PSBase.CimInstanceProperties['OperationalSettings'].Value
+          $out = ""
+
+          if ($settings -and $settings.ClassificationEnabled) {
+            $out = Format-NetAdapterQosClassification $settings
+          }
+
+          if (!$out[0]) {
+            $out = "Not Available"
+          }
+
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RemoteTrafficClasses</Name>
+        <GetScriptBlock>
+          import-module netadapter\msft_netadapterqos.format.helper.psm1
+
+          $settings = $this.PSBase.CimInstanceProperties['RemoteSettings'].Value
+          $out = ""
+
+          if ($settings -and $settings.TransmissionSelectionEnabled) {
+            $out = Format-NetAdapterQosTrafficClass $settings
+          }
+
+          if (!$out[0]) {
+            $out = "Not Available"
+          }
+
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RemoteFlowControl</Name>
+        <GetScriptBlock>
+          import-module netadapter\msft_netadapterqos.format.helper.psm1
+
+          $settings = $this.PSBase.CimInstanceProperties['RemoteSettings'].Value
+          $out = ""
+
+          if ($settings -and $settings.FlowControlEnabled) {
+            $out = Format-NetAdapterQosFlowControl $settings
+          }
+
+          if (!$out[0]) {
+            $out = "Not Available"
+          }
+
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RemoteClassifications</Name>
+        <GetScriptBlock>
+          import-module netadapter\msft_netadapterqos.format.helper.psm1
+
+          $settings = $this.PSBase.CimInstanceProperties['RemoteSettings'].Value
+          $out = ""
+
+          if ($settings -and $settings.ClassificationEnabled) {
+            $out = Format-NetAdapterQosClassification $settings
+          }
+
+          if (!$out[0]) {
+            $out = "Not Available"
+          }
+
+          $out
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OperationalSettings</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['OperationalSettings'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RemoteSettings</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['RemoteSettings'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AdminStatus</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterQos.AdminStatus]($this.PSBase.CimInstanceProperties['AdminStatus'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter_QosCapabilities</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>MacSecBypassSupported</Name>
+        <GetScriptBlock>
+          [System.Boolean]($this.PSBase.CimInstanceProperties['MacSecBypassSupported'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MacSecBypass</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterQos.Supported][System.UInt32]($this.PSBase.CimInstanceProperties['MacSecBypassSupported'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CeeDcbxSupported</Name>
+        <GetScriptBlock>
+          [System.Boolean]($this.PSBase.CimInstanceProperties['CeeDcbxSupported'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>IeeeDcbxSupported</Name>
+        <GetScriptBlock>
+          [System.Boolean]($this.PSBase.CimInstanceProperties['IeeeDcbxSupported'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DcbxSupport</Name>
+        <GetScriptBlock>
+          $Flags = 0
+          if ($this.PSBase.CimInstanceProperties['CeeDcbxSupported'].Value -ne 0) {
+            $Flags += 1
+          }
+          if ($this.PSBase.CimInstanceProperties['IeeeDcbxSupported'].Value -ne 0) {
+            $Flags += 2
+          }
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterQos.DcbxSupport]$Flags
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NumberOfTrafficClasses</Name>
+        <GetScriptBlock>
+          [System.Byte]($this.PSBase.CimInstanceProperties['NumberOfTrafficClasses'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NumberOfEtsCapableTrafficClasses</Name>
+        <GetScriptBlock>
+          [System.Byte]($this.PSBase.CimInstanceProperties['NumberOfEtsCapableTrafficClasses'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NumberOfPfcEnabledTrafficClasses</Name>
+        <GetScriptBlock>
+          [System.Byte]($this.PSBase.CimInstanceProperties['NumberOfPfcEnabledTrafficClasses'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NumTCs</Name>
+        <GetScriptBlock>
+          $tcMax = $this.PSBase.CimInstanceProperties['NumberOfTrafficClasses'].Value
+          $tcEts = $this.PSBase.CimInstanceProperties['NumberOfEtsCapableTrafficClasses'].Value
+          $tcPfc = $this.PSBase.CimInstanceProperties['NumberOfPfcEnabledTrafficClasses'].Value
+          "$($tcMax)/$($tcEts)/$($tcPfc)"
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter_QosSettings</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>TransmissionSelectionEnabled</Name>
+        <GetScriptBlock>
+          [System.Boolean]($this.PSBase.CimInstanceProperties['TransmissionSelectionEnabled'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PriorityAssignmentTable</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['PriorityAssignmentTable'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>TsaAssignmentTable</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['TsaAssignmentTable'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>BandwidthAssignmentTable</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['BandwidthAssignmentTable'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>FlowControlEnabled</Name>
+        <GetScriptBlock>
+          [System.Boolean]($this.PSBase.CimInstanceProperties['FlowControlEnabled'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PriorityFlowControlEnableArray</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['PriorityFlowControlEnableArray'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ClassificationEnabled</Name>
+        <GetScriptBlock>
+          [System.Boolean]($this.PSBase.CimInstanceProperties['ClassificationEnabled'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NumberOfClassificationElements</Name>
+        <GetScriptBlock>
+          [System.UInt32]($this.PSBase.CimInstanceProperties['NumberOfClassificationElements'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ClassificationTable</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['ClassificationTable'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagementSettingData</Name>
+    <Members>
+
+      <ScriptProperty>
+        <Name>AllowComputerToTurnOffDevice</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['AllowComputerToTurnOffDevice'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['AllowComputerToTurnOffDevice'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>D0PacketCoalescing</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['D0PacketCoalescing'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['D0PacketCoalescing'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>DeviceSleepOnDisconnect</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['DeviceSleepOnDisconnect'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['DeviceSleepOnDisconnect'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>ArpOffload</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['ArpOffload'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['ArpOffload'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>NSOffload</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['NSOffload'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['NSOffload'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>RsnRekeyOffload</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['RsnRekeyOffload'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['RsnRekeyOffload'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>SelectiveSuspend</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['SelectiveSuspend'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['SelectiveSuspend'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>WakeOnMagicPacket</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['WakeOnMagicPacket'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['WakeOnMagicPacket'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <ScriptProperty>
+        <Name>WakeOnPattern</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]($this.PSBase.CimInstanceProperties['WakeOnPattern'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['WakeOnPattern'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterPowerManagement.Setting]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterRscSettingData</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>IPv4FailureReason</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterRsc.FailureReason]($this.PSBase.CimInstanceProperties['IPv4FailureReason'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['IPv4FailureReason'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterRsc.FailureReason]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>IPv6FailureReason</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterRsc.FailureReason]($this.PSBase.CimInstanceProperties['IPv6FailureReason'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param($newValue)
+          $this.PSBase.CimInstanceProperties['IPv6FailureReason'].Value = [System.UInt16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterRsc.FailureReason]$newValue
+        </SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterIPsecOffloadV2SettingData</Name>
+    <Members>
+       <ScriptProperty>
+        <Name>AuthenticationAlgorithmsEnabled</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterIPsecOffloadV2.AuthenticationAlgos]($this.PSBase.CimInstanceProperties['AuthenticationAlgorithmsEnabled'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+       <ScriptProperty>
+        <Name>AuthenticationAlgorithmsSupported</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterIPsecOffloadV2.AuthenticationAlgos]($this.PSBase.CimInstanceProperties['AuthenticationAlgorithmsSupported'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+       <ScriptProperty>
+        <Name>EncryptionAlgorithmsEnabled</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterIPsecOffloadV2.EncryptionAlgos]($this.PSBase.CimInstanceProperties['EncryptionAlgorithmsEnabled'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+       <ScriptProperty>
+        <Name>EncryptionAlgorithmsSupported</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetAdapterIPsecOffloadV2.EncryptionAlgos]($this.PSBase.CimInstanceProperties['EncryptionAlgorithmsSupported'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterRdmaSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ifAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>InterfaceAlias</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ifDesc</Name>
+        <ReferencedMemberName>InterfaceDescription</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+
+</Types>

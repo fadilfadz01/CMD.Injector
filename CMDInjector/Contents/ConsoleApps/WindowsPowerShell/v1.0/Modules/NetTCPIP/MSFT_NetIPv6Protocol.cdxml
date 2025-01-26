@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetIPv6Protocol" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetIPv6Protocol</DefaultNoun>
+
+    <InstanceCmdlets>
+
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <!-- BaseIPProtocol Properties -->
+        <QueryableProperties>
+          <Property PropertyName="DefaultHopLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NeighborCacheLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="NeighborCacheLimitEntries" Aliases="NeighborCacheLimit" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RouteCacheLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="RouteCacheLimitEntries" Aliases="RouteCacheLimit" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ReassemblyLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="ReassemblyLimitBytes" Aliases="ReassemblyLimit" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="IcmpRedirects">
+            <Type PSType="NetIPv6Protocol.IcmpRedirects" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="SourceRoutingBehavior">
+            <Type PSType="NetIPv6Protocol.SourceRoutingBehavior" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DhcpMediaSense">
+            <Type PSType="NetIPv6Protocol.DhcpMediaSense" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MediaSenseEventLog">
+            <Type PSType="NetIPv6Protocol.MediaSenseEventLog" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MldLevel">
+            <Type PSType="NetIPv6Protocol.MldLevel" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MldVersion">
+            <Type PSType="NetIPv6Protocol.MldVersion" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MulticastForwarding">
+            <Type PSType="NetIPv6Protocol.MulticastForwarding" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="GroupForwardedFragments">
+            <Type PSType="NetIPv6Protocol.GroupForwardedFragments" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RandomizeIdentifiers">
+            <Type PSType="NetIPv6Protocol.RandomizeIdentifiers" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AddressMaskReply">
+            <Type PSType="NetIPv6Protocol.AddressMaskReply" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <!-- IPv6Protocol Properties -->
+          <Property PropertyName="UseTemporaryAddresses">
+            <Type PSType="NetIPv6Protocol.UseTemporaryAddresses" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxDadAttempts">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="MaxTemporaryDadAttempts" Aliases="MaxDadAttempts" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxValidLifetime">
+            <Type PSType="System.TimeSpan" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="MaxTemporaryValidLifetime" Aliases="MaxValidLifetime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxPreferredLifetime">
+            <Type PSType="System.TimeSpan" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="MaxTemporaryPreferredLifetime" Aliases="MaxPreferredLifetime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RegenerateTime">
+            <Type PSType="System.TimeSpan" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="TemporaryRegenerateTime" Aliases="RegenerateTime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxRandomTime">
+            <Type PSType="System.TimeSpan" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="MaxTemporaryDesyncTime" Aliases="MaxRandomTime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          </QueryableProperties>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="DefaultHopLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="NeighborCacheLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="NeighborCacheLimitEntries" Aliases="NeighborCacheLimit" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RouteCacheLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="RouteCacheLimitEntries" Aliases="RouteCacheLimit" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ReassemblyLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="ReassemblyLimitBytes" Aliases="ReassemblyLimit" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="IcmpRedirects">
+              <Type PSType="NetIPv6Protocol.IcmpRedirects" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="SourceRoutingBehavior">
+              <Type PSType="NetIPv6Protocol.SourceRoutingBehavior" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DhcpMediaSense">
+              <Type PSType="NetIPv6Protocol.DhcpMediaSense" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MediaSenseEventLog">
+              <Type PSType="NetIPv6Protocol.MediaSenseEventLog" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MldLevel">
+              <Type PSType="NetIPv6Protocol.MldLevel" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MldVersion">
+              <Type PSType="NetIPv6Protocol.MldVersion" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MulticastForwarding">
+              <Type PSType="NetIPv6Protocol.MulticastForwarding" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="GroupForwardedFragments">
+              <Type PSType="NetIPv6Protocol.GroupForwardedFragments" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RandomizeIdentifiers">
+              <Type PSType="NetIPv6Protocol.RandomizeIdentifiers" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AddressMaskReply">
+              <Type PSType="NetIPv6Protocol.AddressMaskReply" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <!-- IPv6Protocol Properties -->
+            <Parameter ParameterName="UseTemporaryAddresses">
+              <Type PSType="NetIPv6Protocol.UseTemporaryAddresses" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxDadAttempts">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="MaxTemporaryDadAttempts" Aliases="MaxDadAttempts" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxValidLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata PSName="MaxTemporaryValidLifetime" Aliases="MaxValidLifetime" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxPreferredLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata PSName="MaxTemporaryPreferredLifetime" Aliases="MaxPreferredLifetime" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RegenerateTime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata PSName="TemporaryRegenerateTime" Aliases="RegenerateTime" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxRandomTime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata PSName="MaxTemporaryDesyncTime" Aliases="MaxRandomTime" IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters />
+      </Cmdlet>
+
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetIPv6Protocol.IcmpRedirects" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.SourceRoutingBehavior" UnderlyingType="System.UInt32">
+      <Value Name="Forward" Value="0" />
+      <Value Name="DontForward" Value="1" />
+      <Value Name="Drop" Value="2" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.DhcpMediaSense" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.MediaSenseEventLog" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.MldLevel" UnderlyingType="System.UInt32">
+      <Value Name="None" Value="0" />
+      <Value Name="SendOnly" Value="1" />
+      <Value Name="All" Value="2" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.MldVersion" UnderlyingType="System.UInt32">
+      <Value Name="Version1" Value="3" />
+      <Value Name="Version2" Value="4" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.MulticastForwarding" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.GroupForwardedFragments" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.RandomizeIdentifiers" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.AddressMaskReply" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv6Protocol.UseTemporaryAddresses" UnderlyingType="System.UInt32">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+      <Value Name="Always" Value="2" />
+    </Enum>
+  </Enums>  
+  
+</PowerShellMetadata>

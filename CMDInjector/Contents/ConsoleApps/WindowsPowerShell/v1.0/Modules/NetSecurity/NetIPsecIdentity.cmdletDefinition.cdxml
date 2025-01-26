@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetIPsecIdentity" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetIPsecIdentity</DefaultNoun>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.ImpersonationType" UnderlyingType="uint32">
+      <Value Name="None" Value="0"/>
+      <Value Name="Impersonated" Value="1"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.EffectiveAuthenticationMethod" UnderlyingType="uint32">
+      <Value Name="PresharedKey" Value="0"/>
+      <Value Name="Certificate" Value="1"/>
+      <Value Name="Kerberos" Value="2"/>
+      <Value Name="Anonymous" Value="3"/>
+      <Value Name="SSL" Value="4"/>
+      <Value Name="NTLMv2" Value="5"/>
+      <Value Name="CGA" Value="6"/>
+      <Value Name="CertificateEcdsa256" Value="7"/>
+      <Value Name="CertificateEcdsa384" Value="8"/>
+      <Value Name="SSLEcdsa256" Value="9"/>
+      <Value Name="SSLEcdsa384" Value="10"/>
+      <Value Name="EAP" Value="11"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.IdFlags" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="HealthCertificate" Value="1"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

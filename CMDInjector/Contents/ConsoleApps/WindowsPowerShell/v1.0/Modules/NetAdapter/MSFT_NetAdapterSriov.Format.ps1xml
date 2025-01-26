@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterVmqQueue.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterVmqQueue cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>MSFT_NetAdapterSriov_ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterSriovSettingData</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterSriovSettingData</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+         <ListEntries>
+           <ListEntry>
+             <ListItems>
+               <ListItem>
+                 <label>Name</label>
+                 <PropertyName>Name</PropertyName>
+               </ListItem>
+               <ListItem>
+                 <label>InterfaceDescription</label>
+                 <PropertyName>InterfaceDescription</PropertyName>
+               </ListItem>
+               <ListItem>
+                 <label>Enabled</label>
+                 <PropertyName>Enabled</PropertyName>
+               </ListItem>
+               <ListItem>
+                 <label>SriovSupport</label>
+                 <PropertyName>SriovSupport</PropertyName>
+               </ListItem>
+               <ListItem>
+                 <label>SwitchName</label>
+                 <PropertyName>SwitchName</PropertyName>
+               </ListItem>
+               <ListItem>
+                 <label>NumVFs</label>
+                 <PropertyName>NumVFs</PropertyName>
+               </ListItem>
+             </ListItems>
+           </ListEntry>
+         </ListEntries>
+       </ListControl>
+    </View>
+    <View>
+    <Name>MSFT_NetAdapterSriov_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterSriovSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterSriovSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>SwitchName</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>SriovSupport</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>NumVFs</label>
+          <Width>10</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 30
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>SwitchName</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>SriovSupport</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>NumVFs</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

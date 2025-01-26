@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterRss.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterRss cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterRss_ListView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterRssSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterRssSettingData</TypeName>
+    </ViewSelectedBy>
+    <ListControl>
+      <ListEntries>
+        <ListEntry>
+          <ListItems>
+            <ListItem>
+              <label>Name</label>
+              <PropertyName>Name</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>InterfaceDescription</label>
+              <PropertyName>InterfaceDescription</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>Enabled</label>
+              <PropertyName>Enabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>NumberOfReceiveQueues</label>
+              <PropertyName>NumberOfReceiveQueues</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>Profile</label>
+              <PropertyName>Profile</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>BaseProcessor: [Group:Number]</label>
+              <ScriptBlock>
+              "$($_.BaseProcessorGroup):$($_.BaseProcessorNumber)"
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>MaxProcessor: [Group:Number]</label>
+              <ScriptBlock>
+              "$($_.MaxProcessorGroup):$($_.MaxProcessorNumber)"
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>MaxProcessors</label>
+              <PropertyName>MaxProcessors</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>RssProcessorArray: [Group:Number/NUMA Distance]</label>
+              <ScriptBlock>
+                $out=""
+                for ($i = 0; $i -lt $_.RssProcessorArraySize;)
+                {
+                  $out+="$($_.RssProcessorArray[$i].ProcessorGroup):$($_.RssProcessorArray[$i].ProcessorNumber)/"
+                  $out+="$($_.RssProcessorArray[$i].PreferenceIndex)"
+                  $i++;
+                  if (($i % 8) -eq 0) {if($i -ne $_.RssProcessorArraySize){$out+="`n"}} else {$out+="  "}
+                }
+                $out
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IndirectionTable: [Group:Number]</label>
+              <ScriptBlock>
+                $out=""
+                for ($i = 0; $i -lt $_.IndirectionTableEntryCount;)
+                {
+                  $out+="$($_.IndirectionTable[$i].ProcessorGroup):$($_.IndirectionTable[$i].ProcessorNumber)`t"
+                  $i++;
+                  if ((($i % 8) -eq 0) -and ($i -ne $_.IndirectionTableEntryCount)) {$out+="`n"}
+                }
+                $out
+              </ScriptBlock>
+            </ListItem>
+          </ListItems>
+        </ListEntry>
+      </ListEntries>
+    </ListControl>
+  </View>
+  <View>
+    <Name>MSFT_NetAsapterRss_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterRssSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterRssSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>Enabled</label>
+          <Width>7</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>Profile</label>
+          <Width>24</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>BaseProcessor</label>
+          <Width>13</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>MaxProcessor</label>
+          <Width>12</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>MaxProcessors</label>
+          <Width>13</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>Queues</label>
+          <Width>6</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 30
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>Enabled</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>Profile</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              $out = "$($_.BaseProcessorGroup):$($_.BaseProcessorNumber)"
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              $out = "$($_.MaxProcessorGroup):$($_.MaxProcessorNumber)"
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>MaxProcessors</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>NumberOfReceiveQueues</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

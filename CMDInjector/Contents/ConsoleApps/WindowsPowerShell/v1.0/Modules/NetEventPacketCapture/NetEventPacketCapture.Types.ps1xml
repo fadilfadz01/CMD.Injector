@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Types>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetEventSession</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>CaptureMode</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.CaptureModes]($this.PSBase.CimInstanceProperties['CaptureMode'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.CaptureModes]$value)
+          $this.PSBase.CimInstanceProperties['CaptureMode'].Value = [System.Byte]$value
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MaxFileSize</Name>
+        <GetScriptBlock>
+          "" + $this.PSBase.CimInstanceProperties['MaxFileSize'].Value + " MB"
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>TraceBufferSize</Name>
+        <GetScriptBlock>
+          "" + $this.PSBase.CimInstanceProperties['TraceBufferSize'].Value + " KB"
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MaxNumberOfBuffers</Name>
+        <GetScriptBlock>
+          $this.PSBase.CimInstanceProperties['MaxNumberOfBuffers'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SessionStatus</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.ESessionStatus]($this.PSBase.CimInstanceProperties['SessionStatus'].Value)
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetEventProvider</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>MatchAnyKeyword</Name>
+        <GetScriptBlock>
+            "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAnyKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MatchAllKeyword</Name>
+        <GetScriptBlock>
+            "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAllKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetEventPacketCaptureProvider</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>MatchAnyKeyword</Name>
+        <GetScriptBlock>
+          "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAnyKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MatchAllKeyword</Name>
+        <GetScriptBlock>
+          "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAllKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CaptureType</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.CaptureType]($this.PSBase.CimInstanceProperties['CaptureType'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.CaptureType]$value)
+          $this.PSBase.CimInstanceProperties['CaptureType'].Value = [System.Byte]$value
+        </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>VmCaptureDirection</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.VmCaptureDirection]($this.PSBase.CimInstanceProperties['VmCaptureDirection'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.VmCaptureDirection]$value)
+          $this.PSBase.CimInstanceProperties['VmCaptureDirection'].Value = [System.Byte]$value
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetEventNetworkAdapter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>PromiscuousMode</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.PromiscuousMode]($this.PSBase.CimInstanceProperties['PromiscuousMode'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.PromiscuousMode]$value)
+          $this.PSBase.CimInstanceProperties['PromiscuousMode'].Value = [System.Boolean]$value
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetEventVFPProvider</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>MatchAnyKeyword</Name>
+        <GetScriptBlock>
+            "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAnyKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MatchAllKeyword</Name>
+        <GetScriptBlock>
+            "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAllKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>VFPFlowDirection</Name>
+        <GetScriptBlock>
+          [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.VFPFlowDirection]($this.PSBase.CimInstanceProperties['VFPFlowDirection'].Value)
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetEventPacketCapture.VFPFlowDirection]$value)
+          $this.PSBase.CimInstanceProperties['VFPFlowDirection'].Value = [System.UInt32]$value
+        </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetEventVmSwitchProvider</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>MatchAnyKeyword</Name>
+        <GetScriptBlock>
+            "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAnyKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MatchAllKeyword</Name>
+        <GetScriptBlock>
+            "0x{0:X0}" -f $this.PSBase.CimInstanceProperties['MatchAllKeyword'].Value
+        </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+</Types>

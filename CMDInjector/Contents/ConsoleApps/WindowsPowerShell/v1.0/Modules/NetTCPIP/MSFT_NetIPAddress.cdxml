@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetIPAddress" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetIPAddress</DefaultNoun>
+
+    <InstanceCmdlets>
+      <GetCmdletParameters>
+        <QueryableProperties>
+          <Property PropertyName="IPAddress">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Aliases="LocalAddress" Position="0" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceIndex">
+            <Type PSType="System.UInt32" />
+            <RegularQuery>
+              <CmdletParameterMetadata IsMandatory="false" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceAlias">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Aliases="ifAlias" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AddressFamily">
+            <Type PSType="NetIPAddress.AddressFamily" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Type">
+            <Type PSType="NetIPAddress.Type" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PrefixLength">
+            <Type PSType="System.Byte" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PrefixOrigin">
+            <Type PSType="NetIPAddress.PrefixOrigin" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="SuffixOrigin">
+            <Type PSType="NetIPAddress.SuffixOrigin" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AddressState">
+            <Type PSType="NetIPAddress.AddressState" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ValidLifetime">
+            <Type PSType="System.TimeSpan" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PreferredLifetime">
+            <Type PSType="System.TimeSpan" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="SkipAsSource">
+            <Type PSType="System.Boolean" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetIPInterfaceIPAddress" ResultRole="Dependent" SourceRole="Antecedent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetIPInterface" />
+              <CmdletParameterMetadata PSName="AssociatedIPInterface" ValueFromPipeline="true" />
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+    	<QueryOptions>
+         <Option OptionName="PolicyStore">
+          <Type PSType="System.String"/>
+          <CmdletParameterMetadata IsMandatory="false" />
+         </Option> 
+         <Option OptionName="IncludeAllCompartments">
+          <Type PSType="System.Management.Automation.SwitchParameter"/>
+          <CmdletParameterMetadata IsMandatory="false" />
+         </Option> 
+        </QueryOptions>  
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="PrefixLength">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ValidLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PreferredLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="SkipAsSource">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="IPAddress">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Aliases="LocalAddress" Position="0" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <RegularQuery>
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifAlias" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="AddressFamily">
+              <Type PSType="NetIPAddress.AddressFamily" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="Type">
+              <Type PSType="NetIPAddress.Type" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="PrefixOrigin">
+              <Type PSType="NetIPAddress.PrefixOrigin" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="SuffixOrigin">
+              <Type PSType="NetIPAddress.SuffixOrigin" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="AddressState">
+              <Type PSType="NetIPAddress.AddressState" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+    	  <QueryOptions>
+           <Option OptionName="PolicyStore">
+            <Type PSType="System.String"/>
+            <CmdletParameterMetadata IsMandatory="false" />
+           </Option>
+           <Option OptionName="IncludeAllCompartments">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata IsMandatory="false" />
+           </Option> 
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High"/>
+        <Method MethodName="cim:DeleteInstance" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="IPAddress">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Aliases="LocalAddress" Position="0" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <RegularQuery>
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifAlias" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="AddressFamily">
+              <Type PSType="NetIPAddress.AddressFamily" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="Type">
+              <Type PSType="NetIPAddress.Type" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="PrefixLength">
+              <Type PSType="System.Byte" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="PrefixOrigin">
+              <Type PSType="NetIPAddress.PrefixOrigin" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="SuffixOrigin">
+              <Type PSType="NetIPAddress.SuffixOrigin" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="AddressState">
+              <Type PSType="NetIPAddress.AddressState" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="ValidLifetime">
+              <Type PSType="System.TimeSpan" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="PreferredLifetime">
+              <Type PSType="System.TimeSpan" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="SkipAsSource">
+              <Type PSType="System.Boolean" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+    	  <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="System.String"/>
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Option> 
+            <Option OptionName="DefaultGateway">
+              <Type PSType="System.String"/>
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Option> 
+            <Option OptionName="IncludeAllCompartments">
+              <Type PSType="System.Management.Automation.SwitchParameter"/>
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Option> 
+          </QueryOptions> 
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="Medium" DefaultCmdletParameterSet="ByInterfaceAlias"/>
+        <Method MethodName="Create" CmdletParameterSet="ByInterfaceAlias">
+          <ReturnValue>
+            <Type PSType="System.UInt32" />
+            <CmdletOutputMetadata>
+              <ErrorCode />
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="IPAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Aliases="LocalAddress" Position="0" ValueFromPipelineByPropertyName="true" />
+            </Parameter>
+            <Parameter ParameterName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Aliases="ifAlias" ValueFromPipelineByPropertyName="true" />
+            </Parameter>
+            <Parameter ParameterName="DefaultGateway">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AddressFamily">
+              <Type PSType="NetIPAddress.AddressFamily" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="Type">
+              <Type PSType="NetIPAddress.Type" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PrefixLength">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ValidLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PreferredLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="SkipAsSource">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PolicyStore">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <Method MethodName="Create" CmdletParameterSet="ByInterfaceIndex">
+          <ReturnValue>
+            <Type PSType="System.UInt32" />
+            <CmdletOutputMetadata>
+              <ErrorCode />
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="IPAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Aliases="LocalAddress" Position="0" ValueFromPipelineByPropertyName="true" />
+            </Parameter>
+            <Parameter ParameterName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="true" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" />
+            </Parameter>
+            <Parameter ParameterName="DefaultGateway">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AddressFamily">
+              <Type PSType="NetIPAddress.AddressFamily" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="Type">
+              <Type PSType="NetIPAddress.Type" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PrefixLength">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ValidLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PreferredLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="SkipAsSource">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PolicyStore">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetIPAddress.PrefixOrigin" UnderlyingType="System.UInt16">
+      <Value Name="Other" Value="0" />
+      <Value Name="Manual" Value="1" />
+      <Value Name="WellKnown" Value="2" />
+      <Value Name="Dhcp" Value="3" />
+      <Value Name="RouterAdvertisement" Value="4" />
+    </Enum>
+    <Enum EnumName="NetIPAddress.SuffixOrigin" UnderlyingType="System.UInt16">
+      <Value Name="Other" Value="0" />
+      <Value Name="Manual" Value="1" />
+      <Value Name="WellKnown" Value="2" />
+      <Value Name="Dhcp" Value="3" />
+      <Value Name="Link" Value="4" />
+      <Value Name="Random" Value="5" />
+    </Enum>
+    <Enum EnumName="NetIPAddress.Store" UnderlyingType="System.Byte">
+      <Value Name="PersistentStore" Value="0" />
+      <Value Name="ActiveStore" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPAddress.Type" UnderlyingType="System.Byte">
+      <Value Name="Unicast" Value="1" />
+      <Value Name="Anycast" Value="2" />
+    </Enum>
+    <Enum EnumName="NetIPAddress.AddressFamily" UnderlyingType="System.UInt16">
+      <Value Name="IPv4" Value="2" />
+      <Value Name="IPv6" Value="23" />
+    </Enum>
+    <Enum EnumName="NetIPAddress.AddressState" UnderlyingType="System.UInt16">
+      <Value Name="Invalid" Value="0" />
+      <Value Name="Tentative" Value="1" />
+      <Value Name="Duplicate" Value="2" />
+      <Value Name="Deprecated" Value="3" />
+      <Value Name="Preferred" Value="4" />
+    </Enum>
+  </Enums>
+  
+</PowerShellMetadata>

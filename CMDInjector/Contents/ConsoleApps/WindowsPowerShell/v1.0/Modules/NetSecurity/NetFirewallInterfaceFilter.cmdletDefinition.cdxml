@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetInterfaceFilter" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallInterfaceFilter</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableAssociations>
+          <Association Association="MSFT_NetFirewallRuleFilterByInterface" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallRule"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleFilterByInterface" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetConSecRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecRule"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="InterfaceAlias">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="InterfaceAlias"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+</PowerShellMetadata>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterStatistics.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterStatistics cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterStatistics_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterStatisticsSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterStatisticsSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ReceivedBytes</label>
+          <Width>15</Width>
+          <Alignment>Right</Alignment>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ReceivedUnicastPackets</label>
+          <Width>22</Width>
+          <Alignment>Right</Alignment>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>SentBytes</label>
+          <Width>15</Width>
+          <Alignment>Right</Alignment>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>SentUnicastPackets</label>
+          <Width>18</Width>
+          <Alignment>Right</Alignment>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>ReceivedBytes</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>ReceivedUnicastPackets</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>SentBytes</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>SentUnicastPackets</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

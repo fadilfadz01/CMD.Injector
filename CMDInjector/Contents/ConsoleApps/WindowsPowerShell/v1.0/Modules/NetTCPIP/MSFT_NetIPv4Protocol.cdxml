@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetIPv4Protocol" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetIPv4Protocol</DefaultNoun>
+
+    <InstanceCmdlets>
+
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <!-- BaseIPProtocol Properties -->
+        <QueryableProperties>
+          <Property PropertyName="DefaultHopLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NeighborCacheLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="NeighborCacheLimitEntries" Aliases="NeighborCacheLimit" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RouteCacheLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="RouteCacheLimitEntries" Aliases="RouteCacheLimit" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ReassemblyLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="ReassemblyLimitBytes" Aliases="ReassemblyLimit" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="IcmpRedirects">
+            <Type PSType="NetIPv4Protocol.IcmpRedirects" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="SourceRoutingBehavior">
+            <Type PSType="NetIPv4Protocol.SourceRoutingBehavior" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DhcpMediaSense">
+            <Type PSType="NetIPv4Protocol.DhcpMediaSense" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MediaSenseEventLog">
+            <Type PSType="NetIPv4Protocol.MediaSenseEventLog" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MldLevel">
+            <Type PSType="NetIPv4Protocol.MldLevel" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="IGMPLevel" Aliases="MldLevel" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MldVersion">
+            <Type PSType="NetIPv4Protocol.MldVersion" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="IGMPVersion" Aliases="MldVersion" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MulticastForwarding">
+            <Type PSType="NetIPv4Protocol.MulticastForwarding" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="GroupForwardedFragments">
+            <Type PSType="NetIPv4Protocol.GroupForwardedFragments" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RandomizeIdentifiers">
+            <Type PSType="NetIPv4Protocol.RandomizeIdentifiers" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AddressMaskReply">
+            <Type PSType="NetIPv4Protocol.AddressMaskReply" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <!-- IPv4Protocol Properties -->
+          <Property PropertyName="MinimumMtu">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="DefaultHopLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="NeighborCacheLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="NeighborCacheLimitEntries" Aliases="NeighborCacheLimit" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RouteCacheLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="RouteCacheLimitEntries" Aliases="RouteCacheLimit" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ReassemblyLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="ReassemblyLimitBytes" Aliases="ReassemblyLimit" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="IcmpRedirects">
+              <Type PSType="NetIPv4Protocol.IcmpRedirects" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="SourceRoutingBehavior">
+              <Type PSType="NetIPv4Protocol.SourceRoutingBehavior" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DhcpMediaSense">
+              <Type PSType="NetIPv4Protocol.DhcpMediaSense" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MediaSenseEventLog">
+              <Type PSType="NetIPv4Protocol.MediaSenseEventLog" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MldLevel">
+              <Type PSType="NetIPv4Protocol.MldLevel" />
+              <CmdletParameterMetadata PSName="IGMPLevel" Aliases="MldLevel" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MldVersion">
+              <Type PSType="NetIPv4Protocol.MldVersion" />
+              <CmdletParameterMetadata PSName="IGMPVersion" Aliases="MldVersion" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MulticastForwarding">
+              <Type PSType="NetIPv4Protocol.MulticastForwarding" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="GroupForwardedFragments">
+              <Type PSType="NetIPv4Protocol.GroupForwardedFragments" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RandomizeIdentifiers">
+              <Type PSType="NetIPv4Protocol.RandomizeIdentifiers" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AddressMaskReply">
+              <Type PSType="NetIPv4Protocol.AddressMaskReply" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <!-- IPv4Protocol Parameters -->
+            <Parameter ParameterName="MinimumMtu">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters />
+
+      </Cmdlet>
+
+    </InstanceCmdlets>
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetIPv4Protocol.IcmpRedirects" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.SourceRoutingBehavior" UnderlyingType="System.UInt32">
+      <Value Name="Forward" Value="0" />
+      <Value Name="DontForward" Value="1" />
+      <Value Name="Drop" Value="2" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.DhcpMediaSense" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.MediaSenseEventLog" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.MldLevel" UnderlyingType="System.UInt32">
+      <Value Name="None" Value="0" />
+      <Value Name="SendOnly" Value="1" />
+      <Value Name="All" Value="2" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.MldVersion" UnderlyingType="System.UInt32">
+      <Value Name="Version1" Value="2" />
+      <Value Name="Version2" Value="3" />
+      <Value Name="Version3" Value="4" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.MulticastForwarding" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.GroupForwardedFragments" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.RandomizeIdentifiers" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPv4Protocol.AddressMaskReply" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

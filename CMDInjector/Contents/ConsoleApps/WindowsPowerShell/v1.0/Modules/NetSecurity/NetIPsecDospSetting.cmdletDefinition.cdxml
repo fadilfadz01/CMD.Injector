@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetIPsecDoSPSetting" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetIPsecDospSetting</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="ElementName">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Name" CmdletParameterSets="ByName" IsMandatory="true" Position="0"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="StateIdleTimeoutSeconds">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="StateIdleTimeoutSeconds"/>
+            </Parameter>
+            <Parameter ParameterName="PerIPRateLimitQueueIdleTimeoutSeconds">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="PerIPRateLimitQueueIdleTimeoutSeconds"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecUnauthDscp">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecUnauthDscp"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecUnauthRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecUnauthRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecUnauthPerIPRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecUnauthPerIPRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecAuthDscp">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecAuthDscp"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecAuthRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecAuthRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IcmpV6Dscp">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="IcmpV6Dscp"/>
+            </Parameter>
+            <Parameter ParameterName="IcmpV6RateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IcmpV6RateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6FilterExemptDscp">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6FilterExemptDscp"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6FilterExemptRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6FilterExemptRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="DefBlockExemptDscp">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="DefBlockExemptDscp"/>
+            </Parameter>
+            <Parameter ParameterName="DefBlockExemptRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="DefBlockExemptRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="MaxStateEntries">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxStateEntries"/>
+            </Parameter>
+            <Parameter ParameterName="MaxPerIPRateLimitQueues">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxPerIPRateLimitQueues"/>
+            </Parameter>
+            <Parameter ParameterName="EnabledKeyingModules">
+              <Type PSType="NetSecurity.DospKeyModules"/>
+              <CmdletParameterMetadata PSName="EnabledKeyingModules"/>
+            </Parameter>
+            <Parameter ParameterName="FilteringFlags">
+              <Type PSType="NetSecurity.DospFlags"/>
+              <CmdletParameterMetadata PSName="FilteringFlags"/>
+            </Parameter>
+            <Parameter ParameterName="PublicInterfaceAliases">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata PSName="PublicInterfaceAliases"/>
+            </Parameter>
+            <Parameter ParameterName="PrivateInterfaceAliases">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata PSName="PrivateInterfaceAliases"/>
+            </Parameter>
+            <Parameter ParameterName="PublicV6Address">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PublicV6Address"/>
+            </Parameter>
+            <Parameter ParameterName="PrivateV6Address">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PrivateV6Address"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="ElementName">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:DeleteInstance"/>
+      </Cmdlet>
+    </InstanceCmdlets>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="ElementName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="Name"/>
+            </Parameter>
+            <Parameter ParameterName="StateIdleTimeoutSeconds">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="StateIdleTimeoutSeconds"/>
+            </Parameter>
+            <Parameter ParameterName="PerIPRateLimitQueueIdleTimeoutSeconds">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="PerIPRateLimitQueueIdleTimeoutSeconds"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecUnauthDscp">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecUnauthDscp"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecUnauthRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecUnauthRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecUnauthPerIPRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecUnauthPerIPRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecAuthDscp">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecAuthDscp"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6IPsecAuthRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6IPsecAuthRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IcmpV6Dscp">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="IcmpV6Dscp"/>
+            </Parameter>
+            <Parameter ParameterName="IcmpV6RateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IcmpV6RateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6FilterExemptDscp">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6FilterExemptDscp"/>
+            </Parameter>
+            <Parameter ParameterName="IpV6FilterExemptRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="IpV6FilterExemptRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="DefBlockExemptDscp">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="DefBlockExemptDscp"/>
+            </Parameter>
+            <Parameter ParameterName="DefBlockExemptRateLimitBytesPerSec">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="DefBlockExemptRateLimitBytesPerSec"/>
+            </Parameter>
+            <Parameter ParameterName="MaxStateEntries">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxStateEntries"/>
+            </Parameter>
+            <Parameter ParameterName="MaxPerIPRateLimitQueues">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxPerIPRateLimitQueues"/>
+            </Parameter>
+            <Parameter ParameterName="EnabledKeyingModules">
+              <Type PSType="NetSecurity.DospKeyModules"/>
+              <CmdletParameterMetadata PSName="EnabledKeyingModules"/>
+            </Parameter>
+            <Parameter ParameterName="FilteringFlags">
+              <Type PSType="NetSecurity.DospFlags"/>
+              <CmdletParameterMetadata PSName="FilteringFlags"/>
+            </Parameter>
+            <Parameter ParameterName="PublicInterfaceAliases">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="PublicInterfaceAliases"/>
+            </Parameter>
+            <Parameter ParameterName="PrivateInterfaceAliases">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="PrivateInterfaceAliases"/>
+            </Parameter>
+            <Parameter ParameterName="PublicV6Address">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PublicV6Address"/>
+            </Parameter>
+            <Parameter ParameterName="PrivateV6Address">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PrivateV6Address"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.DospKeyModules" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="IkeV1" Value="1"/>
+      <Value Name="IkeV2" Value="2"/>
+      <Value Name="AuthIP" Value="4"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.DospFlags" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="DisableDefaultBlock" Value="8"/>
+      <Value Name="FilterBlock" Value="16"/>
+      <Value Name="FilterExempt" Value="32"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.AddressVersion" UnderlyingType="uint16" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="IPv4" Value="1"/>
+      <Value Name="IPv6" Value="2"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

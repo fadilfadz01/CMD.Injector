@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetSecDeltaCollection" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetIPsecPolicyChange</DefaultNoun>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.ChangeAction" UnderlyingType="uint16">
+      <Value Name="Add" Value="0"/>
+      <Value Name="Delete" Value="1"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.EndpointType" UnderlyingType="uint16">
+      <Value Name="Endpoint1" Value="0"/>
+      <Value Name="Endpoint2" Value="1"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

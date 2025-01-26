@@ -1,0 +1,825 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetConSecRule" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetIPsecRule</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="InstanceID">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="IPsecRuleName" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByIPsecRuleName" IsMandatory="true" Position="0" Aliases="ID Name"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DisplayName">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByDisplayName" IsMandatory="true"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Description">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DisplayGroup">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RuleGroup">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Group" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Enabled">
+            <Type PSType="NetSecurity.Enabled"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Mode">
+            <Type PSType="NetSecurity.IPsecMode"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InboundSecurity">
+            <Type PSType="NetSecurity.SecurityPolicy"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery" Aliases="SecIn"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="OutboundSecurity">
+            <Type PSType="NetSecurity.SecurityPolicy"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery" Aliases="SecOut"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="QuickModeCryptoSet">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Phase1AuthSet">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Phase2AuthSet">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="KeyModule">
+            <Type PSType="NetSecurity.KeyModule"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AllowWatchKey">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AllowSetKey">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RemoteTunnelEndpointDNSName">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="RemoteTunnelHostname" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxReturnPathLifetimeSeconds">
+            <Type PSType="uint32"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="ForwardPathLifetime" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="BypassTunnelIfEncrypted">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="EncryptedTunnelBypass" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RequireAuthorization">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Users">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="User" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Machines">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Machine" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PrimaryStatus">
+            <Type PSType="NetSecurity.PrimaryStatus"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Status">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PolicyStoreSource">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PolicyStoreSourceType">
+            <Type PSType="NetSecurity.PolicyStoreType"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetConSecRuleFilterByAddress" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetAddressFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallAddressFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallAddressFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleFilterByInterface" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetInterfaceFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallInterfaceFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallInterfaceFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleFilterByInterfaceType" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetInterfaceTypeFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallInterfaceTypeFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallInterfaceTypeFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleFilterByProtocolPort" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetProtocolPortFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallPortFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallPortFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleInProfile" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallProfile"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallProfile" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallProfile"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleEMAuthSet" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetIKEP2AuthSet"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecPhase2AuthSet" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecPhase2AuthSet"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleMMAuthSet" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetIKEP1AuthSet"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecPhase1AuthSet" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecPhase1AuthSet"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleQMCryptoSet" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetIKEQMCryptoSet"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecQuickModeCryptoSet" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecQuickModeCryptoSet"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="TracePolicyStore">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="ElementName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewDisplayName"/>
+            </Parameter>
+            <Parameter ParameterName="Description">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Description"/>
+            </Parameter>
+            <Parameter ParameterName="Enabled">
+              <Type PSType="NetSecurity.Enabled"/>
+              <CmdletParameterMetadata PSName="Enabled"/>
+            </Parameter>
+            <Parameter ParameterName="Profiles">
+              <Type PSType="NetSecurity.Profile"/>
+              <CmdletParameterMetadata PSName="Profile"/>
+            </Parameter>
+            <Parameter ParameterName="Platforms">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="Platform"/>
+            </Parameter>
+            <Parameter ParameterName="Mode">
+              <Type PSType="NetSecurity.IPsecMode"/>
+              <CmdletParameterMetadata PSName="Mode"/>
+            </Parameter>
+            <Parameter ParameterName="InboundSecurity">
+              <Type PSType="NetSecurity.SecurityPolicy"/>
+              <CmdletParameterMetadata Aliases="SecIn" PSName="InboundSecurity"/>
+            </Parameter>
+            <Parameter ParameterName="OutboundSecurity">
+              <Type PSType="NetSecurity.SecurityPolicy"/>
+              <CmdletParameterMetadata Aliases="SecOut" PSName="OutboundSecurity"/>
+            </Parameter>
+            <Parameter ParameterName="QuickModeCryptoSet">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="QuickModeCryptoSet"/>
+            </Parameter>
+            <Parameter ParameterName="Phase1AuthSet">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Phase1AuthSet"/>
+            </Parameter>
+            <Parameter ParameterName="Phase2AuthSet">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Phase2AuthSet"/>
+            </Parameter>
+            <Parameter ParameterName="KeyModule">
+              <Type PSType="NetSecurity.KeyModule"/>
+              <CmdletParameterMetadata PSName="KeyModule"/>
+            </Parameter>
+            <Parameter ParameterName="AllowWatchKey">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="AllowWatchKey"/>
+            </Parameter>
+            <Parameter ParameterName="AllowSetKey">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="AllowSetKey"/>
+            </Parameter>
+            <Parameter ParameterName="LocalTunnelEndpoint">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalTunnelEndpoint"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteTunnelEndpoint">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemoteTunnelEndpoint"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteTunnelEndpointDNSName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteTunnelHostname"/>
+            </Parameter>
+            <Parameter ParameterName="MaxReturnPathLifetimeSeconds">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="ForwardPathLifetime"/>
+            </Parameter>
+            <Parameter ParameterName="BypassTunnelIfEncrypted">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="EncryptedTunnelBypass"/>
+            </Parameter>
+            <Parameter ParameterName="RequireAuthorization">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="RequireAuthorization"/>
+            </Parameter>
+            <Parameter ParameterName="Users">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="User"/>
+            </Parameter>
+            <Parameter ParameterName="Machines">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Machine"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemoteAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Protocol">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Protocol"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalPort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalPort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemotePort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemotePort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceAlias">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata PSName="InterfaceAlias"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceType">
+              <Type PSType="NetSecurity.InterfaceType"/>
+              <CmdletParameterMetadata PSName="InterfaceType"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="InstanceID">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" Aliases="ID Name" PSName="IPsecRuleName" Position="0" IsMandatory="true" CmdletParameterSets="ByIPsecRuleName"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="DisplayName">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="DisplayName" IsMandatory="true" CmdletParameterSets="ByDisplayName"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="DisplayGroup">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="DisplayGroup" IsMandatory="true" CmdletParameterSets="ByDisplayGroup"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="RuleGroup">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Group" IsMandatory="true" CmdletParameterSets="ByGroup"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:DeleteInstance"/>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Rename" ConfirmImpact="Medium"/>
+        <Method MethodName="Rename">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="NewName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="NewName"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Copy" ConfirmImpact="Medium"/>
+        <Method MethodName="CloneObject">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="NewPolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewPolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="NewGPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewGPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="NewName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewName"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Enable" ConfirmImpact="Medium"/>
+        <Method MethodName="Enable">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Disable" ConfirmImpact="Medium"/>
+        <Method MethodName="Disable">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Sync" ConfirmImpact="Medium"/>
+        <Method MethodName="SyncPolicyDelta">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="Servers">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="Servers">
+                <ValidateNotNull/>
+                <ValidateNotNullOrEmpty/>
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="Domains">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="Domains">
+                <ValidateNotNull/>
+                <ValidateNotNullOrEmpty/>
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="EndpointType">
+              <Type PSType="NetSecurity.EndpointType"/>
+              <CmdletParameterMetadata PSName="EndpointType"/>
+            </Parameter>
+            <Parameter ParameterName="AddressType">
+              <Type PSType="NetSecurity.AddressVersion"/>
+              <CmdletParameterMetadata PSName="AddressType"/>
+            </Parameter>
+            <Parameter ParameterName="Output">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]"/>
+              <CmdletOutputMetadata PSName="Output"/>
+            </Parameter>
+            <Parameter ParameterName="DnsServers">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="DnsServers"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Update" ConfirmImpact="Medium"/>
+        <Method MethodName="SetPolicyDelta">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="Action">
+              <Type PSType="NetSecurity.ChangeAction"/>
+              <CmdletParameterMetadata IsMandatory="true" ValueFromPipelineByPropertyName="true" PSName="Action"/>
+            </Parameter>
+            <Parameter ParameterName="IPv6Addresses">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" PSName="IPv6Addresses"/>
+            </Parameter>
+            <Parameter ParameterName="IPv4Addresses">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" PSName="IPv4Addresses"/>
+            </Parameter>
+            <Parameter ParameterName="EndpointType">
+              <Type PSType="NetSecurity.EndpointType"/>
+              <CmdletParameterMetadata IsMandatory="true" ValueFromPipelineByPropertyName="true" PSName="EndpointType"/>
+            </Parameter>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter"/>
+              <CmdletParameterMetadata PSName="PassThru"/>
+            </Parameter>
+            <Parameter ParameterName="Output">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]"/>
+              <CmdletOutputMetadata PSName="Output"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="InstanceID">
+              <Type PSType="string"/>
+              <RegularQuery>
+                <CmdletParameterMetadata IsMandatory="true" ValueFromPipelineByPropertyName="true" Aliases="ID Name" PSName="IPsecRuleName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="GPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="InstanceID">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" Aliases="ID Name" PSName="IPsecRuleName"/>
+            </Parameter>
+            <Parameter ParameterName="ElementName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="DisplayName"/>
+            </Parameter>
+            <Parameter ParameterName="Description">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Description"/>
+            </Parameter>
+            <Parameter ParameterName="RuleGroup">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Group"/>
+            </Parameter>
+            <Parameter ParameterName="Enabled">
+              <Type PSType="NetSecurity.Enabled"/>
+              <CmdletParameterMetadata PSName="Enabled"/>
+            </Parameter>
+            <Parameter ParameterName="Profiles">
+              <Type PSType="NetSecurity.Profile"/>
+              <CmdletParameterMetadata PSName="Profile"/>
+            </Parameter>
+            <Parameter ParameterName="Platforms">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="Platform"/>
+            </Parameter>
+            <Parameter ParameterName="Mode">
+              <Type PSType="NetSecurity.IPsecMode"/>
+              <CmdletParameterMetadata PSName="Mode"/>
+            </Parameter>
+            <Parameter ParameterName="InboundSecurity">
+              <Type PSType="NetSecurity.SecurityPolicy"/>
+              <CmdletParameterMetadata Aliases="SecIn" PSName="InboundSecurity"/>
+            </Parameter>
+            <Parameter ParameterName="OutboundSecurity">
+              <Type PSType="NetSecurity.SecurityPolicy"/>
+              <CmdletParameterMetadata Aliases="SecOut" PSName="OutboundSecurity"/>
+            </Parameter>
+            <Parameter ParameterName="QuickModeCryptoSet">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="QuickModeCryptoSet"/>
+            </Parameter>
+            <Parameter ParameterName="Phase1AuthSet">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Phase1AuthSet"/>
+            </Parameter>
+            <Parameter ParameterName="Phase2AuthSet">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Phase2AuthSet"/>
+            </Parameter>
+            <Parameter ParameterName="KeyModule">
+              <Type PSType="NetSecurity.KeyModule"/>
+              <CmdletParameterMetadata PSName="KeyModule"/>
+            </Parameter>
+            <Parameter ParameterName="AllowWatchKey">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="AllowWatchKey"/>
+            </Parameter>
+            <Parameter ParameterName="AllowSetKey">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="AllowSetKey"/>
+            </Parameter>
+            <Parameter ParameterName="LocalTunnelEndpoint">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalTunnelEndpoint"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteTunnelEndpoint">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemoteTunnelEndpoint"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteTunnelEndpointDNSName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteTunnelHostname"/>
+            </Parameter>
+            <Parameter ParameterName="MaxReturnPathLifetimeSeconds">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="ForwardPathLifetime"/>
+            </Parameter>
+            <Parameter ParameterName="BypassTunnelIfEncrypted">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="EncryptedTunnelBypass"/>
+            </Parameter>
+            <Parameter ParameterName="RequireAuthorization">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="RequireAuthorization"/>
+            </Parameter>
+            <Parameter ParameterName="Users">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="User"/>
+            </Parameter>
+            <Parameter ParameterName="Machines">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Machine"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemoteAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Protocol">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Protocol"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalPort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalPort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemotePort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemotePort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceAlias">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata PSName="InterfaceAlias"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceType">
+              <Type PSType="NetSecurity.InterfaceType"/>
+              <CmdletParameterMetadata PSName="InterfaceType"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Show"/>
+        <Method MethodName="EnumerateFull">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="GPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="Dependents">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/NetSecurityDeepEnumElement"/>
+              <CmdletOutputMetadata PSName="Dependents"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Find"/>
+        <Method MethodName="Find">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="LocalAddress">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="LocalAddress"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteAddress">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="RemoteAddress"/>
+            </Parameter>
+            <Parameter ParameterName="Protocol">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Protocol"/>
+            </Parameter>
+            <Parameter ParameterName="LocalPort">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="LocalPort"/>
+            </Parameter>
+            <Parameter ParameterName="RemotePort">
+              <Type PSType="uint16"/>
+              <CmdletParameterMetadata PSName="RemotePort"/>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]"/>
+              <CmdletOutputMetadata PSName="CmdletOutput"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.Enabled" UnderlyingType="uint16">
+      <Value Name="True" Value="1"/>
+      <Value Name="False" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Profile" UnderlyingType="uint16" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="Public" Value="4"/>
+      <Value Name="Private" Value="2"/>
+      <Value Name="Domain" Value="1"/>
+      <Value Name="NotApplicable" Value="65535"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.IPsecMode" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="Transport" Value="3"/>
+      <Value Name="Tunnel" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.SecurityPolicy" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="Request" Value="1"/>
+      <Value Name="Require" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.KeyModule" UnderlyingType="uint16" BitwiseFlags="true">
+      <Value Name="IKEv1" Value="1"/>
+      <Value Name="IKEv2" Value="4"/>
+      <Value Name="AuthIP" Value="2"/>
+      <Value Name="Default" Value="0"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.InterfaceType" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="Wired" Value="1"/>
+      <Value Name="Wireless" Value="2"/>
+      <Value Name="RemoteAccess" Value="4"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.PrimaryStatus" UnderlyingType="uint16">
+      <Value Name="Unknown" Value="0"/>
+      <Value Name="OK" Value="1"/>
+      <Value Name="Inactive" Value="2"/>
+      <Value Name="Error" Value="3"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.PolicyStoreType" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="Local" Value="1"/>
+      <Value Name="GroupPolicy" Value="2"/>
+      <Value Name="Dynamic" Value="3"/>
+      <Value Name="Generated" Value="4"/>
+      <Value Name="Hardcoded" Value="5"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.EndpointType" UnderlyingType="uint16">
+      <Value Name="Endpoint1" Value="0"/>
+      <Value Name="Endpoint2" Value="1"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.AddressVersion" UnderlyingType="uint16" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="IPv4" Value="1"/>
+      <Value Name="IPv6" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.ChangeAction" UnderlyingType="uint16">
+      <Value Name="Add" Value="0"/>
+      <Value Name="Delete" Value="1"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

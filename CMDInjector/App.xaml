@@ -1,0 +1,20 @@
+﻿<Application
+    x:Class="CMDInjector.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector">
+    
+    <Application.Resources>
+        <SolidColorBrush x:Key="AppAccentColor" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="ToggleSwitchFillOn" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStroke" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="SliderTrackValueFill" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="SliderThumbBackground" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightListAccentLowBrush" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightListAccentHighBrush" Color="{ThemeResource SystemAccentColor}"/>
+        <!--<SolidColorBrush x:Key="SelectionHighlightColor" Color="{ThemeResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightAltBaseHighBrush" Color="{ThemeResource SystemAccentColor}"/>-->
+    </Application.Resources>
+</Application>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetNeighbor" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetNeighbor</DefaultNoun>
+
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="IPAddress">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceIndex">
+            <Type PSType="System.UInt32" />
+            <RegularQuery>
+              <CmdletParameterMetadata IsMandatory="false" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceAlias">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Aliases="ifAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="LinkLayerAddress">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="State">
+            <Type PSType="NetNeighbor.State" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AddressFamily">
+            <Type PSType="NetNeighbor.AddressFamily" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetIPInterfaceNeighbor" ResultRole="Dependent" SourceRole="Antecedent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetIPInterface" />
+              <CmdletParameterMetadata PSName="AssociatedIPInterface" ValueFromPipeline="true" CmdletParameterSets="ByName" />
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="PolicyStore">
+            <Type PSType="System.String"/>
+            <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName"/>
+          </Option>
+          <Option OptionName="IncludeAllCompartments">
+             <Type PSType="System.Management.Automation.SwitchParameter"/>
+             <CmdletParameterMetadata IsMandatory="false"/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="LinkLayerAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="IPAddress">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Position="0" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <RegularQuery>
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="State">
+              <Type PSType="NetNeighbor.State" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="AddressFamily">
+              <Type PSType="NetNeighbor.AddressFamily" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="System.String"/>
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName"/>     
+            </Option> 
+            <Option OptionName="IncludeAllCompartments">
+              <Type PSType="System.Management.Automation.SwitchParameter"/>
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </Option>
+          </QueryOptions>  
+        </GetCmdletParameters>
+      </Cmdlet>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High"/>
+        <Method MethodName="cim:DeleteInstance" />
+      </Cmdlet>
+
+    </InstanceCmdlets>
+
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="Medium" DefaultCmdletParameterSet="ByInterfaceAlias"/>
+        <Method MethodName="Create" CmdletParameterSet="ByInterfaceAlias">
+          <ReturnValue>
+            <Type PSType="System.UInt32" />
+            <CmdletOutputMetadata>
+              <ErrorCode />
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="IPAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0" />
+            </Parameter>
+            <Parameter ParameterName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Aliases="ifAlias" ValueFromPipelineByPropertyName="true" />
+            </Parameter>
+            <Parameter ParameterName="LinkLayerAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PolicyStore">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="State">
+              <Type PSType="NetNeighbor.State" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AddressFamily">
+              <Type PSType="NetNeighbor.AddressFamily" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <Method MethodName="Create" CmdletParameterSet="ByInterfaceIndex">
+          <ReturnValue>
+            <Type PSType="System.UInt32" />
+            <CmdletOutputMetadata>
+              <ErrorCode />
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="IPAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0"/>
+            </Parameter>
+            <Parameter ParameterName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="true" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" />
+            </Parameter>
+            <Parameter ParameterName="LinkLayerAddress">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="PolicyStore">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="State">
+              <Type PSType="NetNeighbor.State" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AddressFamily">
+              <Type PSType="NetNeighbor.AddressFamily" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetNeighbor.Store" UnderlyingType="System.Byte">
+      <Value Name="PersistentStore" Value="0" />
+      <Value Name="ActiveStore" Value="1" />
+    </Enum>
+    <Enum EnumName="NetNeighbor.State" UnderlyingType="System.Byte">
+      <Value Name="Unreachable" Value="0" />
+      <Value Name="Incomplete" Value="1" />
+      <Value Name="Probe" Value="2" />
+      <Value Name="Delay" Value="3" />
+      <Value Name="Stale" Value="4" />
+      <Value Name="Reachable" Value="5" />
+      <Value Name="Permanent" Value="6" />
+    </Enum>
+    <Enum EnumName="NetNeighbor.AddressFamily" UnderlyingType="System.UInt16">
+      <Value Name="IPv4" Value="2" />
+      <Value Name="IPv6" Value="23" />
+    </Enum>
+  </Enums>
+
+</PowerShellMetadata>

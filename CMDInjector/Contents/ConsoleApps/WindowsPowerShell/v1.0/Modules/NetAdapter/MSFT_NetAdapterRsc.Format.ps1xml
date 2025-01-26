@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterRsc.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterRsc cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterRsc_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterRscSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterRscSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>12</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>12</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>15</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>15</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>17</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>17</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <PropertyName>Name</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv4Enabled</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv6Enabled</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv4OperationalState</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv6OperationalState</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv4FailureReason</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv6FailureReason</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  <View>
+    <Name>MSFT_NetAsapterRsc_ListView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterRscSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterRscSettingData</TypeName>
+    </ViewSelectedBy>
+    <ListControl>
+      <ListEntries>
+        <ListEntry>
+          <ListItems>
+            <ListItem>
+              <PropertyName>Name</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>InterfaceDescription</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv4Enabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv6Enabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>IPv4Supported</label>
+              <ScriptBlock>$_.RscHardwareCapabilities.IPv4Supported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IPv6Supported</label>
+              <ScriptBlock>$_.RscHardwareCapabilities.IPv6Supported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv4OperationalState</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv6OperationalState</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv4FailureReason</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv6FailureReason</PropertyName>
+            </ListItem>
+          </ListItems>
+        </ListEntry>
+      </ListEntries>
+    </ListControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetTransportFilter" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetTransportFilter</DefaultNoun>
+
+    <InstanceCmdlets>
+
+      <GetCmdletParameters>
+        <QueryableProperties>
+          <Property PropertyName="SettingName">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Protocol">
+            <Type PSType="NetTransportFilter.Protocol" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="LocalPortStart">
+            <Type PSType="System.UInt16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="LocalPortEnd">
+            <Type PSType="System.UInt16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RemotePortStart">
+            <Type PSType="System.UInt16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RemotePortEnd">
+            <Type PSType="System.UInt16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DestinationPrefix">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetTransportFilterTCPSetting" ResultRole="Antecedent" SourceRole="Dependent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetTCPSetting" />
+              <CmdletParameterMetadata PSName="AssociatedTCPSetting" ValueFromPipeline="true" CmdletParameterSets="ByName" />
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High"/>
+        <Method MethodName="cim:DeleteInstance" />
+      </Cmdlet>
+
+    </InstanceCmdlets>
+
+    <StaticCmdlets>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:CreateInstance">
+          <ReturnValue>
+            <Type PSType="int" />
+            <CmdletOutputMetadata>
+              <ErrorCode />
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="SettingName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" />
+            </Parameter>
+            <Parameter ParameterName="Protocol">
+              <Type PSType="NetTransportFilter.Protocol" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="LocalPortStart">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="LocalPortEnd">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RemotePortStart">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RemotePortEnd">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>            
+            <Parameter ParameterName="DestinationPrefix">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+
+		
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+  
+  <Enums>
+    <Enum EnumName="NetTransportFilter.Protocol" UnderlyingType="System.UInt16">
+      <Value Name="TCP" Value="6" />
+      <Value Name="UDP" Value="17" />
+    </Enum>
+  </Enums>
+
+</PowerShellMetadata>

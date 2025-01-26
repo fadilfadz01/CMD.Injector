@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/StandardCimv2/MSFT_NetEventSession" ClassVersion="1.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetEventSession</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetEventSession_Provider" ResultRole="GroupComponent" SourceRole="PartComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventProvider" />
+              <CmdletParameterMetadata PSName="AssociatedEventProvider" ValueFromPipeline = "true"  CmdletParameterSets="ByProviderOfSession"/> 
+            </AssociatedInstance>
+          </Association> 
+        </QueryableAssociations>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High" />
+        <Method MethodName="cim:DeleteInstance" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryableAssociations>
+            <Association Association="MSFT_NetEventSession_Provider" ResultRole="GroupComponent" SourceRole="PartComponent" >
+              <AssociatedInstance>
+                <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventProvider" />
+                <CmdletParameterMetadata PSName="AssociatedEventProvider" ValueFromPipeline = "true"  CmdletParameterSets="ByProviderOfSession"/> 
+              </AssociatedInstance>
+            </Association> 
+          </QueryableAssociations>
+        </GetCmdletParameters>
+      </Cmdlet>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium" />
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="CaptureMode">
+              <Type PSType="NetEventPacketCapture.CaptureModes" />
+              <CmdletParameterMetadata Aliases="cm" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="LocalFilePath">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata Aliases="lfp" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxFileSize">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxNumberOfBuffers">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="TraceBufferSize">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>    
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Start" ConfirmImpact="High" />
+        <Method MethodName="Start" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Stop" ConfirmImpact="High" />
+        <Method MethodName="Stop" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+
+    </InstanceCmdlets>    
+
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="High"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="Name">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CaptureMode" DefaultValue="SaveToFile">
+              <Type PSType="NetEventPacketCapture.CaptureModes" />
+              <CmdletParameterMetadata Aliases="cm" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="LocalFilePath">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata Aliases="lfp" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxFileSize" DefaultValue="250">
+              <Type PSType="uint32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxNumberOfBuffers">
+              <Type PSType="byte" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="TraceBufferSize">
+              <Type PSType="uint32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+   </StaticCmdlets>
+
+  </Class>
+
+  <Enums>
+
+    <Enum EnumName="NetEventPacketCapture.CaptureModes" UnderlyingType="System.Byte">
+      <Value Name="RealtimeRPC"    Value="0" />
+      <Value Name="SaveToFile"     Value="1" />
+      <Value Name="RealtimeLocal"  Value="2" />
+    </Enum>
+
+    <Enum EnumName="NetEventPacketCapture.ESessionStatus" UnderlyingType="System.Byte">
+      <Value Name="Running"     Value="0" />
+      <Value Name="NotRunning"  Value="1" />
+      <Value Name="HasProblem"  Value="2" />
+    </Enum>
+
+  </Enums>
+
+</PowerShellMetadata>

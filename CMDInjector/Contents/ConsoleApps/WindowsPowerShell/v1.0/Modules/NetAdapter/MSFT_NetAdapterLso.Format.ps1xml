@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterLso.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterLso cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterLso_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterLsoSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterLsoSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>Version</label>
+          <Width>15</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>14</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>12</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width>12</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <PropertyName>Name</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+                $out=""
+                  if ($_.MaximumLsoVersionSupported -ge 2) {$out+="LSO Version 2"} else { if ($_.MaximumLsoVersionSupported -eq 1) {$out+="LSO Version 1"} else {$out+="None"} }
+                $out
+              </ScriptBlock>              
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>V1IPv4Enabled</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv4Enabled</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>IPv6Enabled</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  <View>
+    <Name>MSFT_NetAsapterLso_ListView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterLsoSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterLsoSettingData</TypeName>
+    </ViewSelectedBy>
+    <ListControl>
+      <ListEntries>
+        <ListEntry>
+          <ListItems>
+            <ListItem>
+              <PropertyName>Name</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>InterfaceDescription</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>Version</label>
+              <ScriptBlock>
+                $out=""
+                  if ($_.MaximumLsoVersionSupported -ge 2) {$out+="LSO Version 2"} else { if ($_.MaximumLsoVersionSupported -eq 1) {$out+="LSO Version 1"} else {$out+="None"} }
+                $out
+              </ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <PropertyName>V1IPv4Enabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv4Enabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <PropertyName>IPv6Enabled</PropertyName>
+            </ListItem>
+            <ListItem>
+              <label>V1IPv4MaxOffloadSizeSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV1HardwareCapabilities.IPv4MaxOffloadSizeSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>V1IPv4MinSegmentCountSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV1HardwareCapabilities.IPv4MinSegmentCountSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>V1IPv4TcpOptionsSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV1HardwareCapabilities.IPv4TcpOptionsSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>V1IPv4IpOptionsSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV1HardwareCapabilities.IPv4IpOptionsSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IPv4MaxOffloadSizeSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV2HardwareCapabilities.IPv4MaxOffloadSizeSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IPv4MinSegmentCountSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV2HardwareCapabilities.IPv4MinSegmentCountSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IPv6MaxOffLoadSizeSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV2HardwareCapabilities.IPv6MaxOffLoadSizeSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IPv6MinSegmentCountSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV2HardwareCapabilities.IPv6MinSegmentCountSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IPv6IpExtensionHeadersSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV2HardwareCapabilities.IPv6IpExtensionHeadersSupported</ScriptBlock>
+            </ListItem>
+            <ListItem>
+              <label>IPv6TcpOptionsSupported</label>
+              <ScriptBlock>$_.LargeSendOffloadV2HardwareCapabilities.IPv6TcpOptionsSupported</ScriptBlock>
+            </ListItem>
+          </ListItems>
+        </ListEntry>
+      </ListEntries>
+    </ListControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

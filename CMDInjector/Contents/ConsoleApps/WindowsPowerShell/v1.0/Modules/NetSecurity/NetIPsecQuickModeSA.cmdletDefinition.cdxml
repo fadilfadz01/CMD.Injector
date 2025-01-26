@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetQuickModeSA" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetIPsecQuickModeSA</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="InstanceID">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Name" CmdletParameterSets="ByName" IsMandatory="true" Position="0" Aliases="ID"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetSAAssociation" ResultRole="Dependent" SourceRole="Antecedent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetMainModeSA"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecMainModeSA" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecMainModeSA"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:DeleteInstance"/>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.IPsecMode" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="Transport" Value="3"/>
+      <Value Name="Tunnel" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.QmSATransformType" UnderlyingType="uint32">
+      <Value Name="None" Value="0"/>
+      <Value Name="Ah" Value="1"/>
+      <Value Name="EspAuth" Value="2"/>
+      <Value Name="EspCipher" Value="3"/>
+      <Value Name="EspAuthAndCipher" Value="4"/>
+      <Value Name="EspAuthFirewall" Value="5"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.QmBundleFlags" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="None" Value="0"/>
+      <Value Name="NdSecure" Value="1"/>
+      <Value Name="NdBoundary" Value="2"/>
+      <Value Name="NdpeerNatBoundary" Value="4"/>
+      <Value Name="GuaranteeEncryption" Value="8"/>
+      <Value Name="NLB" Value="16"/>
+      <Value Name="NoMachineLuidVerify" Value="32"/>
+      <Value Name="NoImpersonationLuidVerify" Value="64"/>
+      <Value Name="NoExplicitCredMatch" Value="128"/>
+      <Value Name="Unknown256" Value="256"/>
+      <Value Name="AllowNullTargetNameMatch" Value="512"/>
+      <Value Name="ClearDfOnTunnel" Value="1024"/>
+      <Value Name="AssumeUdpContextOutbound" Value="2048"/>
+      <Value Name="NdPeerBoundary" Value="4096"/>
+      <Value Name="SuppressDuplicateDeletion" Value="8192"/>
+      <Value Name="PeerSupportsGuaranteeEncryption" Value="16384"/>
+      <Value Name="ForceInboundConnections" Value="32768"/>
+      <Value Name="ForceOutboundConnections" Value="65536"/>
+      <Value Name="ForwardPathInitiator" Value="131072"/>
+      <Value Name="EnableOptionalAsymmetricIdle" Value="262144"/>
+      <Value Name="UsingDictatedKeys" Value="524288"/>
+      <Value Name="LocallyDictatedKeys" Value="1048576"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

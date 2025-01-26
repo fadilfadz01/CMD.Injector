@@ -1,0 +1,1075 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Types>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetFirewallRule</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>DisplayName</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["DisplayName"].Value</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["DisplayName"].Value = $x ; $this.PSBase.CimInstanceProperties["ElementName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Group</Name>
+        <ReferencedMemberName>RuleGroup</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]($this.PSBase.CimInstanceProperties['Enabled'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Enabled'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Profile</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]($this.PSBase.CimInstanceProperties['Profiles'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Profiles'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Platform</Name>
+        <ReferencedMemberName>Platforms</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Direction</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Direction]($this.PSBase.CimInstanceProperties['Direction'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Direction'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Direction]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Action</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Action]($this.PSBase.CimInstanceProperties['Action'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Action'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Action]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EdgeTraversalPolicy</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EdgeTraversal]($this.PSBase.CimInstanceProperties['EdgeTraversalPolicy'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EdgeTraversalPolicy'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EdgeTraversal]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>LSM</Name>
+        <ReferencedMemberName>LooseSourceMapping</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>PrimaryStatus</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]($this.PSBase.CimInstanceProperties['PrimaryStatus'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PrimaryStatus'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["Status"].Value + " (" + ($this.PSBase.CimInstanceProperties["StatusCode"].Value + 0) + ")"</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnforcementStatus</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatEnforcementStatus($this.PSBase.CimInstanceProperties["EnforcementStatus"].Value)</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PolicyStoreSourceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]($this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetConSecRule</Name>
+    <Members>
+      <AliasProperty>
+        <Name>IPsecRuleName</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>IPsecRuleName</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>IPsecRuleName</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>DisplayName</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["DisplayName"].Value</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["DisplayName"].Value = $x ; $this.PSBase.CimInstanceProperties["ElementName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Group</Name>
+        <ReferencedMemberName>RuleGroup</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]($this.PSBase.CimInstanceProperties['Enabled'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Enabled'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Profile</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]($this.PSBase.CimInstanceProperties['Profiles'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Profiles'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Platform</Name>
+        <ReferencedMemberName>Platforms</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Mode</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IPsecMode]($this.PSBase.CimInstanceProperties['Mode'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Mode'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IPsecMode]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>InboundSecurity</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.SecurityPolicy]($this.PSBase.CimInstanceProperties['InboundSecurity'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['InboundSecurity'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.SecurityPolicy]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>SecIn</Name>
+        <ReferencedMemberName>InboundSecurity</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>OutboundSecurity</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.SecurityPolicy]($this.PSBase.CimInstanceProperties['OutboundSecurity'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['OutboundSecurity'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.SecurityPolicy]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>SecOut</Name>
+        <ReferencedMemberName>OutboundSecurity</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>QuickModeCryptoSet</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["QuickModeCryptoSet"].Value; if ($x -ne $null -and $x.ToUpperInvariant().Equals("{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE2}")) { "Default"; } else { $x }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+if ($x.PSTypeNames.Contains("Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEQMCryptoSet")) {
+    $this.PSBase.CimInstanceProperties["QuickModeCryptoSet"].Value = $x.ID;
+} elseif ($x.ToUpperInvariant().Equals("DEFAULT")) {
+    $this.PSBase.CimInstanceProperties["QuickModeCryptoSet"].Value = "{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE2}";
+} else { 
+    $this.PSBase.CimInstanceProperties["QuickModeCryptoSet"].Value = $x;
+}</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Phase1AuthSet</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value; if ($x -ne $null -and $x.ToUpperInvariant().Equals("{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE3}")) { "Default"; } else { $x }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+if ($x.PSTypeNames.Contains("Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEMMAuthSet")) {
+    $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value = $x.ID;
+} elseif ($x.ToUpperInvariant().Equals("DEFAULT")) {
+    $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value = "{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE3}";
+} else {
+    $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value = $x;
+}</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Phase2AuthSet</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["Phase2AuthSet"].Value; if ($x -ne $null -and $x.ToUpperInvariant().Equals("{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE4}")) { "Default"; } else { $x }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+if ($x.PSTypeNames.Contains("Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEEMAuthSet")) {
+    $this.PSBase.CimInstanceProperties["Phase2AuthSet"].Value = $x.ID;
+} elseif ($x.ToUpperInvariant().Equals("DEFAULT")) {
+    $this.PSBase.CimInstanceProperties["Phase2AuthSet"].Value = "{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE4}";
+} else {
+    $this.PSBase.CimInstanceProperties["Phase2AuthSet"].Value = $x;
+}</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>KeyModule</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.KeyModule]($this.PSBase.CimInstanceProperties['KeyModule'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['KeyModule'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.KeyModule]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>RemoteTunnelHostname</Name>
+        <ReferencedMemberName>RemoteTunnelEndpointDNSName</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ForwardPathLifetime</Name>
+        <ReferencedMemberName>MaxReturnPathLifetimeSeconds</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>EncryptedTunnelBypass</Name>
+        <ReferencedMemberName>BypassTunnelIfEncrypted</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>User</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["Users"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["Users"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Machine</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["Machines"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["Machines"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PrimaryStatus</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]($this.PSBase.CimInstanceProperties['PrimaryStatus'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PrimaryStatus'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["Status"].Value + " (" + ($this.PSBase.CimInstanceProperties["StatusCode"].Value + 0) + ")"</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnforcementStatus</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatEnforcementStatus($this.PSBase.CimInstanceProperties["EnforcementStatus"].Value)</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PolicyStoreSourceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]($this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetMainModeRule</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>DisplayName</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["DisplayName"].Value</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["DisplayName"].Value = $x ; $this.PSBase.CimInstanceProperties["ElementName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Group</Name>
+        <ReferencedMemberName>RuleGroup</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]($this.PSBase.CimInstanceProperties['Enabled'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Enabled'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Profile</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]($this.PSBase.CimInstanceProperties['Profiles'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Profiles'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Platform</Name>
+        <ReferencedMemberName>Platforms</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>MainModeCryptoSet</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["MainModeCryptoSet"].Value; if ($x -ne $null -and $x.ToUpperInvariant().Equals("{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE1}")) { "Default"; } else { $x }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+if ($x.PSTypeNames.Contains("Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEMMCryptoSet")) {
+    $this.PSBase.CimInstanceProperties["MainModeCryptoSet"].Value = $x.ID;
+} elseif ($x.ToUpperInvariant().Equals("DEFAULT")) {
+    $this.PSBase.CimInstanceProperties["MainModeCryptoSet"].Value = "{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE1}";
+} else {
+    $this.PSBase.CimInstanceProperties["MainModeCryptoSet"].Value = $x;
+}</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Phase1AuthSet</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value; if ($x -ne $null -and $x.ToUpperInvariant().Equals("{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE3}")) { "Default"; } else { $x }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+if ($x.PSTypeNames.Contains("Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEMMAuthSet")) {
+    $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value = $x.ID;
+} elseif ($x.ToUpperInvariant().Equals("DEFAULT")) {
+    $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value = "{E5A5D32A-4BCE-4E4D-B07F-4AB1BA7E5FE3}";
+} else {
+    $this.PSBase.CimInstanceProperties["Phase1AuthSet"].Value = $x;
+}</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PrimaryStatus</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]($this.PSBase.CimInstanceProperties['PrimaryStatus'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PrimaryStatus'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["Status"].Value + " (" + ($this.PSBase.CimInstanceProperties["StatusCode"].Value + 0) + ")"</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnforcementStatus</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatEnforcementStatus($this.PSBase.CimInstanceProperties["EnforcementStatus"].Value)</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PolicyStoreSourceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]($this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAddressFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>LocalAddress</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableStringArray($this.PSBase.CimInstanceProperties["LocalAddress"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["LocalAddress"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>LocalIP</Name>
+        <ReferencedMemberName>LocalAddress</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>RemoteAddress</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableStringArray($this.PSBase.CimInstanceProperties["RemoteAddress"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["RemoteAddress"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>RemoteIP</Name>
+        <ReferencedMemberName>RemoteAddress</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetApplicationFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Program</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["AppPath"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["AppPath"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetInterfaceFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>InterfaceAlias</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableStringArray($this.PSBase.CimInstanceProperties["InterfaceAlias"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["InterfaceAlias"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetInterfaceTypeFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>InterfaceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.InterfaceType]($this.PSBase.CimInstanceProperties['InterfaceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['InterfaceType'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.InterfaceType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetNetworkLayerSecurityFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Authentication</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Authentication]($this.PSBase.CimInstanceProperties['Authentication'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Authentication'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Authentication]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Encryption</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Encryption]($this.PSBase.CimInstanceProperties['Encryption'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Encryption'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Encryption]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>LocalUser</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["LocalUsers"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["LocalUsers"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RemoteUser</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["RemoteUsers"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["RemoteUsers"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RemoteMachine</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["RemoteMachines"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["RemoteMachines"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetProtocolPortFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Protocol</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["Protocol"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["Protocol"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>LocalPort</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableStringArray($this.PSBase.CimInstanceProperties["LocalPort"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["LocalPort"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RemotePort</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableStringArray($this.PSBase.CimInstanceProperties["RemotePort"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["RemotePort"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>IcmpType</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableStringArray($this.PSBase.CimInstanceProperties["IcmpType"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["IcmpType"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DynamicTarget</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.DynamicTransport]($this.PSBase.CimInstanceProperties['DynamicTransport'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['DynamicTransport'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.DynamicTransport]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>DynamicTransport</Name>
+        <ReferencedMemberName>DynamicTarget</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetServiceFilter</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Service</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatNullableString($this.PSBase.CimInstanceProperties["ServiceName"].Value)</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["ServiceName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEP1AuthSet</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>DisplayName</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["DisplayName"].Value</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["DisplayName"].Value = $x ; $this.PSBase.CimInstanceProperties["ElementName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Group</Name>
+        <ReferencedMemberName>RuleGroup</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Proposal</Name>
+        <ReferencedMemberName>Proposals</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>PrimaryStatus</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]($this.PSBase.CimInstanceProperties['PrimaryStatus'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PrimaryStatus'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["Status"].Value + " (" + ($this.PSBase.CimInstanceProperties["StatusCode"].Value + 0) + ")"</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnforcementStatus</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatEnforcementStatus($this.PSBase.CimInstanceProperties["EnforcementStatus"].Value)</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PolicyStoreSourceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]($this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEP2AuthSet</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>DisplayName</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["DisplayName"].Value</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["DisplayName"].Value = $x ; $this.PSBase.CimInstanceProperties["ElementName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Group</Name>
+        <ReferencedMemberName>RuleGroup</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Proposal</Name>
+        <ReferencedMemberName>Proposals</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>PrimaryStatus</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]($this.PSBase.CimInstanceProperties['PrimaryStatus'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PrimaryStatus'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["Status"].Value + " (" + ($this.PSBase.CimInstanceProperties["StatusCode"].Value + 0) + ")"</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnforcementStatus</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatEnforcementStatus($this.PSBase.CimInstanceProperties["EnforcementStatus"].Value)</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PolicyStoreSourceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]($this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEBasicAuthProposal</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>AuthenticationMethod</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.AuthenticationMethod]($this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.AuthenticationMethod]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEKerbAuthProposal</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>AuthenticationMethod</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.AuthenticationMethod]($this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.AuthenticationMethod]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Proxy</Name>
+        <ReferencedMemberName>KerbProxy</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEPSKAuthProposal</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>AuthenticationMethod</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.AuthenticationMethod]($this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.AuthenticationMethod]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKECertAuthProposal</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>AuthenticationMethod</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.AuthenticationMethod]($this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.AuthenticationMethod]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Authority</Name>
+        <ReferencedMemberName>TrustedCA</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>AuthorityType</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.CertificateAuthorityType]($this.PSBase.CimInstanceProperties['TrustedCAType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['TrustedCAType'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.CertificateAuthorityType]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>AccountMapping</Name>
+        <ReferencedMemberName>MapToAccount</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Signing</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.CertificateSigningAlgorithm]($this.PSBase.CimInstanceProperties['SigningAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['SigningAlgorithm'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.CertificateSigningAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>SubjectName</Name>
+        <ReferencedMemberName>CertName</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>SubjectNameType</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.CertificateSubjectType]($this.PSBase.CimInstanceProperties['CertNameType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['CertNameType'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.CertificateSubjectType]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>ExtendedKeyUsage</Name>
+        <ReferencedMemberName>EKUs</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEMMCryptoSet</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>DisplayName</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["DisplayName"].Value</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["DisplayName"].Value = $x ; $this.PSBase.CimInstanceProperties["ElementName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Group</Name>
+        <ReferencedMemberName>RuleGroup</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Proposal</Name>
+        <ReferencedMemberName>Proposals</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>MaxMinutes</Name>
+        <ReferencedMemberName>MaxLifetimeMinutes</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>MaxSessions</Name>
+        <ReferencedMemberName>MaxLifetimeSessions</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>PrimaryStatus</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]($this.PSBase.CimInstanceProperties['PrimaryStatus'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PrimaryStatus'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["Status"].Value + " (" + ($this.PSBase.CimInstanceProperties["StatusCode"].Value + 0) + ")"</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnforcementStatus</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatEnforcementStatus($this.PSBase.CimInstanceProperties["EnforcementStatus"].Value)</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PolicyStoreSourceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]($this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEQMCryptoSet</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>DisplayName</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["DisplayName"].Value</GetScriptBlock>
+        <SetScriptBlock>param($x) ; $this.PSBase.CimInstanceProperties["DisplayName"].Value = $x ; $this.PSBase.CimInstanceProperties["ElementName"].Value = $x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>Group</Name>
+        <ReferencedMemberName>RuleGroup</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Proposal</Name>
+        <ReferencedMemberName>Proposals</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>PerfectForwardSecrecyGroup</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]($this.PSBase.CimInstanceProperties['PfsGroupID'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PfsGroupID'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>PfsGroup</Name>
+        <ReferencedMemberName>PerfectForwardSecrecyGroup</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>PrimaryStatus</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]($this.PSBase.CimInstanceProperties['PrimaryStatus'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PrimaryStatus'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PrimaryStatus]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>$this.PSBase.CimInstanceProperties["Status"].Value + " (" + ($this.PSBase.CimInstanceProperties["StatusCode"].Value + 0) + ")"</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnforcementStatus</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.Formatting.Formatter]::FormatEnforcementStatus($this.PSBase.CimInstanceProperties["EnforcementStatus"].Value)</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PolicyStoreSourceType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]($this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PolicyStoreSourceType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PolicyStoreType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEMMCryptoProposal</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Encryption</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]($this.PSBase.CimInstanceProperties['CipherAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['CipherAlgorithm'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Hash</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.HashAlgorithm]($this.PSBase.CimInstanceProperties['HashAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['HashAlgorithm'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.HashAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>KeyExchange</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]($this.PSBase.CimInstanceProperties['GroupID'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['GroupID'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIKEQMCryptoProposal</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Encapsulation</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.IPsecEncapsulation]($this.PSBase.CimInstanceProperties['Encapsulation'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Encapsulation'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.IPsecEncapsulation]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AhHash</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.HashAlgorithm]($this.PSBase.CimInstanceProperties['HashAlgorithmAH'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['HashAlgorithmAH'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.HashAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EspHash</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.HashAlgorithm]($this.PSBase.CimInstanceProperties['HashAlgorithmESP'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['HashAlgorithmESP'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.HashAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Encryption</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]($this.PSBase.CimInstanceProperties['CipherAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['CipherAlgorithm'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <AliasProperty>
+        <Name>MaxKilobytes</Name>
+        <ReferencedMemberName>MaxLifetimeKilobytes</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>MaxMinutes</Name>
+        <ReferencedMemberName>MaxLifetimeMinutes</ReferencedMemberName>
+      </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetFirewallProfile</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Profile</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['Enabled'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Enabled'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DefaultInboundAction</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Action]($this.PSBase.CimInstanceProperties['DefaultInboundAction'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['DefaultInboundAction'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Action]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DefaultOutboundAction</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Action]($this.PSBase.CimInstanceProperties['DefaultOutboundAction'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['DefaultOutboundAction'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Action]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AllowInboundRules</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['AllowInboundRules'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AllowInboundRules'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AllowLocalFirewallRules</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['AllowLocalFirewallRules'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AllowLocalFirewallRules'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AllowLocalIPsecRules</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['AllowLocalIPsecRules'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AllowLocalIPsecRules'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AllowUserApps</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['AllowUserApps'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AllowUserApps'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AllowUserPorts</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['AllowUserPorts'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AllowUserPorts'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AllowUnicastResponseToMulticast</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['AllowUnicastResponseToMulticast'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AllowUnicastResponseToMulticast'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>NotifyOnListen</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['NotifyOnListen'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['NotifyOnListen'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnableStealthModeForIPsec</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['EnableStealthModeForIPsec'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EnableStealthModeForIPsec'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>LogMaxSizeKilobytes</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["LogMaxSizeKilobytes"]; if ($x -ne $null -and $x.Value -ne $null -and $x.Value.ToString().ToUpperInvariant().Equals("4294967296")) { "NotConfigured"; } else { $x.Value }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+            if ($x.ToUpperInvariant().Equals("NOTCONFIGURED")) { $this.PSBase.CimInstanceProperties["LogMaxSizeKilobytes"].Value = 4294967296; } else { $this.PSBase.CimInstanceProperties["LogMaxSizeKilobytes"].Value = [uint32]$x; }</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>LogAllowed</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['LogAllowed'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['LogAllowed'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>LogBlocked</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['LogBlocked'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['LogBlocked'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>LogIgnored</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['LogIgnored'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['LogIgnored'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetSecDeltaCollection</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Action</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.ChangeAction]($this.PSBase.CimInstanceProperties['Action'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Action'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.ChangeAction]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EndpointType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EndpointType]($this.PSBase.CimInstanceProperties['EndpointType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EndpointType'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EndpointType]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIPsecDoSPSetting</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>ElementName</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>IpV6IPsecUnauthDscp</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["IpV6IPsecUnauthDscp"]; if ($x -ne $null -and $x.Value -ne $null -and $x.Value.ToString().ToUpperInvariant().Equals("255")) { "Disabled"; } else { $x.Value }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+            if ($x.ToUpperInvariant().Equals("DISABLED")) { $this.PSBase.CimInstanceProperties["IpV6IPsecUnauthDscp"].Value = 255; } else { $this.PSBase.CimInstanceProperties["IpV6IPsecUnauthDscp"].Value = [uint32]$x; }</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>IpV6IPsecAuthDscp</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["IpV6IPsecAuthDscp"]; if ($x -ne $null -and $x.Value -ne $null -and $x.Value.ToString().ToUpperInvariant().Equals("255")) { "Disabled"; } else { $x.Value }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+            if ($x.ToUpperInvariant().Equals("DISABLED")) { $this.PSBase.CimInstanceProperties["IpV6IPsecAuthDscp"].Value = 255; } else { $this.PSBase.CimInstanceProperties["IpV6IPsecAuthDscp"].Value = [uint32]$x; }</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>IcmpV6Dscp</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["IcmpV6Dscp"]; if ($x -ne $null -and $x.Value -ne $null -and $x.Value.ToString().ToUpperInvariant().Equals("255")) { "Disabled"; } else { $x.Value }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+            if ($x.ToUpperInvariant().Equals("DISABLED")) { $this.PSBase.CimInstanceProperties["IcmpV6Dscp"].Value = 255; } else { $this.PSBase.CimInstanceProperties["IcmpV6Dscp"].Value = [uint32]$x; }</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>IpV6FilterExemptDscp</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["IpV6FilterExemptDscp"]; if ($x -ne $null -and $x.Value -ne $null -and $x.Value.ToString().ToUpperInvariant().Equals("255")) { "Disabled"; } else { $x.Value }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+            if ($x.ToUpperInvariant().Equals("DISABLED")) { $this.PSBase.CimInstanceProperties["IpV6FilterExemptDscp"].Value = 255; } else { $this.PSBase.CimInstanceProperties["IpV6FilterExemptDscp"].Value = [uint32]$x; }</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>DefBlockExemptDscp</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["DefBlockExemptDscp"]; if ($x -ne $null -and $x.Value -ne $null -and $x.Value.ToString().ToUpperInvariant().Equals("255")) { "Disabled"; } else { $x.Value }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+            if ($x.ToUpperInvariant().Equals("DISABLED")) { $this.PSBase.CimInstanceProperties["DefBlockExemptDscp"].Value = 255; } else { $this.PSBase.CimInstanceProperties["DefBlockExemptDscp"].Value = [uint32]$x; }</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnabledKeyingModules</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.DospKeyModules]($this.PSBase.CimInstanceProperties['EnabledKeyingModules'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EnabledKeyingModules'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.DospKeyModules]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>FilteringFlags</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.DospFlags]($this.PSBase.CimInstanceProperties['FilteringFlags'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['FilteringFlags'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.DospFlags]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EffectiveAddressFamily</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.AddressVersion]($this.PSBase.CimInstanceProperties['EffectiveAddressFamily'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EffectiveAddressFamily'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.AddressVersion]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetIPsecIdentity</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>ImpersonationType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.ImpersonationType]($this.PSBase.CimInstanceProperties['ImpersonationType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['ImpersonationType'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.ImpersonationType]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AuthenticationMethod</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EffectiveAuthenticationMethod]($this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AuthenticationMethod'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EffectiveAuthenticationMethod]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Flags</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IdFlags]($this.PSBase.CimInstanceProperties['Flags'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Flags'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IdFlags]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetMainModeSA</Name>
+    <Members>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>CipherAlgorithm</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]($this.PSBase.CimInstanceProperties['CipherAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['CipherAlgorithm'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>HashAlgorithm</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.HashAlgorithm]($this.PSBase.CimInstanceProperties['HashAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['HashAlgorithm'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.HashAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>GroupId</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]($this.PSBase.CimInstanceProperties['GroupId'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['GroupId'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>KeyModule</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EffectiveKeyModule]($this.PSBase.CimInstanceProperties['KeyModule'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['KeyModule'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.EffectiveKeyModule]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetQuickModeSA</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>InstanceID</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>ID</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>EncapsulationMode</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IPsecMode]($this.PSBase.CimInstanceProperties['EncapsulationMode'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EncapsulationMode'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IPsecMode]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Direction</Name>
+        <GetScriptBlock>$dir = $this.PSBase.CimInstanceProperties["InboundDirection"]; if ($dir -ne $null -and $dir.Value -ne $null -and $dir.Value.Equals($true)) { [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Direction]::Inbound } else { [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Direction]::Outbound }</GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>FirstTransformType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.QmSATransformType]($this.PSBase.CimInstanceProperties['FirstTransformType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['FirstTransformType'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.QmSATransformType]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>FirstIntegrityAlgorithm</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.HashAlgorithm]($this.PSBase.CimInstanceProperties['FirstIntegrityAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['FirstIntegrityAlgorithm'].Value = [System.Uint32][Microsoft.Windows.Firewall.Commands.HashAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>FirstCipherAlgorithm</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]($this.PSBase.CimInstanceProperties['FirstCipherAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['FirstCipherAlgorithm'].Value = [System.Uint32][Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SecondTransformType</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.QmSATransformType]($this.PSBase.CimInstanceProperties['SecondTransformType'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['SecondTransformType'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.QmSATransformType]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SecondIntegrityAlgorithm</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.HashAlgorithm]($this.PSBase.CimInstanceProperties['SecondIntegrityAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['SecondIntegrityAlgorithm'].Value = [System.Uint32][Microsoft.Windows.Firewall.Commands.HashAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SecondCipherAlgorithm</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]($this.PSBase.CimInstanceProperties['SecondCipherAlgorithm'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['SecondCipherAlgorithm'].Value = [System.Uint32][Microsoft.Windows.Firewall.Commands.EncryptionAlgorithm]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Flags</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.QmBundleFlags]($this.PSBase.CimInstanceProperties['Flags'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Flags'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.QmBundleFlags]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>PfsGroupId</Name>
+        <GetScriptBlock>[Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]($this.PSBase.CimInstanceProperties['PfsGroupId'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['PfsGroupId'].Value = [System.Uint16][Microsoft.Windows.Firewall.Commands.DiffieHellmanGroup]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetSecuritySettingData</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Name</Name>
+        <ReferencedMemberName>ElementName</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptProperty>
+        <Name>Exemptions</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.TrafficExemption]($this.PSBase.CimInstanceProperties['Exemptions'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Exemptions'].Value = [System.Uint32][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.TrafficExemption]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnableStatefulFtp</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['EnableStatefulFtp'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EnableStatefulFtp'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnableStatefulPptp</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['EnableStatefulPptp'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EnableStatefulPptp'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ActiveProfile</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]($this.PSBase.CimInstanceProperties['Profile'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['Profile'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Profile]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RequireFullAuthSupport</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]($this.PSBase.CimInstanceProperties['RequireFullAuthSupport'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['RequireFullAuthSupport'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.GpoBoolean]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CertValidationLevel</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.CRLCheck]($this.PSBase.CimInstanceProperties['CertValidationLevel'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['CertValidationLevel'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.CRLCheck]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>AllowIPsecThroughNAT</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IPsecThroughNAT]($this.PSBase.CimInstanceProperties['AllowIPsecThroughNAT'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['AllowIPsecThroughNAT'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.IPsecThroughNAT]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MaxSAIdleTimeSeconds</Name>
+        <GetScriptBlock>$x = $this.PSBase.CimInstanceProperties["MaxSAIdleTimeSeconds"]; if ($x -ne $null -and $x.Value -ne $null -and $x.Value.ToString().Equals("0")) { "NotConfigured"; } else { $x.Value }</GetScriptBlock>
+        <SetScriptBlock>param($x)
+        if ($x.ToUpperInvariant().Equals("NOTCONFIGURED")) { $this.PSBase.CimInstanceProperties["MaxSAIdleTimeSeconds"].Value = 0; } else { $this.PSBase.CimInstanceProperties["MaxSAIdleTimeSeconds"].Value = [uint32]$x; }</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>KeyEncoding</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.KeyEncoding]($this.PSBase.CimInstanceProperties['KeyEncoding'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['KeyEncoding'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.KeyEncoding]$x</SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EnablePacketQueuing</Name>
+        <GetScriptBlock>[Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PacketQueuing]($this.PSBase.CimInstanceProperties['EnablePacketQueuing'].Value + 0)</GetScriptBlock>
+        <SetScriptBlock>param($x); $this.PSBase.CimInstanceProperties['EnablePacketQueuing'].Value = [System.Uint16][Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.PacketQueuing]$x</SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetGPO</Name>
+    <Members/>
+  </Type>
+</Types>

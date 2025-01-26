@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterSriovVf.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterSriovVf cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterVPort_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterSriovVfSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterSriovVfSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>FunctionID</label>
+          <Width>10</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>VPortID</label>
+          <Width>7</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>MacAddress</label>
+          <Width>17</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>VmID</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>VmFriendlyName</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 30
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>FunctionID</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>VPortID</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              $out=""
+              if ($_.CurrentMacAddress)
+              {
+                Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+                $out = Format-MacAddress $_.CurrentMacAddress
+              }
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>VmID</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>VmFriendlyName</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

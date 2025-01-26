@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="CMDInjector.PacMan"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="PACMAN" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}" Margin="10,0,0,0"/>
+            <TextBlock Text="App package installer &amp; manager." Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="20,-10,20,0">
+                    <TextBlock Text="Installer:" FontSize="25"/>
+                    <TextBox Name="AppsPath" PlaceholderText="C:\Data\Users\Public\Documents\Test.xap" MaxHeight="130" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Margin="5,5,5,0" TextChanged="AppsPath_TextChanged"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ResultBox" Text="Ready" Margin="5,10,5,0"/>
+                        <TextBlock Name="SeeLogBox" Visibility="Collapsed" Margin="0,10,0,0">
+                            <Hyperlink Click="SeeLog_Click">See log</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                    <ProgressBar Name="InstallProg" Margin="5,10,5,0" Foreground="{ThemeResource AppAccentColor}"/>
+                    <ProgressBar Name="IndivitualInstProg" Margin="5,-4,5,0" Foreground="{ThemeResource AppAccentColor}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="Deployment option" HorizontalAlignment="Center" FontSize="18" Margin="0,15,0,0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <ComboBox Name="DeploymentOpt" MinWidth="150" SelectedIndex="1">
+                            <ComboBoxItem Content="Deployment Mode"/>
+                            <ComboBoxItem Content="Force Application Shutdown"/>
+                            <ComboBoxItem Content="None"/>
+                        </ComboBox>
+                        <Button Name="DeploymentInfoBtn" Content="&#xE171;" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Height="30" Click="DeploymentInfoBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <TextBlock Text="Installation type" FontSize="18" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-5,0,0">
+                        <RadioButton Name="InstallType" Content="Install" GroupName="InstallTypeGroup" IsChecked="True" Margin="45,0,-40,0" Checked="InstallType_Checked"/>
+                        <RadioButton Name="UpdateType" Content="Update" GroupName="InstallTypeGroup" Margin="0,0,-30,0" Checked="InstallType_Checked"/>
+                        <RadioButton Name="RegisterType" Content="Register" GroupName="InstallTypeGroup" Checked="InstallType_Checked"/>
+                    </StackPanel>
+                    <TextBlock Name="BrowseBtnTip" Text="Hold down the Browse button to add more apps to the list." Foreground="Yellow" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="15,0,15,0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="-5,15,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Name="BrowseBtn" Content="Browse" MinWidth="100" Margin="0,0,10,0" Click="BrowseBtn_Click" Holding="BrowseBtn_Holding"/>
+                    <Button Name="InstallBtn" Content="Install" MinWidth="100" Click="InstallBtn_Click" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel Name="ManagerStack" Grid.Row="4" Margin="20,25,20,0">
+                    <TextBlock Text="Manager:" FontSize="25"/>
+                    <ComboBox Name="AppListCombo" MinWidth="150" Margin="6,5,4,0" HorizontalAlignment="Stretch" SelectionChanged="AppListCombo_SelectionChanged" VerticalAlignment="Top"/>
+                    <StackPanel Name="AppLoadStack" Margin="5,10,5,0">
+                        <TextBlock Name="AppLoadingText" Text="Loading..."/>
+                        <ProgressBar Name="AppLoadingProg" Margin="0,10,0,0"/>
+                    </StackPanel>
+                    <TextBlock Name="PacManMangerTip" Text="Hold down the App Folder or Data Folder button to copy the path to the clipboard." TextWrapping="Wrap" Foreground="Yellow" HorizontalAlignment="Center" Margin="0,10,0,0" Visibility="Collapsed"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                        <StackPanel Margin="0,0,10,0" MinHeight="200">
+                            <Button Name="LaunchBtn" Content="Launch" MinWidth="100" HorizontalAlignment="Stretch" Click="LaunchBtn_Click" Holding="LaunchBtn_Holding"/>
+                            <Button Name="MoveBtn" Content="Move" MinWidth="100" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="MoveBtn_Click" IsEnabled="False"/>
+                            <Button Name="AppFoldrBtn" Content="App Folder" MinWidth="100" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="AppFoldrBtn_Click" Holding="AppFoldrBtn_Holding"/>
+                            <Button Name="BackupBtn" Content="Backup" MinWidth="100" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="BackupBtn_Click" IsEnabled="False"/>
+                            <Button Name="EnableLoopbackBtn" Content="Enable Loopback" MinWidth="100" Margin="0,10,0,0" Click="LoopbackBtn_Click"/>
+                        </StackPanel>
+                        <StackPanel MinHeight="240">
+                            <Button Name="AppInfoBtn" Content="App Info" MinWidth="100" HorizontalAlignment="Stretch" Click="AppInfoBtn_Click"/>
+                            <Button Name="UninstallBtn" Content="Uninstall" MinWidth="100" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="UninstallBtn_Click"/>
+                            <Button Name="AppDataBtn" Content="Data Folder" MinWidth="100" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="AppDataBtn_Click" Holding="AppDataBtn_Holding"/>
+                            <Button Name="RestoreBtn" Content="Restore" MinWidth="100" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="RestoreBtn_Click" IsEnabled="False"/>
+                            <Button Name="DisableLoopbackBtn" Content="Disable Loopback" MinWidth="100" Margin="0,10,0,0" Click="LoopbackBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

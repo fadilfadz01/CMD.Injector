@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetIPInterface" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+
+    <DefaultNoun>NetIPInterface</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="InterfaceIndex">
+            <Type PSType="System.UInt32" />
+            <RegularQuery>
+              <CmdletParameterMetadata IsMandatory="false" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceAlias">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Aliases="ifAlias" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AddressFamily">
+            <Type PSType="NetIPInterface.AddressFamily" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Forwarding">
+            <Type PSType="NetIPInterface.Forwarding" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ClampMss">
+            <Type PSType="NetIPInterface.ClampMss" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Advertising">
+            <Type PSType="NetIPInterface.Advertising" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NlMtu">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="NlMtuBytes" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceMetric">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NeighborUnreachabilityDetection">
+            <Type PSType="NetIPInterface.NeighborUnreachabilityDetection" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="BaseReachableTime">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="BaseReachableTimeMs" Aliases="BaseReachableTime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ReachableTime">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="ReachableTimeMs" Aliases="ReachableTime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RetransmitTime">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="RetransmitTimeMs" Aliases="RetransmitTime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DadTransmits">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DadRetransmitTime">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="DadRetransmitTimeMs" Aliases="DadRetransmitTime" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RouterDiscovery">
+            <Type PSType="NetIPInterface.RouterDiscovery" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ManagedAddressConfiguration">
+            <Type PSType="NetIPInterface.ManagedAddressConfiguration" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="OtherStatefulConfiguration">
+            <Type PSType="NetIPInterface.OtherStatefulConfiguration" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="WeakHostSend">
+            <Type PSType="NetIPInterface.WeakHostSend" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="WeakHostReceive">
+            <Type PSType="NetIPInterface.WeakHostReceive" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="IgnoreDefaultRoutes">
+            <Type PSType="NetIPInterface.IgnoreDefaultRoutes" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AdvertisedRouterLifetime">
+            <Type PSType="System.TimeSpan" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AdvertiseDefaultRoute">
+            <Type PSType="NetIPInterface.AdvertiseDefaultRoute" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="CurrentHopLimit">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ForceArpNdWolPattern">
+            <Type PSType="NetIPInterface.ForceArpNdWolPattern" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DirectedMacWolPattern">
+            <Type PSType="NetIPInterface.DirectedMacWolPattern" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="EcnMarking">
+            <Type PSType="NetIPInterface.EcnMarking" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Dhcp">
+            <Type PSType="NetIPInterface.Dhcp" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ConnectionState">
+            <Type PSType="NetIPInterface.ConnectionState" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AutomaticMetric">
+            <Type PSType="NetIPInterface.AutomaticMetric" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NeighborDiscoverySupported">
+            <Type PSType="NetIPInterface.NeighborDiscoverySupported" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="CompartmentId">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetIPInterfaceRoute" ResultRole="Antecedent" SourceRole="Dependent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetRoute" />
+              <CmdletParameterMetadata PSName="AssociatedRoute" ValueFromPipeline="true" CmdletParameterSets="ByRoute"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetIPInterfaceIPAddress" ResultRole="Antecedent" SourceRole="Dependent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetIPAddress" />
+              <CmdletParameterMetadata PSName="AssociatedIPAddress" ValueFromPipeline="true" CmdletParameterSets="ByIPAddress" />
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetIPInterfaceNeighbor" ResultRole="Antecedent" SourceRole="Dependent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetNeighbor" />
+              <CmdletParameterMetadata PSName="AssociatedNeighbor" ValueFromPipeline="true" CmdletParameterSets="ByNeighbor" />
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetIPInterfaceAdapter" ResultRole="Antecedent" SourceRole="Dependent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetAdapter" />
+              <CmdletParameterMetadata PSName="AssociatedAdapter" ValueFromPipeline="true" CmdletParameterSets="ByAdapter" />
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+    	<QueryOptions>
+         <Option OptionName="PolicyStore">
+          <Type PSType="System.String"/>
+          <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName"/>     
+         </Option>
+         <Option OptionName="IncludeAllCompartments">
+          <Type PSType="System.Management.Automation.SwitchParameter"/>
+          <CmdletParameterMetadata IsMandatory="false" />
+         </Option> 
+        </QueryOptions>  
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="Forwarding">
+              <Type PSType="NetIPInterface.Forwarding" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ClampMss">
+              <Type PSType="NetIPInterface.ClampMss" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="Advertising">
+              <Type PSType="NetIPInterface.Advertising" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="NlMtu">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="NlMtuBytes" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="InterfaceMetric">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="NeighborUnreachabilityDetection">
+              <Type PSType="NetIPInterface.NeighborUnreachabilityDetection" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="BaseReachableTime">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="BaseReachableTimeMs" Aliases="BaseReachableTime" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RetransmitTime">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="RetransmitTimeMs" Aliases="RetransmitTime" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DadTransmits">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DadRetransmitTime">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="DadRetransmitTimeMs" Aliases="DadRetransmitTime" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="RouterDiscovery">
+              <Type PSType="NetIPInterface.RouterDiscovery" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ManagedAddressConfiguration">
+              <Type PSType="NetIPInterface.ManagedAddressConfiguration" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="OtherStatefulConfiguration">
+              <Type PSType="NetIPInterface.OtherStatefulConfiguration" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="WeakHostSend">
+              <Type PSType="NetIPInterface.WeakHostSend" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="WeakHostReceive">
+              <Type PSType="NetIPInterface.WeakHostReceive" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="IgnoreDefaultRoutes">
+              <Type PSType="NetIPInterface.IgnoreDefaultRoutes" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AdvertisedRouterLifetime">
+              <Type PSType="System.TimeSpan" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AdvertiseDefaultRoute">
+              <Type PSType="NetIPInterface.AdvertiseDefaultRoute" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="CurrentHopLimit">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ForceArpNdWolPattern">
+              <Type PSType="NetIPInterface.ForceArpNdWolPattern" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DirectedMacWolPattern">
+              <Type PSType="NetIPInterface.DirectedMacWolPattern" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="EcnMarking">
+              <Type PSType="NetIPInterface.EcnMarking" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="Dhcp">
+              <Type PSType="NetIPInterface.Dhcp" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AutomaticMetric">
+              <Type PSType="NetIPInterface.AutomaticMetric" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <RegularQuery>
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifIndex" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <RegularQuery>
+                <CmdletParameterMetadata IsMandatory="false" Aliases="ifAlias" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="AddressFamily">
+              <Type PSType="NetIPInterface.AddressFamily" />
+              <RegularQuery>
+                <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="ReachableTime">
+              <Type PSType="System.UInt32" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="NeighborDiscoverySupported">
+              <Type PSType="NetIPInterface.NeighborDiscoverySupported" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="CompartmentId">
+              <Type PSType="System.UInt32" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+    	  <QueryOptions>
+           <Option OptionName="PolicyStore">
+            <Type PSType="System.String"/>
+            <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName"/>     
+           </Option> 
+           <Option OptionName="IncludeAllCompartments">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata IsMandatory="false" />
+           </Option> 
+          </QueryOptions>  
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetIPInterface.AddressFamily" UnderlyingType="System.UInt16">
+      <Value Name="IPv4" Value="2" />
+      <Value Name="IPv6" Value="23" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.Store" UnderlyingType="System.Byte">
+      <Value Name="PersistentStore" Value="0" />
+      <Value Name="ActiveStore" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.Forwarding" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.ClampMss" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.Advertising" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.NeighborUnreachabilityDetection" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.RouterDiscovery" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+      <Value Name="ControlledByDHCP" Value="2" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.ManagedAddressConfiguration" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.OtherStatefulConfiguration" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.WeakHostSend" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.WeakHostReceive" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.IgnoreDefaultRoutes" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.AdvertiseDefaultRoute" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.ForceArpNdWolPattern" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.DirectedMacWolPattern" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.EcnMarking" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="UseEct1" Value="1" />
+      <Value Name="UseEct0" Value="2" />
+      <Value Name="AppDecide" Value="3" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.Dhcp" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.ConnectionState" UnderlyingType="System.Byte">
+      <Value Name="Disconnected" Value="0" />
+      <Value Name="Connected" Value="1" />
+    </Enum>
+    <Enum EnumName="NetIPInterface.AutomaticMetric" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum> 	
+    <Enum EnumName="NetIPInterface.NeighborDiscoverySupported" UnderlyingType="System.Byte">
+      <Value Name="No" Value="0" />
+      <Value Name="Yes" Value="1" />
+    </Enum>	
+  </Enums>
+
+</PowerShellMetadata>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterBinding.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterBinding cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterBinding_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterBindingSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterBindingSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>30</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>DisplayName</label>
+          <Width>50</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ComponentID</label>
+          <Width>20</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>Enabled</label>
+          <Width>12</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>DisplayName</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>ComponentID</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              $out=""
+              $out = if($_.Enabled -eq $true) {"True"} else {"False"}
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

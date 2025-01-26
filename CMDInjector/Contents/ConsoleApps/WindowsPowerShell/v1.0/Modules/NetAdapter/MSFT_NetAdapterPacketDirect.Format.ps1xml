@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterPacketDirect.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterPacketDirect cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+
+    <View>
+      <Name>MSFT_NetAdapterPacketDirectSettingData_TableView</Name>
+      <ViewSelectedBy>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT\StandardCimv2\MSFT_NetAdapterPacketDirectSettingData</TypeName>
+       <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPacketDirectSettingData</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+           <label>Name</label>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <label>InterfaceDescription</label>
+            <Width>20</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <label>Enabled</label>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <label>Operational</label>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <label>DomainId</label>
+            <Width>10</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <label>DiagnosticCode</label>
+            <Width>15</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <ScriptBlock>
+                Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+                Format-AdapterName $_.Name 12
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+                Format-AdapterInstanceID $_.InterfaceDescription 20
+                </ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Enabled</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Operational</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DomainId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>
+                [Convert]::ToString($_.DiagnosticCode, 16)
+                </ScriptBlock>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>MSFT_NetAdapterPacketDirectSettingData_ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPacketDirectSettingData</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPacketDirectSettingData</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>Name</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Enabled</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Operational</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DomainId</PropertyName>
+              </ListItem>
+              <ListItem>
+                <label>DiagnosticCode</label>
+                <ScriptBlock>
+                [Convert]::ToString($_.DiagnosticCode, 16)
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <label>Capabilities</label>
+                <ScriptBlock>
+                ($_.Capabilities|fl|out-string).Trim()
+                </ScriptBlock>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>MSFT_NetAdapter_PacketDirectCapabilities</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter_PacketDirectCapabilities</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter_PacketDirectCapabilities</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+                <ListItem>
+                  <PropertyName>DrainNotificationSupported</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>ModerationByIntervalSupported</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>ModerationByCountSupported</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MinimumModerationInterval</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumModerationInterval</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>ModerationIntervalGranularity</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumTxPartialBufferCount</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumRxPartialBufferCount</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumNumberOfRxQueues</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumNumberOfTxQueues</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumNumberOfRxQueuesForDefaultVPort</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumNumberOfTxQueuesForDefaultVPort</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumNumberOfRxQueuesPerNonDefaultVPort</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumNumberOfTxQueuesPerNonDefaultVPort</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumRxQueueSize</PropertyName>
+                </ListItem>
+                <ListItem>
+                  <PropertyName>MaximumTxQueueSize</PropertyName>
+                </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>

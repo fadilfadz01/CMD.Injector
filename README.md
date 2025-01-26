@@ -2,6 +2,9 @@
 A command prompt for Windows 10 Mobile.
 
 
+Since the app has reached its goal, I’ve decided to release the source code for the CMD Injector project (from 2021) as a token of remembrance. This was my first project after learning to code, so please excuse the messy code.
+
+
 ### Disclaimer
 > Author does not take responsibility for any damage of the phone caused by the app. You are using this app solely at your own risk.
 

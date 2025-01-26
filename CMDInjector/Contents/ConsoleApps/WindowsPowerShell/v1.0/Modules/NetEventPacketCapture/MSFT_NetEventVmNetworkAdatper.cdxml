@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/StandardCimv2/MSFT_NetEventVmNetworkAdapter" ClassVersion="1.0.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetEventVmNetworkAdapter</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetEventCaptureTarget_CaptureProvider" ResultRole="PartComponent" SourceRole="GroupComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventPacketCaptureProvider" />
+              <CmdletParameterMetadata PSName="AssociatedPacketCaptureProvider" ValueFromPipeline = "true"  CmdletParameterSets="ByProviderOfTarget"/> 
+            </AssociatedInstance>
+          </Association> 
+        </QueryableAssociations>
+      </GetCmdletParameters>
+
+      <GetCmdlet>
+        <CmdletMetadata Verb="Get" />
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetEventCaptureTarget_CaptureProvider" ResultRole="PartComponent" SourceRole="GroupComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventPacketCaptureProvider" />
+              <CmdletParameterMetadata PSName="AssociatedPacketCaptureProvider" ValueFromPipeline = "true"  CmdletParameterSets="ByProviderOfTarget"/> 
+            </AssociatedInstance>
+          </Association> 
+        </QueryableAssociations>
+          <QueryOptions>
+            <Option OptionName="ShowInstalled">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </GetCmdlet>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High" />
+        <Method MethodName="cim:DeleteInstance" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+
+    </InstanceCmdlets>    
+    <StaticCmdlets>
+        <Cmdlet>
+        <CmdletMetadata Verb="Add" ConfirmImpact="High"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="Name">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+    </Method>
+     </Cmdlet>
+   </StaticCmdlets>
+  </Class>
+</PowerShellMetadata>

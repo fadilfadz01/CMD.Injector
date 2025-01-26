@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_DNSClient" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>DnsClient</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="InterfaceIndex">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" ValueFromPipeline="true" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceAlias">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Position="0" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ConnectionSpecificSuffix">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Aliases="Suffix" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RegisterThisConnectionsAddress">
+            <Type PSType="System.Boolean" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="UseSuffixWhenRegistering">
+            <Type PSType="System.Boolean" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Low"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="ConnectionSpecificSuffix">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" Aliases="Suffix" />
+            </Parameter>
+            <Parameter ParameterName="RegisterThisConnectionsAddress">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="UseSuffixWhenRegistering">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:ResetConnectionSpecificSuffix">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata IsMandatory="false" PSName="ResetConnectionSpecificSuffix" Aliases="ResetSuffix" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByAlias">
+          <QueryableProperties>
+            <Property PropertyName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="true" CmdletParameterSets="ByName" ValueFromPipeline="true" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" CmdletParameterSets="ByAlias" Position="0" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="Register" ConfirmImpact="Low"/>
+        <Method MethodName="Register">
+          <ReturnValue>
+            <Type PSType="System.UInt32"/>
+            <CmdletOutputMetadata>
+               <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+</PowerShellMetadata>

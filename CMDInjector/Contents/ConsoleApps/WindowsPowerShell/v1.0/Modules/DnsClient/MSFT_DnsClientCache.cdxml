@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_DNSClientCache" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>DnsClientCache</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Entry">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Position="0" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Name">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Aliases="RecordName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Type">
+            <Type PSType="DnsClientCache.Type" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Aliases="RecordType" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Status">
+            <Type PSType="DnsClientCache.Status" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Section">
+            <Type PSType="DnsClientCache.Section" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="TimeToLive">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Aliases="TTL" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DataLength">
+            <Type PSType="System.UInt16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Data">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+    </InstanceCmdlets>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="Clear" ConfirmImpact="Low"/>
+        <Method MethodName="Clear">
+          <ReturnValue>
+            <Type PSType="System.UInt32"/>
+            <CmdletOutputMetadata>
+               <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="DnsClientCache.Type" UnderlyingType="System.UInt16">
+      <Value Name="A" Value="1" />
+      <Value Name="NS" Value="2" />
+      <Value Name="CNAME" Value="5" />
+      <Value Name="SOA" Value="6" />
+      <Value Name="PTR" Value="12" />
+      <Value Name="MX" Value="15" />
+      <Value Name="AAAA" Value="28" />
+      <Value Name="SRV" Value="33" />
+    </Enum>
+    <Enum EnumName="DnsClientCache.Status" UnderlyingType="System.UInt32">
+      <Value Name="Success" Value="0" />
+      <Value Name="NotExist" Value="9003" />
+      <Value Name="NoRecords" Value="9701" />
+    </Enum>
+    <Enum EnumName="DnsClientCache.Section" UnderlyingType="System.Byte">
+      <Value Name="Answer" Value="1" />
+      <Value Name="Authority" Value="2" />
+      <Value Name="Additional" Value="3" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

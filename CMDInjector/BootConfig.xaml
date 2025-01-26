@@ -1,0 +1,103 @@
+﻿<Page
+    x:Class="CMDInjector.BootConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="BOOTCONFIG" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="GUI Boot Configuration Data customizer." Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="270"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="Boot Manager:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Default" FontSize="18" Margin="25,0,0,0"/>
+                    <ComboBox Name="DefaultBox" Margin="40,0,0,0" MaxWidth="250" MinWidth="150" IsEnabled="False" SelectionChanged="DefaultBox_SelectionChanged"/>
+                    <TextBlock Text="DisplayOrder" FontSize="18" Margin="25,10,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ListBox Name="DisplayOrderList" BorderThickness="2" BorderBrush="{ThemeResource AppAccentColor}" SelectionMode="Single" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="130" MinWidth="150" Margin="40,0,0,0"/>
+                        <StackPanel VerticalAlignment="Center">
+                            <Button Name="AddBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE710;" Height="30" Margin="0,0,0,3">
+                                <Button.Flyout>
+                                    <MenuFlyout x:Name="AddFlyMenu"></MenuFlyout>
+                                </Button.Flyout>
+                            </Button>
+                            <Button Name="RemoveBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE738;" Height="30" Margin="0,0,0,3" Click="RemoveBtn_Click"/>
+                            <Button Name="MoveUpBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74A;" Height="30" Margin="0,0,0,3" Click="MoveUpBtn_Click"/>
+                            <Button Name="SaveBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74e;" Height="30" IsEnabled="False" Click="SaveBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="TestSigning" FontSize="18" Margin="25,10,0,0"/>
+                    <ToggleSwitch Name="ManTestSigningTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="ManTestSigningTog_Toggled"/>
+                    <TextBlock Text="NoIntegrityChecks" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="ManNoIntegrityChecksTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="ManNoIntegrityChecksTog_Toggled"/>
+                    <StackPanel Name="TimeoutStack" Margin="0,0,0,5" Visibility="Visible">
+                        <TextBlock Text="TimeOut" FontSize="18" Margin="25,0,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="TimeoutBox" InputScope="Number" MaxLength="2" MinWidth="150" Margin="40,0,0,0" TextChanged="TimeoutBox_TextChanged"/>
+                            <Button Name="TimeoutBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74e;" Height="30" Click="TimeoutBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="DisplayBootMenu" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="BootMenuTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="BootMenuTog_Toggled"/>
+                    <TextBlock Text="Volume up" FontSize="18" Margin="25,0,0,0"/>
+                    <ComboBox Name="VolUpBox" Margin="40,0,0,0" MaxWidth="250" MinWidth="150" IsEnabled="False" SelectionChanged="VolUpBox_SelectionChanged">
+                    </ComboBox>
+                    <TextBlock Text="Volume down" FontSize="18" Margin="25,10,0,0"/>
+                    <ComboBox Name="VolDownBox" Margin="40,0,0,0" MaxWidth="250" MinWidth="150" IsEnabled="False" SelectionChanged="VolDownBox_SelectionChanged"></ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,15,0,0">
+                    <TextBlock Text="Boot Loader:" FontSize="25" Margin="20,5,0,0"/>
+                    <TextBlock Text="Description" FontSize="18" Margin="25,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="DescriptionBox" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Margin="40,0,0,0" MinWidth="150" MaxLength="20" TextChanged="DescriptionBox_TextChanged"/>
+                        <Button Name="DescriptionBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74e;" Height="30" Click="DescriptionBtn_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="TestSigning" FontSize="18" Margin="25,10,0,0"/>
+                    <ToggleSwitch Name="LoadTestSigningTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="LoadTestSigningTog_Toggled"/>
+                    <TextBlock Text="NoIntegrityChecks" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="LoadNoIntegrityChecksTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="LoadNoIntegrityChecksTog_Toggled"/>
+                    <TextBlock Text="FlightSigning" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="LoadFlightSignTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="LoadFlightSignTog_Toggled"/>
+                    <TextBlock Text="BootMenuPolicy" FontSize="18" Margin="25,0,0,0"/>
+                    <ComboBox Name="BootMenuPolBox" Margin="40,0,0,0" MinWidth="150" SelectionChanged="BootMenuPolBox_SelectionChanged">
+                        <ComboBoxItem Content="Legacy"/>
+                        <ComboBoxItem Content="Standard"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,15,0,0">
+                    <TextBlock Text="Boot Loader Settings:" FontSize="25" Margin="20,5,0,0"/>
+                    <TextBlock Text="AdvancedOptions" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="AdvOptTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="AdvOptTog_Toggled"/>
+                    <TextBlock Text="OptionsEdit" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="OptEditTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="OptEditTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,15,0,0">
+                    <TextBlock Text="Developer Menu:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Installation" FontSize="18" Margin="25,0,0,0"/>
+                    <Button Name="DevMenuBtn" Content="Install" Margin="40,0,0,0" IsEnabled="False" MinWidth="100" Click="DevMenuBtn_Click"/>
+                    <TextBlock Text="TestSigning" FontSize="18" Margin="25,10,0,0"/>
+                    <ToggleSwitch Name="DevTestSigningTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="DevTestSigningTog_Toggled"/>
+                    <TextBlock Text="NoIntegrityChecks" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="DevNoIntegrityChecksTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="DevNoIntegrityChecksTog_Toggled"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -1,0 +1,1295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{B78C393A-102A-4CF8-AE46-9B8DC7E7815C}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMDInjector</RootNamespace>
+    <AssemblyName>CMDInjector</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Never</AppxBundle>
+    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <PackageCertificateKeyFile>CMDInjector_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <PackageCertificateThumbprint>432228F7490BFFA9C55413A299434620622A5AF5</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BootConfig.xaml.cs">
+      <DependentUpon>BootConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Changelog.cs" />
+    <Compile Include="CMDInjector.xaml.cs">
+      <DependentUpon>CMDInjector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\InstalledFont.cs" />
+    <Compile Include="SplashAnimation.xaml.cs">
+      <DependentUpon>SplashAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.xaml.cs">
+      <DependentUpon>Startup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Images2Video.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacMan.xaml.cs">
+      <DependentUpon>PacMan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\SuspensionManager.cs" />
+    <Compile Include="Terminal.xaml.cs">
+      <DependentUpon>Terminal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Snapper.xaml.cs">
+      <DependentUpon>Snapper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\TelnetInterface.cs" />
+    <Compile Include="TweaksBox.xaml.cs">
+      <DependentUpon>TweaksBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomContentDialog.xaml.cs">
+      <DependentUpon>CustomContentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icons\Extensions\PmbakExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Menus\AboutMenuTileLogo.png" />
+    <Content Include="Assets\Icons\VolumeOptions\DownVolumeOptionTileLogo.png" />
+    <Content Include="Assets\Icons\VolumeOptions\MuteVolumeOptionTileLogo.png" />
+    <Content Include="Assets\Icons\VolumeOptions\UpVolumeOptionTileLogo.png" />
+    <Content Include="Assets\Images\Bootscreens\ShutdownImage.png" />
+    <Content Include="Assets\Images\Splashscreens\Blur_Dark.gif" />
+    <Content Include="Assets\Images\Splashscreens\Blur_Light.gif" />
+    <Content Include="Assets\Images\Splashscreens\Glitch_Dark.gif" />
+    <Content Include="Assets\Images\Splashscreens\Glitch_Light.gif" />
+    <Content Include="Assets\Images\Splashscreens\Wind_Dark.gif" />
+    <Content Include="Assets\Images\Splashscreens\Wind_Light.gif" />
+    <Content Include="Assets\Icons\Extensions\PmlogExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Folders\ExplorerFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\BootConfigMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\DocumentsFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\DownloadsFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\FavoritesFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\GamesFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\MusicFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\PicturesFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\UserFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Folders\VideosFolderTileLogo.png" />
+    <Content Include="Assets\Icons\Extensions\AppxExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Extensions\AppxbundleExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Extensions\XapExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Menus\HelpMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\HomeMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\TweakBoxMenuTileLogo.png" />
+    <Content Include="Assets\Icons\PowerOptions\FFULoaderPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\PowerOptions\LockscreenPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\PacManMenuTileLogo.png" />
+    <Content Include="Assets\Icons\PowerOptions\RestartPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\SettingsMenuTileLogo.png" />
+    <Content Include="Assets\Icons\PowerOptions\ShutdownPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\SnapperMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\StartupMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\TerminalMenuTileLogo.png" />
+    <Content Include="Assets\Images\Bootscreens\BootupImage.png" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_000.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_001.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_002.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_003.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_004.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_005.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_006.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_007.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_008.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_009.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_010.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_011.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_012.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_013.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_014.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_015.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_016.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_017.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_018.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_019.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_020.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_021.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_022.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_023.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_024.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_025.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_026.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_027.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_028.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_029.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_030.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_031.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_032.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_033.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_034.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_035.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_036.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_037.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_038.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_039.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_040.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_041.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_042.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_043.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_044.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_045.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_046.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_047.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_048.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Flowers\Flowers_049.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_000.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_001.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_002.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_003.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_004.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_005.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_006.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_007.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_008.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_009.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_010.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_011.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_012.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_013.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_014.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_015.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_016.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_017.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_018.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_019.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_020.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_021.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_022.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_023.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_024.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_025.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_026.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_027.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_028.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_029.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_030.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_031.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_032.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_033.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_034.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_035.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_036.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_037.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_038.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_039.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_040.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_041.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_042.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_043.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_044.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_045.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_046.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_047.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_048.jpg" />
+    <Content Include="Assets\Images\Lockscreens\RedMoon\RedMoon_049.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_000.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_001.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_002.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_003.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_004.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_005.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_006.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_007.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_008.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_009.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_010.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_011.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_012.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_013.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_014.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_015.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_016.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_017.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_018.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_019.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_020.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_021.png" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_022.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_023.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_024.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_025.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_026.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_027.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_028.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Stripes\Stripes_029.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_000.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_001.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_002.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_003.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_004.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_005.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_006.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_007.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_008.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_009.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_010.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_011.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_012.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_013.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_014.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_015.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_016.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_017.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_018.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_019.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_020.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_021.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_022.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_023.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_024.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_025.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_026.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_027.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_028.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_029.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_030.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_031.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_032.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_033.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_034.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_035.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_036.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_037.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_038.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_039.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_040.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_041.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_042.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_043.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_044.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_045.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_046.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_047.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_048.jpg" />
+    <Content Include="Assets\Images\Lockscreens\Timelapse\Timelapse_049.jpg" />
+    <Content Include="Assets\Images\Transitions\Transparent.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\Sounds\Tick.wav" />
+    <Content Include="Assets\Sounds\Error.wav" />
+    <Content Include="Assets\Sounds\Lock.wav" />
+    <Content Include="Assets\Sounds\Alert.wav" />
+    <Content Include="Assets\Sounds\Capture.wav" />
+    <Content Include="Assets\Sounds\StartRecord.wav" />
+    <Content Include="Assets\Sounds\StopRecord.wav" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Contents\ConsoleApps\fc.exe" />
+    <Content Include="Contents\ConsoleApps\InputProcessorClient.dll" />
+    <Content Include="Contents\GlanceScreen\NsgGlance_NlpmServiceImpl_4.1.12.4.dll" />
+    <Content Include="Contents\GlanceScreen\NsgGlance_NlpmService_4.1.12.4.dll" />
+    <Content Include="Contents\ConsoleApps\accesschk.exe" />
+    <Content Include="Contents\ConsoleApps\AppXTest.Common.Feature.DeployAppx.dll" />
+    <Content Include="Contents\ConsoleApps\attrib.exe" />
+    <Content Include="Contents\ConsoleApps\bcdboot.exe" />
+    <Content Include="Contents\ConsoleApps\bcdedit.exe" />
+    <Content Include="Contents\Bootsh\bootshsvc.dll" />
+    <Content Include="Contents\ConsoleApps\certmgr.exe" />
+    <Content Include="Contents\ConsoleApps\CheckNetIsolation.exe" />
+    <Content Include="Contents\ConsoleApps\chkdsk.exe" />
+    <Content Include="Contents\ConsoleApps\cmd.exe" />
+    <Content Include="Contents\ConsoleApps\cmdkey.exe" />
+    <Content Include="Contents\ConsoleApps\CoreClrPowerShellExt\v1.0\Microsoft.PowerShell.CoreCLR.AssemblyLoadContext.dll" />
+    <Content Include="Contents\ConsoleApps\cscript.exe" />
+    <Content Include="Contents\ConsoleApps\dcopy.exe" />
+    <Content Include="Contents\ConsoleApps\depends.exe" />
+    <Content Include="Contents\ConsoleApps\DeployAppx.exe" />
+    <Content Include="Contents\ConsoleApps\DeployUtil.exe" />
+    <Content Include="Contents\ConsoleApps\devcon.exe" />
+    <Content Include="Contents\ConsoleApps\DevToolsLauncher.exe" />
+    <Content Include="Contents\ConsoleApps\DIALTESTWP8.EXE" />
+    <Content Include="Contents\ConsoleApps\Dism.exe" />
+    <Content Include="Contents\ConsoleApps\Dism\AppxProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\AssocProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\CbsProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\CompatProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DismCore.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DismCorePS.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DismHost.exe" />
+    <Content Include="Contents\ConsoleApps\Dism\DismProv.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DmiProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\FfuProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\FolderProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\GenericProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\IBSProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\ImagingProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\IntlProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\LogProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\MsiProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\OfflineSetupProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\OSProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\ProvProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\SmiProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\TransmogProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\UnattendProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\VhdProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\WimProvider.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\clrcompression.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\clretwrc.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\coreclr.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\Microsoft.CSharp.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\Microsoft.VisualBasic.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\Microsoft.Win32.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\Microsoft.Win32.Registry.AccessControl.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\Microsoft.Win32.Registry.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\mscorlib.ni.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\mscorrc.debug.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\mscorrc.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.AppContext.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Buffers.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Collections.Concurrent.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Collections.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Collections.Immutable.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Collections.NonGeneric.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Collections.Specialized.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ComponentModel.Annotations.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ComponentModel.DataAnnotations.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ComponentModel.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ComponentModel.EventBasedAsync.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ComponentModel.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ComponentModel.TypeConverter.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Console.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Core.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Data.Common.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.Contracts.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.Debug.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.Process.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.StackTrace.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.TextWriterTraceListener.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.Tools.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.TraceSource.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Diagnostics.Tracing.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Dynamic.Runtime.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Globalization.Calendars.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Globalization.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Globalization.Extensions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.Compression.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.Compression.ZipFile.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.FileSystem.AccessControl.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.FileSystem.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.FileSystem.Watcher.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.MemoryMappedFiles.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.Packaging.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.Pipes.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.IO.UnmanagedMemoryStream.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Linq.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Linq.Expressions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Linq.Parallel.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Linq.Queryable.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.Http.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.Http.WinHttpHandler.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.NameResolution.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.NetworkInformation.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.Ping.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.Requests.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.Security.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.Sockets.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.WebHeaderCollection.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.WebSockets.Client.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Net.WebSockets.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Numerics.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Numerics.Vectors.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ObjectModel.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Private.DataContractSerialization.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Private.ServiceModel.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Private.Uri.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.DispatchProxy.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.Emit.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.Emit.ILGeneration.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.Emit.Lightweight.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.Extensions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.Metadata.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Reflection.TypeExtensions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Resources.ReaderWriter.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Resources.ResourceManager.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.CompilerServices.VisualC.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Extensions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Handles.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.InteropServices.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.InteropServices.PInvoke.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Loader.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Numerics.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Serialization.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Serialization.Json.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Serialization.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Runtime.Serialization.Xml.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.AccessControl.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Claims.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Cryptography.Cng.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Cryptography.Csp.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Cryptography.OpenSsl.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Principal.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.Principal.Windows.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Security.SecureString.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceModel.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceModel.Duplex.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceModel.Http.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceModel.NetTcp.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceModel.Primitives.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceModel.Security.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceModel.Web.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.ServiceProcess.ServiceController.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Text.Encoding.CodePages.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Text.Encoding.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Text.Encoding.Extensions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Text.Encodings.Web.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Text.RegularExpressions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.AccessControl.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.Overlapped.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.Tasks.Dataflow.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.Tasks.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.Tasks.Parallel.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.Thread.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.ThreadPool.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Threading.Timer.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Windows.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.Linq.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.ReaderWriter.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.Serialization.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.XDocument.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.XmlDocument.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.XmlSerializer.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.XPath.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.XPath.XDocument.dll" />
+    <Content Include="Contents\ConsoleApps\DotNetCore\v1.0\System.Xml.XPath.XmlDocument.dll" />
+    <Content Include="Contents\ConsoleApps\find.exe" />
+    <Content Include="Contents\ConsoleApps\findstr.exe" />
+    <Content Include="Contents\ConsoleApps\finger.exe" />
+    <Content Include="Contents\ConsoleApps\FolderPermissions.exe" />
+    <Content Include="Contents\ConsoleApps\ftp.exe" />
+    <Content Include="Contents\ConsoleApps\ftpd.exe" />
+    <Content Include="Contents\ConsoleApps\FveEnable.exe" />
+    <Content Include="Contents\ConsoleApps\gbot.exe" />
+    <Content Include="Contents\ConsoleApps\gse.dll" />
+    <Content Include="Contents\ConsoleApps\help.exe" />
+    <Content Include="Contents\ConsoleApps\HOSTNAME.EXE" />
+    <Content Include="Contents\ConsoleApps\icacls.exe" />
+    <Content Include="Contents\ConsoleApps\imagex.exe" />
+    <Content Include="Contents\ConsoleApps\IoTSettings.exe" />
+    <Content Include="Contents\ConsoleApps\IoTShell.exe" />
+    <Content Include="Contents\ConsoleApps\iotstartup.exe" />
+    <Content Include="Contents\ConsoleApps\ipconfig.exe" />
+    <Content Include="Contents\ConsoleApps\kill.exe" />
+    <Content Include="Contents\ConsoleApps\label.exe" />
+    <Content Include="Contents\ConsoleApps\logman.exe" />
+    <Content Include="Contents\ConsoleApps\MinDeployAppX.exe" />
+    <Content Include="Contents\ConsoleApps\minshutdown.exe" />
+    <Content Include="Contents\ConsoleApps\mountvol.exe" />
+    <Content Include="Contents\ConsoleApps\msnap.exe" />
+    <Content Include="Contents\ConsoleApps\mwkdbgctrl.exe" />
+    <Content Include="Contents\ConsoleApps\net.exe" />
+    <Content Include="Contents\ConsoleApps\net1.exe" />
+    <Content Include="Contents\ConsoleApps\neth.dll" />
+    <Content Include="Contents\ConsoleApps\neth.exe" />
+    <Content Include="Contents\ConsoleApps\netsh.exe" />
+    <Content Include="Contents\ConsoleApps\nslookup.exe" />
+    <Content Include="Contents\ConsoleApps\pacmanerr.dll" />
+    <Content Include="Contents\ConsoleApps\pacman_ierror.dll" />
+    <Content Include="Contents\ConsoleApps\ping.exe" />
+    <Content Include="Contents\ConsoleApps\PMTestErrorLookup.exe" />
+    <Content Include="Contents\ConsoleApps\PowerTool.exe" />
+    <Content Include="Contents\ConsoleApps\ProvisioningTool.exe" />
+    <Content Include="Contents\ConsoleApps\recover.exe" />
+    <Content Include="Contents\ConsoleApps\reg.exe" />
+    <Content Include="Contents\ConsoleApps\regsvr32.exe" />
+    <Content Include="Contents\ConsoleApps\replace.exe" />
+    <Content Include="Contents\ConsoleApps\sc.exe" />
+    <Content Include="Contents\ConsoleApps\ScreenCapture.exe" />
+    <Content Include="Contents\ConsoleApps\SendKeys.exe" />
+    <Content Include="Contents\ConsoleApps\setbootoption.exe" />
+    <Content Include="Contents\ConsoleApps\setcomputername.exe" />
+    <Content Include="Contents\ConsoleApps\SetDisplayResolution.exe" />
+    <Content Include="Contents\ConsoleApps\setx.exe" />
+    <Content Include="Contents\ConsoleApps\sfpdisable.exe" />
+    <Content Include="Contents\ConsoleApps\shutdown.exe" />
+    <Content Include="Contents\ConsoleApps\SirepController.exe" />
+    <Content Include="Contents\ConsoleApps\sleep.exe" />
+    <Content Include="Contents\ConsoleApps\sort.exe" />
+    <Content Include="Contents\ConsoleApps\takeown.exe" />
+    <Content Include="Contents\ConsoleApps\TaskSchUtil.exe" />
+    <Content Include="Contents\ConsoleApps\telnetd.exe" />
+    <Content Include="Contents\ConsoleApps\TestDeploymentInfo.dll" />
+    <Content Include="Contents\ConsoleApps\TestNavigationApi.exe" />
+    <Content Include="Contents\ConsoleApps\TH.exe" />
+    <Content Include="Contents\ConsoleApps\tlist.exe" />
+    <Content Include="Contents\ConsoleApps\TouchRecorder.exe" />
+    <Content Include="Contents\ConsoleApps\tracelog.exe" />
+    <Content Include="Contents\ConsoleApps\tzutil.exe" />
+    <Content Include="Contents\ConsoleApps\VaultCmd.exe" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\en-US\default.help.txt" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\microsoft.codeanalysis.csharp.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\microsoft.codeanalysis.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.Management.Infrastructure.CimCmdlets.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.Management.Infrastructure.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.Management.Infrastructure.Native.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.Management.Infrastructure.Native.Unmanaged.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.PowerShell.Commands.Diagnostics.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.PowerShell.Commands.Management.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.PowerShell.Commands.Utility.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.PowerShell.ConsoleHost.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.PowerShell.CoreCLR.Eventing.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.PowerShell.Security.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.WSMan.Management.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Microsoft.WSMan.Runtime.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Appx\en\Microsoft.Windows.Appx.PackageManager.Commands.Resources.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Appx\Microsoft.Windows.Appx.PackageManager.Commands.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\dnslookup.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.LocalAccounts\1.0.0.0\en\Microsoft.PowerShell.LocalAccounts.Resources.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.LocalAccounts\1.0.0.0\Microsoft.PowerShell.LocalAccounts.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\en\Microsoft.Windows.Firewall.Commands.Resources.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\Microsoft.Windows.Firewall.Commands.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PKI\en\Microsoft.CertificateServices.PKIClient.Cmdlets.Resources.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PKI\Microsoft.CertificateServices.PKIClient.Cmdlets.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\TrustedPlatformModule\Microsoft.Tpm.Commands.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\powershell.exe" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\PSEvents.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\pwrshsip.dll" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\Maml_HTML.xsl" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\Maml_HTML_Style.xsl" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\System.Management.Automation.dll" />
+    <Content Include="Contents\ConsoleApps\WPConPlatDev.exe" />
+    <Content Include="Contents\ConsoleApps\xcopy.exe" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BootConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CMDInjector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Startup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PacMan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Terminal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Snapper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TweaksBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomContentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Uwp">
+      <Version>4.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.Direct2D1">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.DXGI">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="XamlBrewer.Uwp.AnimatedSplashScreen">
+      <Version>1.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\ConsoleApps\Dism\en-US\AppxProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\AssocProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\CbsProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\CompatProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\DismCore.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\DismProv.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\DmiProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\FfuProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\FolderProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\GenericProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\IBSProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\ImagingProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\IntlProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\LogProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\MsiProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\OfflineSetupProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\OSProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\ProvProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\SmiProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\TransmogProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\UnattendProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\VhdProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\WimProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\attrib.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\bcdboot.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\cmd.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\cmdkey.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\cscript.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\Dism.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\find.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\findstr.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\finger.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\ftp.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\help.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\hostname.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\ICacls.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\ipconfig.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\label.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\mountvol.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\neth.dll.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\netsh.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\nslookup.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\ping.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\recover.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\reg.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\regsvr32.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\replace.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\sc.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\setx.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\sort.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\takeown.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\tzutil.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\VaultCmd.exe.mui" />
+    <Content Include="Contents\ConsoleApps\format.com" />
+    <Content Include="Contents\BatchScripts\SystemWide.bat" />
+    <Content Include="Contents\ConsoleApps\tree.com" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\ConsoleApps\en-US\CheckNetIsolation.exe.mui" />
+    <Content Include="Contents\Bootsh\bootshsvc.dll.mui" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\en-US\powershell.exe.mui" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\en-US\PSEvents.dll.mui" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Examples\profile.ps1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\base.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\baseConditional.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\block.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\blockCommon.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\blockSoftware.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\command.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\conditionSet.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developer.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerCommand.rld" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerCommand.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerDscResource.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManaged.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedClass.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedConstructor.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedDelegate.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedEnumeration.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedEvent.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedField.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedInterface.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedMethod.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedNamespace.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedOperator.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedOverload.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedProperty.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerManagedStructure.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerReference.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerStructure.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\developerXaml.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\endUser.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\faq.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\glossary.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\hierarchy.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\inline.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\inlineCommon.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\inlineSoftware.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\inlineUi.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\ITPro.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\Maml.rld" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\Maml.tbr" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\Maml.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\Maml.xsx">
+      <DependentUpon>Maml.xsd</DependentUpon>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\ManagedDeveloper.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\ManagedDeveloperStructure.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\ProviderHelp.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\shellExecute.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\structure.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\structureGlossary.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\structureList.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\structureProcedure.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\structureTable.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\structureTaskExecution.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\task.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Schemas\PSMaml\troubleshooting.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Appx\Appx.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Appx\Appx.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Appx\Appx.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Appx\en\Appx.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\CimCmdlets\CimCmdlets.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\DnsClient.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\DnsCmdlets.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\DnsCmdlets.Types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\DnsConfig.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\DnsConfig.Types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\MSFT_DnsClient.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\MSFT_DnsClientCache.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\MSFT_DnsClientGlobalSetting.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\DnsClient\MSFT_DnsClientServerAddress.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\en-US\ArchiveResources.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\Microsoft.PowerShell.Archive.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\Microsoft.PowerShell.Archive.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Diagnostics\Microsoft.PowerShell.Diagnostics.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Host\Microsoft.PowerShell.Host.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.LocalAccounts\1.0.0.0\LocalAccounts.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.LocalAccounts\1.0.0.0\Microsoft.PowerShell.LocalAccounts.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Management\Microsoft.PowerShell.Management.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Security\Microsoft.PowerShell.Security.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Utility\Microsoft.PowerShell.Utility.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Utility\Microsoft.PowerShell.Utility.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\Microsoft.WSMan.Management\Microsoft.WSMan.Management.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapter.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterAdvancedProperty.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterAdvancedProperty.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterBinding.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterBinding.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterChecksumOffload.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterChecksumOffload.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterEncapsulatedPacketTaskOffload.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterEncapsulatedPacketTaskOffload.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterHardwareInfo.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterHardwareInfo.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterIPsecOffload.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterIPsecOffload.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterLso.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterLso.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterPacketDirect.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterPacketDirect.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterPowerManagement.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterPowerManagement.Format.Helper.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterPowerManagement.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterQos.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterQos.Format.Helper.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterQos.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterRdma.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterRdma.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterRsc.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterRsc.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterRss.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterRss.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterSriov.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterSriov.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterSriovVf.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterSriovVf.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterStatistics.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterStatistics.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterVmq.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterVmq.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterVmqQueue.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterVmqQueue.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterVPort.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\MSFT_NetAdapterVPort.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\NetAdapter.Format.Helper.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\NetAdapter.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetAdapter\NetAdapter.Types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventNetworkAdapter.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventNetworkAdapter.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventPacketCaptureProvider.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventPacketCaptureProvider.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventProvider.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventProvider.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventSession.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventSession.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVFPProvider.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVFPProvider.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVmNetworkAdatper.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVmNetworkAdatper.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVmSwitch.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVmSwitch.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVmSwitchProvider.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventVmSwitchProvider.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventWFPCaptureProvider.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\MSFT_NetEventWFPCaptureProvider.format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\NetEventPacketCapture.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\NetEventPacketCapture.Types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallAddressFilter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallApplicationFilter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallInterfaceFilter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallInterfaceTypeFilter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallPortFilter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallProfile.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallRule.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallSecurityFilter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallServiceFilter.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetFirewallSetting.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetGPO.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecDospSetting.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecIdentity.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecMainModeCryptoSet.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecMainModeRule.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecMainModeSA.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecPhase1AuthSet.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecPhase2AuthSet.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecPolicyChange.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecQuickModeCryptoSet.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecQuickModeSA.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetIPsecRule.cmdletDefinition.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetSecurity.formats.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetSecurity.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetSecurity\NetSecurity.types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetCompartment.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetIPAddress.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetIPInterface.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetIPv4Protocol.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetIPv6Protocol.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetNeighbor.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetOffloadGlobalSetting.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetPrefixPolicy.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetRoute.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetTCPConnection.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetTCPSetting.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetTransportFilter.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetUDPEndpoint.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\MSFT_NetUDPSetting.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\NetIPConfiguration.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\NetTCPIP.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\Tcpip.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\Tcpip.Types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\NetTCPIP\Test-NetConnection.psm1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PKI\pki.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PKI\pki.types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PnpDevice\PnpDevice.cdxml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PnpDevice\PnpDevice.Format.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PnpDevice\PnpDevice.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PnpDevice\PnpDevice.Resource.psd1" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\PnpDevice\PnpDevice.Types.ps1xml" />
+    <Content Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\Modules\TrustedPlatformModule\TrustedPlatformModule.psd1" />
+    <Content Include="Contents\Drivers\PatchedSecMgr.sys" />
+    <Content Include="Contents\Drivers\OriginalSecMgr.sys" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contents\ConsoleApps\WindowsPowerShell\v1.0\SessionConfig\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\segmdl2.ttf" />
+    <Content Include="Contents\BatchScripts\SnapperRecorder.bat" />
+    <Content Include="Assets\Fonts\consola.ttf" />
+    <Content Include="Contents\ConsoleApps\en-US\bcdedit.exe.mui" />
+    <Content Include="Contents\DeveloperMenu\ui\boot.ums.connected.bmpx" />
+    <Content Include="Contents\DeveloperMenu\ui\boot.ums.disconnected.bmpx" />
+    <Content Include="Contents\DeveloperMenu\ui\boot.ums.waiting.bmpx" />
+    <Content Include="Contents\DeveloperMenu\developermenu1607.efi" />
+    <Content Include="Contents\DeveloperMenu\developermenu1709.efi" />
+    <Content Include="Contents\ConsoleApps\en-US\logman.exe.mui" />
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_720P.bin" />
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_720P_hi.bin" />
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_FHD.bin" />
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_WQHD.bin" />
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_WQHD_hi.bin" />
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_WVGA.bin" />
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_WXGA.bin" />
+    <Content Include="Contents\BatchScripts\Startup.bat" />
+    <Content Include="Contents\Certificates\SbcpFlightToken.p7b" />
+    <Content Include="Contents\BatchScripts\LiveLockscreen.bat" />
+    <Content Include="Contents\ConsoleApps\more.com" />
+    <Content Include="Contents\BatchScripts\RebootToFlashingMode.bat" />
+    <Content Include="Contents\BatchScripts\MessageDialog.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ndtklib, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\App Libraries\ndtklib.winmd</HintPath>
+    </Reference>
+    <Reference Include="Registry">
+      <HintPath>..\..\..\..\Desktop\App Libraries\Registry.winmd</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Startup\startup.bsc" />
+    <Content Include="Contents\BatchScripts\NonSystemWide.bat" />
+    <Content Include="Contents\BatchScripts\LaunchApplication.bat" />
+    <Content Include="Contents\BatchScripts\Setup.bat" />
+    <Content Include="Contents\InjectionType\arm_fadilfadz.cmdinject..ermanent.deployment_628844477771337a_1.0.0.0_none_3812df19b195b968.manifest" />
+    <Content Include="Contents\InjectionType\arm_fadilfadz.cmdinjector.permanent0_628844477771337a_1.0.0.0_none_a7a677916de429b9.manifest" />
+    <Content Include="Contents\InjectionType\arm_fadilfadz.cmdinjector.permanent1_628844477771337a_1.0.0.0_none_a7a660c96de4435a.manifest" />
+    <Content Include="Contents\InjectionType\FadilFadz.CMDInjector.Permanent~628844477771337a~arm~~1.0.0.0.cat" />
+    <Content Include="Contents\InjectionType\FadilFadz.CMDInjector.Permanent~628844477771337a~arm~~1.0.0.0.mum" />
+    <Content Include="Contents\InjectionType\PermanentInjection.reg" />
+    <Content Include="Contents\InjectionType\TemporaryInjection.reg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackgroundTasks\BackgroundTasks.csproj">
+      <Project>{ef1d61ee-9e37-4d24-95cf-90cc15579e29}</Project>
+      <Name>BackgroundTasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMDInjectorHelper\CMDInjectorHelper.csproj">
+      <Project>{95c98220-9f5e-4e9f-9665-08b883fed883}</Project>
+      <Name>CMDInjectorHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\GlanceScreen\lpmFonts_4.1.12.4\lpmFont_FHD_hi.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.17763.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMDInjector_TemporaryKey.pfx" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetFirewallProfile" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallProfile</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByName" IsMandatory="true" Position="0" Aliases="Profile"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetFirewallRuleInProfile" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallRule"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetConSecRuleInProfile" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetConSecRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecRule"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetMainModeRuleInProfile" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetMainModeRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecMainModeRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecMainModeRule"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="Enabled">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="Enabled"/>
+            </Parameter>
+            <Parameter ParameterName="DefaultInboundAction">
+              <Type PSType="NetSecurity.Action"/>
+              <CmdletParameterMetadata PSName="DefaultInboundAction"/>
+            </Parameter>
+            <Parameter ParameterName="DefaultOutboundAction">
+              <Type PSType="NetSecurity.Action"/>
+              <CmdletParameterMetadata PSName="DefaultOutboundAction"/>
+            </Parameter>
+            <Parameter ParameterName="AllowInboundRules">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="AllowInboundRules"/>
+            </Parameter>
+            <Parameter ParameterName="AllowLocalFirewallRules">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="AllowLocalFirewallRules"/>
+            </Parameter>
+            <Parameter ParameterName="AllowLocalIPsecRules">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="AllowLocalIPsecRules"/>
+            </Parameter>
+            <Parameter ParameterName="AllowUserApps">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="AllowUserApps"/>
+            </Parameter>
+            <Parameter ParameterName="AllowUserPorts">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="AllowUserPorts"/>
+            </Parameter>
+            <Parameter ParameterName="AllowUnicastResponseToMulticast">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="AllowUnicastResponseToMulticast"/>
+            </Parameter>
+            <Parameter ParameterName="NotifyOnListen">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="NotifyOnListen"/>
+            </Parameter>
+            <Parameter ParameterName="EnableStealthModeForIPsec">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="EnableStealthModeForIPsec"/>
+            </Parameter>
+            <Parameter ParameterName="LogFileName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="LogFileName"/>
+            </Parameter>
+            <Parameter ParameterName="LogMaxSizeKilobytes">
+              <Type PSType="uint64"/>
+              <CmdletParameterMetadata PSName="LogMaxSizeKilobytes"/>
+            </Parameter>
+            <Parameter ParameterName="LogAllowed">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="LogAllowed"/>
+            </Parameter>
+            <Parameter ParameterName="LogBlocked">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="LogBlocked"/>
+            </Parameter>
+            <Parameter ParameterName="LogIgnored">
+              <Type PSType="NetSecurity.GpoBoolean"/>
+              <CmdletParameterMetadata PSName="LogIgnored"/>
+            </Parameter>
+            <Parameter ParameterName="DisabledInterfaceAliases">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="DisabledInterfaceAliases"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata Aliases="Profile" PSName="Name" Position="0" IsMandatory="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="All">
+              <Type PSType="System.Management.Automation.SwitchParameter"/>
+              <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+            </Option>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.GpoBoolean" UnderlyingType="uint16">
+      <Value Name="False" Value="0"/>
+      <Value Name="True" Value="1"/>
+      <Value Name="NotConfigured" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Action" UnderlyingType="uint16">
+      <Value Name="NotConfigured" Value="0"/>
+      <Value Name="Allow" Value="2"/>
+      <Value Name="Block" Value="4"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

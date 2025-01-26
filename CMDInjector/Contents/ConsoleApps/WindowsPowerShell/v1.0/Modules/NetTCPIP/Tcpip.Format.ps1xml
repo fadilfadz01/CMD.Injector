@@ -1,0 +1,2006 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Author: Chun-cheng Chen 10/20/2010
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetRoute</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ifIndex</Label>
+            <Width>7</Width>
+          </TableColumnHeader>          
+          <TableColumnHeader>
+            <Width>46</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>40</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>11</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PolicyStore</Label>
+            <Width>11</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </TableColumnItem>              
+              <TableColumnItem>
+                <PropertyName>DestinationPrefix</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>NextHop</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RouteMetric</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Store</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetRoute</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>DestinationPrefix</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CompartmentId</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AddressFamily</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NextHop</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Publish</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RouteMetric</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Protocol</PropertyName>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.ValidLifetime.Days -eq 10675199 -and
+                      $_.ValidLifetime.Hours -eq 2 -and
+                      $_.ValidLifetime.Minutes -eq 48 -and
+                      $_.ValidLifetime.Seconds -eq 5 -and
+                      $_.ValidLifetime.Milliseconds -eq 477) {
+                      “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                      $_.ValidLifetime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>ValidLifetime</Label>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.PreferredLifetime.Days -eq 10675199 -and
+                  $_.PreferredLifetime.Hours -eq 2 -and
+                  $_.PreferredLifetime.Minutes -eq 48 -and
+                  $_.PreferredLifetime.Seconds -eq 5 -and
+                  $_.PreferredLifetime.Milliseconds -eq 477) {
+                  “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                  $_.PreferredLifetime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>PreferredLifetime</Label>
+              </ListItem>
+              <ListItem>
+                <Label>PolicyStore</Label>
+                <PropertyName>Store</PropertyName>
+              </ListItem>              
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPAddress</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>IPAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AddressFamily</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Type</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>PrefixLength</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>PrefixOrigin</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SuffixOrigin</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AddressState</PropertyName>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.ValidLifetime.Days -eq 10675199 -and
+                      $_.ValidLifetime.Hours -eq 2 -and
+                      $_.ValidLifetime.Minutes -eq 48 -and
+                      $_.ValidLifetime.Seconds -eq 5 -and
+                      $_.ValidLifetime.Milliseconds -eq 477) {
+                      “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                      $_.ValidLifetime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>ValidLifetime</Label>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.PreferredLifetime.Days -eq 10675199 -and
+                      $_.PreferredLifetime.Hours -eq 2 -and
+                      $_.PreferredLifetime.Minutes -eq 48 -and
+                      $_.PreferredLifetime.Seconds -eq 5 -and
+                      $_.PreferredLifetime.Milliseconds -eq 477) {
+                      “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                      $_.PreferredLifetime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>PreferredLifetime</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SkipAsSource</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>PolicyStore</Label>
+                <PropertyName>Store</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>TableView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPAddress</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ifIndex</Label>
+            <Width>7</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>47</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PolicyStore</Label>
+            <Width>11</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IPAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>PrefixLength</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>PrefixOrigin</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SuffixOrigin</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AddressState</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Store</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetNeighbor</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ifIndex</Label>
+            <Width>7</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>50</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>21</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>11</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PolicyStore</Label>
+            <Width>15</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IPAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LinkLayerAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>State</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Store</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetNeighbor</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>IPAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AddressFamily</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>LinkLayerAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>State</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>PolicyStore</Label>
+                <PropertyName>Store</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPInterface</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ifIndex</Label>
+            <Width>7</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>31</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>13</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>NlMtu(Bytes)</Label>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>15</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>15</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PolicyStore</Label>
+            <Width>11</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AddressFamily</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>NlMtu</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InterfaceMetric</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Dhcp</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ConnectionState</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Store</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPInterface</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CompartmentId</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AddressFamily</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Forwarding</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ClampMss</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Advertising</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NlMtu</PropertyName>
+                <Label>NlMtu(Bytes)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AutomaticMetric</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceMetric</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NeighborDiscoverySupported</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NeighborUnreachabilityDetection</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>BaseReachableTime</PropertyName>
+                <Label>BaseReachableTime(ms)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ReachableTime</PropertyName>
+                <Label>ReachableTime(ms)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RetransmitTime</PropertyName>
+                <Label>RetransmitTime(ms)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DadTransmits</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DadRetransmitTime</PropertyName>
+                <Label>DadRetransmitTime(ms)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RouterDiscovery</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ManagedAddressConfiguration</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>OtherStatefulConfiguration</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>WeakHostSend</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>WeakHostReceive</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>IgnoreDefaultRoutes</PropertyName>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.AdvertisedRouterLifetime.Days -eq 10675199 -and
+                      $_.AdvertisedRouterLifetime.Hours -eq 2 -and
+                      $_.AdvertisedRouterLifetime.Minutes -eq 48 -and
+                      $_.AdvertisedRouterLifetime.Seconds -eq 5 -and
+                      $_.AdvertisedRouterLifetime.Milliseconds -eq 477) {
+                      "Infinite ([TimeSpan]::MaxValue)"
+                  } else {
+                      $_.AdvertisedRouterLifetime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>AdvertisedRouterLifetime</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AdvertiseDefaultRoute</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CurrentHopLimit</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ForceArpNdWolPattern</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DirectedMacWolPattern</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>EcnMarking</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Dhcp</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ConnectionState</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>PolicyStore</Label>
+                <PropertyName>Store</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetPrefixPolicy</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>60</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>10</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>10</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Prefix</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Precedence</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Label</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetPrefixPolicy</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>Prefix</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Precedence</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Label</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPv6Protocol</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>DefaultHopLimit</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NeighborCacheLimit</PropertyName>
+                <Label>NeighborCacheLimit(Entries)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RouteCacheLimit</PropertyName>
+                <Label>RouteCacheLimit(Entries)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ReassemblyLimit</PropertyName>
+                <Label>ReassemblyLimit(Bytes)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>IcmpRedirects</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SourceRoutingBehavior</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DhcpMediaSense</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MediaSenseEventLog</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MldLevel</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MldVersion</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MulticastForwarding</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>GroupForwardedFragments</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RandomizeIdentifiers</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AddressMaskReply</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>UseTemporaryAddresses</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MaxDadAttempts</PropertyName>
+                <Label>MaxTemporaryDadAttempts</Label>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.MaxValidLifetime.Days -eq 10675199 -and
+                      $_.MaxValidLifetime.Hours -eq 2 -and
+                      $_.MaxValidLifetime.Minutes -eq 48 -and
+                      $_.MaxValidLifetime.Seconds -eq 5 -and
+                      $_.MaxValidLifetime.Milliseconds -eq 477) {
+                      “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                      $_.MaxValidLifetime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>MaxTemporaryValidLifetime</Label>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.MaxPreferredLifetime.Days -eq 10675199 -and
+                      $_.MaxPreferredLifetime.Hours -eq 2 -and
+                      $_.MaxPreferredLifetime.Minutes -eq 48 -and
+                      $_.MaxPreferredLifetime.Seconds -eq 5 -and
+                      $_.MaxPreferredLifetime.Milliseconds -eq 477) {
+                      “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                      $_.MaxPreferredLifetime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>MaxTemporaryPreferredLifetime</Label>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.RegenerateTime.Days -eq 10675199 -and
+                      $_.RegenerateTime.Hours -eq 2 -and
+                      $_.RegenerateTime.Minutes -eq 48 -and
+                      $_.RegenerateTime.Seconds -eq 5 -and
+                      $_.RegenerateTime.Milliseconds -eq 477) {
+                      “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                      $_.RegenerateTime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>TemporaryRegenerateTime</Label>
+              </ListItem>
+              <ListItem>
+                <!-- We explicitly translate MaxValue shown below to Infinite due to the restriction of displaying Infinite on Datetime property -->
+                <ScriptBlock>
+                  if ($_.MaxRandomTime.Days -eq 10675199 -and
+                      $_.MaxRandomTime.Hours -eq 2 -and
+                      $_.MaxRandomTime.Minutes -eq 48 -and
+                      $_.MaxRandomTime.Seconds -eq 5 -and
+                      $_.MaxRandomTime.Milliseconds -eq 477) {
+                      “Infinite ([TimeSpan]::MaxValue)”
+                  } else {
+                      $_.MaxRandomTime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>MaxTemporaryDesyncTime</Label>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>TableView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPv6Protocol</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>15</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>13</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>14</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>11</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>20</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>21</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>14</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>DefaultHopLimit</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IcmpRedirects</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DhcpMediaSense</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>MldVersion</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RandomizeIdentifiers</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>UseTemporaryAddresses</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>MaxDadAttempts</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPv4Protocol</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>DefaultHopLimit</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NeighborCacheLimit</PropertyName>
+                <Label>NeighborCacheLimit(Entries)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RouteCacheLimit</PropertyName>
+                <Label>RouteCacheLimit(Entries)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ReassemblyLimit</PropertyName>
+                <Label>ReassemblyLimit(Bytes)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>IcmpRedirects</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SourceRoutingBehavior</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DhcpMediaSense</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MediaSenseEventLog</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>IGMPLevel</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>IGMPVersion</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MulticastForwarding</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>GroupForwardedFragments</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RandomizeIdentifiers</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AddressMaskReply</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MinimumMtu</PropertyName>
+                <Label>MinimumMtu(Bytes)</Label>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>TableView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetIPv4Protocol</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>15</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>13</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>14</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>11</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>20</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>DefaultHopLimit</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IcmpRedirects</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DhcpMediaSense</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IGMPVersion</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RandomizeIdentifiers</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTCPSetting</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>SettingName</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MinRto</PropertyName>
+                <Label>MinRto(ms)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InitialCongestionWindow</PropertyName>
+                <Label>InitialCongestionWindow(MSS)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CongestionProvider</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CwndRestart</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DelayedAckTimeout</PropertyName>
+                <Label>DelayedAckTimeout(ms)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DelayedAckFrequency</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MemoryPressureProtection</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AutoTuningLevelLocal</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AutoTuningLevelGroupPolicy</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AutoTuningLevelEffective</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>EcnCapability</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Timestamps</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InitialRto</PropertyName>
+                <Label>InitialRto(ms)</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ScalingHeuristics</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DynamicPortRangeStartPort</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DynamicPortRangeNumberOfPorts</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AutomaticUseCustom</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NonSackRttResiliency</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ForceWS</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>MaxSynRetransmissions</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AutoReusePortRangeStartPort</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AutoReusePortRangeNumberOfPorts</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>TableView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTCPSetting</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>11</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>18</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>MinRto(ms)</Label>
+            <Width>10</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>InitialRto(ms)</Label>
+            <Width>14</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>11</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>17</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>17</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>24</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>SettingName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CongestionProvider</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>MinRto</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InitialRto</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CwndRestart</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DelayedAckTimeout</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DelayedAckFrequency</PropertyName>
+                <Alignment>Right</Alignment>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AutoTuningLevelEffective</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetUDPSetting</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>DynamicPortRangeStartPort</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DynamicPortRangeNumberOfPorts</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>TableView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetUDPSetting</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>25</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>30</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>DynamicPortRangeStartPort</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DynamicPortRangeNumberOfPorts</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTransportFilter</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>SettingName</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Protocol</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>LocalPortStart</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>LocalPortEnd</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RemotePortStart</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RemotePortEnd</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DestinationPrefix</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>TableView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTransportFilter</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>14</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>15</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>13</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>39</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>SettingName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Protocol</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LocalPortStart</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LocalPortEnd</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RemotePortStart</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RemotePortEnd</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DestinationPrefix</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTCPConnection</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>35</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>9</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>35</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>10</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>11</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>14</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>14</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>LocalAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LocalPort</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RemoteAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RemotePort</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>State</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AppliedSetting</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>OwningProcess</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetTCPConnection</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>LocalAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>LocalPort</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RemoteAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RemotePort</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>State</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>AppliedSetting</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>OwningProcess</PropertyName>
+              </ListItem>
+              <ListItem>
+                <!-- A zero (i.e. not present) timestamp will end up in 1600 -->
+                <ScriptBlock>
+                  if ($_.CreationTime.Year -eq 1600) {
+                    "N/A"
+                  } else {
+                    $_.CreationTime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>CreationTime</Label>
+              </ListItem>
+              <ListItem>
+                <PropertyName>OffloadState</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetUDPEndpoint</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>40</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>15</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>LocalAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LocalPort</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetUDPEndpoint</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>LocalAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>LocalPort</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>OwningProcess</PropertyName>
+              </ListItem>
+              <ListItem>
+                <!-- A zero (i.e. not present) timestamp will end up in 1600 -->
+                <ScriptBlock>
+                  if ($_.CreationTime.Year -eq 1600) {
+                    "N/A"
+                  } else {
+                    $_.CreationTime.ToString()
+                  }
+                </ScriptBlock>
+                <Label>CreationTime</Label>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetCompartment</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>CompartmentId</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CompartmentDescription</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>CompartmentGuid</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetOffloadGlobalSetting</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>ReceiveSideScaling</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ReceiveSegmentCoalescing</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Chimney</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>TaskOffload</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NetworkDirect</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NetworkDirectAcrossIPSubnets</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>PacketCoalescingFilter</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>NetIPConfiguration</Name>
+      <ViewSelectedBy>
+        <TypeName>NetIPConfiguration</TypeName>
+      </ViewSelectedBy>
+
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+
+              <ListItem>
+                <ItemSelectionCondition>
+                  <PropertyName>Detailed</PropertyName>
+                </ItemSelectionCondition>
+                <PropertyName>ComputerName</PropertyName>
+              </ListItem>
+
+              <ListItem>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+
+              <ListItem>
+                <PropertyName>InterfaceIndex</PropertyName>
+              </ListItem>
+
+              <ListItem>
+                <PropertyName>InterfaceDescription</PropertyName>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetCompartment.CompartmentId</Label>
+                <ItemSelectionCondition>
+                  <PropertyName>Detailed</PropertyName>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetCompartment.CompartmentId</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetCompartment.CompartmentDescription</Label>
+                <ItemSelectionCondition>
+                  <PropertyName>Detailed</PropertyName>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetCompartment.CompartmentDescription</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetAdapter.LinkLayerAddress</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetAdapter -ne $null) -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetAdapter.LinkLayerAddress</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetAdapter.Status</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetAdapter -ne $null) -and (($_.NetAdapter.Status -ne "Up") -or ($_.Detailed))</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetAdapter.Status</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetProfile.Name</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.NetProfile</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetProfile.Name</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetProfile.NetworkCategory</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetProfile) -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetProfile.NetworkCategory</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetProfile.IPv6Connectivity</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetProfile) -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetProfile.IPv6Connectivity</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetProfile.IPv4Connectivity</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetProfile) -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetProfile.IPv4Connectivity</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>IPv6Address</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.NetIPv6Interface.ConnectionState -eq "Connected") -and
+                    ($_.IPv6Address.Count -ne 0)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Address in $_.IPv6Address) {
+                    $output += $Address.IPv6Address + "`n";
+                  }
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>IPv6TemporaryAddress</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.NetIPv6Interface.ConnectionState -eq "Connected") -and
+                    ($_.IPv6TemporaryAddress.Count -ne 0) -and
+                    ($_.Detailed)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Address in $_.IPv6TemporaryAddress) {
+                    $output += $Address.IPv6Address + "`n";
+                  }
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>IPv6LinkLocalAddress</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.NetIPv6Interface.ConnectionState -eq "Connected") -and
+                    ($_.IPv6LinkLocalAddress.Count -ne 0) -and
+                    ($_.Detailed)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Address in $_.IPv6LinkLocalAddress) {
+                    $output += $Address.IPv6Address + "`n";
+                  }
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>IPv4Address</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.NetIPv4Interface.ConnectionState -eq "Connected") -and
+                    ($_.IPv4Address.Count -ne 0)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Address in $_.IPv4Address) {
+                    $output += $Address.IPv4Address + "`n";
+                  }
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>IPv6DefaultGateway</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv6Interface.ConnectionState -eq "Connected")</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = @();
+                  foreach($Route in $_.IPv6DefaultGateway) {
+                    $output += $Route.NextHop;
+                  }
+                  $output;
+                </ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>IPv4DefaultGateway</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv4Interface.ConnectionState -eq "Connected")</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = @();
+                  foreach($Route in $_.IPv4DefaultGateway) {
+                    $output += $Route.NextHop;
+                  }
+                  $output;
+                </ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetIPv6Interface.IsolationId</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv6Interface.ConnectionState -eq "Connected") -and ($_.Detailed) -and ($_.NetIPv6Interface.IsolationId -ne 0)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetIPv6Interface.IsolationId</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetIPv4Interface.IsolationId</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv4Interface.ConnectionState -eq "Connected") -and ($_.Detailed) -and ($_.NetIPv4Interface.IsolationId -ne 0)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetIPv4Interface.IsolationId</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetIPv6Interface.NlMTU</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv6Interface.ConnectionState -eq "Connected") -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetIPv6Interface.NlMTU</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetIPv4Interface.NlMTU</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv4Interface.ConnectionState -eq "Connected") -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetIPv4Interface.NlMTU</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetIPv6Interface.DHCP</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv6Interface.ConnectionState -eq "Connected") -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetIPv6Interface.DHCP</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>NetIPv4Interface.DHCP</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>($_.NetIPv4Interface.ConnectionState -eq "Connected") -and ($_.Detailed)</ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>$_.NetIPv4Interface.DHCP</ScriptBlock>
+              </ListItem>
+
+              <ListItem>
+                <Label>DNSServer</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.DNSServer.Count -ne 0) -and
+                    (($_.NetIPv4Interface.ConnectionState -eq "Connected") -or
+                     ($_.NetIPv6Interface.ConnectionState -eq "Connected"))
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Server in $_.DNSServer) {
+                    foreach($Address in $Server.ServerAddresses) {
+                      $output += $Address + "`n";
+                    }
+                  };
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+
+    </View>
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>TestNetConnectionResult</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>ComputerName</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RemoteAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>RemotePort</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.RemotePort) -ne 0
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>RemotePort</PropertyName>
+               </ListItem>
+               <ListItem>
+                <Label>NameResolutionResults</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.Detailed)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Address in $_.ResolvedAddresses) {
+                      $output += $Address.IPAddressToString + "`n";
+                  };
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>MatchingIPsecRules</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    (($_.RemotePort -ne 0) -and  ($_.Detailed))
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Result in $_.MatchingIPsecRules) {
+                      $output += $Result.DisplayName + "`n";
+                  };
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    (($_.RemotePort -ne 0) -and  ($_.Detailed))
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>NetworkIsolationContext</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ((($_.RemotePort -ne 0) -and  ($_.Detailed)) -and (!$_.IsAdmin))
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>IsAdmin</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>InterfaceAlias</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SourceAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>NetRoute (NextHop)</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    $_.Detailed
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                   $_.NetRoute.NextHop
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    (($_.RemotePort -eq 0) -or (!$_.TcpTestSucceeded))
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>PingSucceeded</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>PingReplyDetails (RTT)</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.PingReplyDetails -ne $null)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $_.PingReplyDetails.RoundTripTime.ToString() + " ms";
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>TcpTestSucceeded</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.RemotePort) -ne 0
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>TcpTestSucceeded</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>TraceRoute</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.TraceRoute -ne $null)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Result in $_.TraceRoute) {
+                      $output += $Result + "`n";
+                  };
+                  $output.Trim("`n");
+                </ScriptBlock>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+    <View>
+      <Name>TableView</Name>
+      <ViewSelectedBy>
+        <TypeName>TestNetConnectionResult</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Width>15</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>10</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>30</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>20</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+           <Label>PingReplyDetails (RTT)</Label>
+            <Width>25</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Width>35</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>ComputerName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RemotePort</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RemoteAddress</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>PingSucceeded</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <scriptblock>
+                     $_.PingReplyDetails.RoundTripTime.ToString() + " ms";
+                </scriptblock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>TcpTestSucceeded</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>DefaultView</Name>
+      <ViewSelectedBy>
+        <TypeName>NetRouteDiagnostics</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>ComputerName</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RemoteAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>ConstrainSourceAddress</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    (($_.ConstrainSourceAddress -ne [System.Net.IPAddress]::IPv6Any) -and
+                     ($_.ConstrainSourceAddress -ne [System.Net.IPAddress]::Any))
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>ConstrainSourceAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>ConstrainInterfaceIndex</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.ConstrainInterfaceIndex -ne 0)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>ConstrainInterfaceIndex</PropertyName>
+               </ListItem>
+              <ListItem>
+                <PropertyName>SelectedSourceAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>OutgoingInterfaceIndex</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>SelectedNetRoute</Label>
+                <ScriptBlock>
+                  $output = "DestinationPrefix: ";
+                  $output += $_.SelectedNetRoute.DestinationPrefix + "`n";
+                  $output += "NextHop: ";
+                  $output += $_.SelectedNetRoute.NextHop;
+                  $output;
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>RouteSelectionEvents</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.Detailed)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Event in $_.RouteSelectionEvents) {
+                      $output += $Event + "`n`n";
+                  };
+                  $output.Trim("`n`n");
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <Label>SourceAddressSelectionEvents</Label>
+                <ItemSelectionCondition>
+                  <ScriptBlock>
+                    ($_.Detailed)
+                  </ScriptBlock>
+                </ItemSelectionCondition>
+                <ScriptBlock>
+                  $output = "";
+                  foreach($Event in $_.SourceAddressSelectionEvents) {
+                      $output += $Event + "`n`n";
+                  };
+                  $output.Trim("`n`n");
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RouteDiagnosticsSucceeded</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>
+

@@ -1,0 +1,128 @@
+﻿<Page
+    x:Class="CMDInjector.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="SETTINGS" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="Personalize the App interfaces." Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="260"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="Application:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Background theme" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="ThemeToggle" Margin="40,-5,0,0" OnContent="Custom" OffContent="Default" Toggled="ThemeToggle_Toggled"/>
+                    <ComboBox Name="CustomTheme" Margin="40,0,0,5" MinWidth="150" Visibility="Collapsed" SelectionChanged="CustomTheme_SelectionChanged">
+                        <ComboBoxItem Name="DarkTheme" Content="Dark"/>
+                        <ComboBoxItem Name="LightTheme" Content="Light"/>
+                    </ComboBox>
+                    <TextBlock Text="Accent color" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="AccentToggle" Margin="40,-5,0,0" OnContent="Custom" OffContent="Default" Toggled="AccentToggle_Toggled"/>
+                    <ComboBox Name="CustomAccent" Margin="40,0,0,5" MinWidth="150" Visibility="Collapsed" SelectionChanged="CustomAccent_SelectionChanged"/>
+                    <TextBlock Text="Splashscreen anim" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="SplashScrTog" Margin="40,-5,0,0" OnContent="On" OffContent="Off" Toggled="SplashScrTog_Toggled"/>
+                    <ComboBox Name="SplashScrCombo" Margin="40,0,0,5" MinWidth="150" Visibility="Collapsed" SelectionChanged="SplashScrCombo_SelectionChanged">
+                        <ComboBoxItem Name="AnimGlich" Content="Glitch"/>
+                        <ComboBoxItem Name="AnimBlur" Content="Blur"/>
+                        <ComboBoxItem Name="AnimWind" Content="Wind"/>
+                    </ComboBox>
+                    <TextBlock Text="Navigation transition" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="MenuTransitionTog" Margin="40,-5,0,0" OnContent="On" OffContent="Off" Toggled="MenuTransitionTog_Toggled"/>
+                    <TextBlock Text="Hamburger menu" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="HamBurMenu" Margin="40,-5,0,0" OnContent="Visible" OffContent="Hidden" Toggled="HamBurMenu_Toggled"/>
+                    <TextBlock Text="User consent" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="LoginReqTog" Margin="40,-5,0,0" OnContent="Required" OffContent="Not required" Toggled="LoginReqTog_Toggled"/>
+                    <TextBlock Text="Capabilities permission" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="ResCapTog" Margin="40,-5,0,0" OnContent="Allowed" OffContent="Denied" Toggled="ResCapTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,10,0,0">
+                    <TextBlock Text="Terminal:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Font size" FontSize="18" Margin="25,0,0,0"/>
+                    <ComboBox Name="ConsoleFontSizeBox" Margin="40,0,0,0" MinWidth="150" SelectionChanged="ConsoleFontSizeBox_SelectionChanged">
+                        <ComboBoxItem Content="12"/>
+                        <ComboBoxItem Content="13"/>
+                        <ComboBoxItem Content="14"/>
+                        <ComboBoxItem Content="15"/>
+                        <ComboBoxItem Content="16"/>
+                        <ComboBoxItem Content="17"/>
+                    </ComboBox>
+                    <TextBlock Text="Keyboard button" FontSize="18" Margin="25,10,0,0"/>
+                    <ToggleSwitch Name="ConKeyBtnTog" OnContent="Visible" OffContent="Hidden" Margin="40,-5,0,0" Toggled="ConKeyBtnTog_Toggled"/>
+                    <TextBlock Text="Argument confirmation" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="ArgConfirmTog" OnContent="On" OffContent="Off" Margin="40,-5,0,0" Toggled="ArgConfirmTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,10,0,0">
+                    <TextBlock Text="Startup:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Text wrap" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="CommandsWrapToggle" Margin="40,-5,0,0" Toggled="CommandsWrapToggle_Toggled"/>
+                    <TextBlock Text="Commands" FontSize="18" Margin="25,5,0,0"/>
+                    <Button Name="StartupRstBtn" Content="Reset" MinWidth="100" Margin="40,5,0,0" Click="StartupRstBtn_Click"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,15,0,0">
+                    <TextBlock Text="PacMan:" FontSize="25" Margin="20,5,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Default installer" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="DefInstIndicator" Text="(Reboot required)" FontSize="18" Foreground="Yellow" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="DefaultTog" OnContent="Yes" OffContent="No" Margin="40,-5,0,0" Toggled="DefaultTog_Toggled"/>
+                    <TextBlock Grid.Row="4" Text="Installation storage" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="StorageTog" OnContent="External" OffContent="Internal" Margin="40,-5,0,0" Toggled="StorageTog_Toggled"/>
+                    <TextBlock Text="Installer log" FontSize="18" Margin="25,5,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                        <TextBox Name="LogPathBox" MinWidth="150" MaxWidth="235" IsReadOnly="True"/>
+                        <Button Name="LogPathBtn" Content="Browse" MinWidth="70" Margin="0,0,40,0" Click="LogPathBtn_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="Backup folder" FontSize="18" Margin="25,10,10,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                        <TextBox Name="BackupFoldBox" MinWidth="150" MaxWidth="235" IsReadOnly="True"/>
+                        <Button Name="BackupFoldBtn" Content="Browse" MinWidth="70" Margin="0,0,40,0" Click="BackupFoldBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Margin="0,15,0,0">
+                    <TextBlock Text="Snapper:" FontSize="25" Margin="20,5,0,0"/>
+                    <TextBlock Text="Notification" FontSize="18" Margin="25,0,0,0"/>
+                    <ToggleSwitch Name="SnapNotifTog" Margin="40,-5,0,0" Toggled="SnapNotifTog_Toggled"/>
+                    <TextBlock Text="Sound effects" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="SnapSoundTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="SnapSoundTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" VerticalAlignment="Top" Margin="0,10,0,0">
+                    <TextBlock Text="Misc:" FontSize="25" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Bootsh service" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="BootshIndicator" Text="(Reboot required)" FontSize="18" Foreground="Yellow" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="BootshToggle" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="BootshToggle_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="UMCIAuditMode" FontSize="18" Margin="25,5,10,0"/>
+                        <TextBlock Name="UMCIModeIndicator" Text="(Reboot required)" FontSize="18" Foreground="Yellow" Margin="0,5,0,0" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="UMCIToggle" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="UMCIToggle_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="KeepWiFiOnSvc" FontSize="18" Margin="25,5,10,0"/>
+                        <TextBlock Name="WifiServiceIndicator" Text="(Reboot required)" FontSize="18" Foreground="Yellow" Margin="0,5,0,0" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="WifiServiceToggle" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="WifiServiceToggle_Toggled"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

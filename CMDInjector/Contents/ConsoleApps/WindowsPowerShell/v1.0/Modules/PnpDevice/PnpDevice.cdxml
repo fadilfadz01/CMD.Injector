@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11"> 
+  <Class ClassName="ROOT\cimv2\Win32_PnPEntity" ClassVersion="2.0"> 
+    <Version>1.0</Version> 
+    <DefaultNoun>PnpDevice</DefaultNoun>
+
+    <InstanceCmdlets> 
+      <GetCmdletParameters DefaultCmdletParameterSet="ByInstanceId">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="FriendlyName" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByFriendlyName" IsMandatory="false">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DeviceId">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" PSName="InstanceId" Aliases="DeviceId" CmdletParameterSets="ByInstanceId" IsMandatory="false" Position="0">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PNPClass">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="Class" CmdletParameterSets="ByInstanceId ByFriendlyName ByClass ByPresence" IsMandatory="false">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Present">
+            <Type PSType="switch"/>
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="PresentOnly" CmdletParameterSets="ByInstanceId ByFriendlyName ByClass ByPresence" IsMandatory="false"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Status">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata CmdletParameterSets="ByInstanceId ByFriendlyName ByStatus ByPresence" IsMandatory="false">
+                <ValidateSet>
+                  <AllowedValue>OK</AllowedValue>
+                  <AllowedValue>ERROR</AllowedValue>
+                  <AllowedValue>DEGRADED</AllowedValue>
+                  <AllowedValue>UNKNOWN</AllowedValue>
+                </ValidateSet>
+              </CmdletParameterMetadata>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+      
+      <Cmdlet>
+          <CmdletMetadata Verb="Enable" ConfirmImpact="High"/>
+          <Method MethodName="Enable">
+            <ReturnValue>
+              <Type PSType="System.Int32" />
+              <CmdletOutputMetadata>
+                <ErrorCode />
+              </CmdletOutputMetadata>
+            </ReturnValue>
+          </Method>
+          <GetCmdletParameters DefaultCmdletParameterSet="ByInstanceId">
+            <QueryableProperties>
+              <Property PropertyName="DeviceID">
+                <Type PSType="string"/>
+                <RegularQuery AllowGlobbing="false">
+                  <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" PSName="InstanceId" Aliases="DeviceId" CmdletParameterSets="ByInstanceId" IsMandatory="true" Position="0">
+                    <ValidateNotNull />
+                    <ValidateNotNullOrEmpty />
+                  </CmdletParameterMetadata>
+                </RegularQuery>
+              </Property>
+            </QueryableProperties>
+          </GetCmdletParameters>
+      </Cmdlet>
+      
+      <Cmdlet>
+          <CmdletMetadata Verb="Disable" ConfirmImpact="High"/>
+          <Method MethodName="Disable">
+            <ReturnValue>
+              <Type PSType="System.Int32" />
+              <CmdletOutputMetadata>
+                <ErrorCode />
+              </CmdletOutputMetadata>
+            </ReturnValue>
+          </Method>
+          <GetCmdletParameters DefaultCmdletParameterSet="ByInstanceId">
+            <QueryableProperties>
+              <Property PropertyName="DeviceID">
+                <Type PSType="string"/>
+                <RegularQuery AllowGlobbing="false">
+                  <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" PSName="InstanceId" Aliases="DeviceId" CmdletParameterSets="ByInstanceId" IsMandatory="true" Position="0">
+                    <ValidateNotNull />
+                    <ValidateNotNullOrEmpty />
+                  </CmdletParameterMetadata>
+                </RegularQuery>
+              </Property>
+            </QueryableProperties>
+          </GetCmdletParameters>
+      </Cmdlet>
+      
+      <Cmdlet>
+        <CmdletMetadata Verb="Get" Noun="PnpDeviceProperty" ConfirmImpact="Low"/>
+        <Method MethodName="GetDeviceProperties" >
+          <ReturnValue>
+            <Type PSType="System.Int32" />
+            <CmdletOutputMetadata>
+              <ErrorCode />
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="devicePropertyKeys">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata PSName="KeyName" Aliases="Key" ValueFromPipelineByPropertyName="true" Position="0" IsMandatory="false">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="deviceProperties">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByInstanceId">
+            <QueryableProperties>
+              <Property PropertyName="DeviceID">
+                <Type PSType="string"/>
+                <RegularQuery AllowGlobbing="false">
+                  <CmdletParameterMetadata ValueFromPipelineByPropertyName="true" PSName="InstanceId" Aliases="DeviceId" CmdletParameterSets="ByInstanceId" IsMandatory="true">
+                    <ValidateNotNull />
+                    <ValidateNotNullOrEmpty />
+                  </CmdletParameterMetadata>
+                </RegularQuery>
+              </Property>
+            </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>    
+
+    <CmdletAdapterPrivateData>
+      <Data Name="ClientSideShouldProcess" />
+    </CmdletAdapterPrivateData>
+  </Class> 
+  
+  <Enums>
+    <Enum EnumName="PnpDevice.Problem" UnderlyingType="uint32">
+      <Value Name="CM_PROB_NONE" Value="0" />
+      <Value Name="CM_PROB_NOT_CONFIGURED" Value="1" />
+      <Value Name="CM_PROB_DEVLOADER_FAILED" Value="2" />
+      <Value Name="CM_PROB_OUT_OF_MEMORY" Value="3" />
+      <Value Name="CM_PROB_ENTRY_IS_WRONG_TYPE" Value="4" />
+      <Value Name="CM_PROB_LACKED_ARBITRATOR" Value="5" />
+      <Value Name="CM_PROB_BOOT_CONFIG_CONFLICT" Value="6" />
+      <Value Name="CM_PROB_FAILED_FILTER" Value="7" />
+      <Value Name="CM_PROB_DEVLOADER_NOT_FOUND" Value="8" />
+      <Value Name="CM_PROB_INVALID_DATA" Value="9" />
+      <Value Name="CM_PROB_FAILED_START" Value="10" />
+      <Value Name="CM_PROB_LIAR" Value="11" />
+      <Value Name="CM_PROB_NORMAL_CONFLICT" Value="12" />
+      <Value Name="CM_PROB_NOT_VERIFIED" Value="13" />
+      <Value Name="CM_PROB_NEED_RESTART" Value="14" />
+      <Value Name="CM_PROB_REENUMERATION" Value="15" />
+      <Value Name="CM_PROB_PARTIAL_LOG_CONF" Value="16" />
+      <Value Name="CM_PROB_UNKNOWN_RESOURCE" Value="17" />
+      <Value Name="CM_PROB_REINSTALL" Value="18" />
+      <Value Name="CM_PROB_REGISTRY" Value="19" />
+      <Value Name="CM_PROB_VXDLDR" Value="20" />
+      <Value Name="CM_PROB_WILL_BE_REMOVED" Value="21" />
+      <Value Name="CM_PROB_DISABLED" Value="22" />
+      <Value Name="CM_PROB_DEVLOADER_NOT_READY" Value="23" />
+      <Value Name="CM_PROB_DEVICE_NOT_THERE" Value="24" />
+      <Value Name="CM_PROB_MOVED" Value="25" />
+      <Value Name="CM_PROB_TOO_EARLY" Value="26" />
+      <Value Name="CM_PROB_NO_VALID_LOG_CONF" Value="27" />
+      <Value Name="CM_PROB_FAILED_INSTALL" Value="28" />
+      <Value Name="CM_PROB_HARDWARE_DISABLED" Value="29" />
+      <Value Name="CM_PROB_CANT_SHARE_IRQ" Value="30" />
+      <Value Name="CM_PROB_FAILED_ADD" Value="31" />
+      <Value Name="CM_PROB_DISABLED_SERVICE" Value="32" />
+      <Value Name="CM_PROB_TRANSLATION_FAILED" Value="33" />
+      <Value Name="CM_PROB_NO_SOFTCONFIG" Value="34" />
+      <Value Name="CM_PROB_BIOS_TABLE" Value="35" />
+      <Value Name="CM_PROB_IRQ_TRANSLATION_FAILED" Value="36" />
+      <Value Name="CM_PROB_FAILED_DRIVER_ENTRY" Value="37" />
+      <Value Name="CM_PROB_DRIVER_FAILED_PRIOR_UNLOAD" Value="38" />
+      <Value Name="CM_PROB_DRIVER_FAILED_LOAD" Value="39" />
+      <Value Name="CM_PROB_DRIVER_SERVICE_KEY_INVALID" Value="40" />
+      <Value Name="CM_PROB_LEGACY_SERVICE_NO_DEVICES" Value="41" />
+      <Value Name="CM_PROB_DUPLICATE_DEVICE" Value="42" />
+      <Value Name="CM_PROB_FAILED_POST_START" Value="43" />
+      <Value Name="CM_PROB_HALTED" Value="44" />
+      <Value Name="CM_PROB_PHANTOM" Value="45" />
+      <Value Name="CM_PROB_SYSTEM_SHUTDOWN" Value="46" />
+      <Value Name="CM_PROB_HELD_FOR_EJECT" Value="47" />
+      <Value Name="CM_PROB_DRIVER_BLOCKED" Value="48" />
+      <Value Name="CM_PROB_REGISTRY_TOO_LARGE" Value="49" />
+      <Value Name="CM_PROB_SETPROPERTIES_FAILED" Value="50" />
+      <Value Name="CM_PROB_WAITING_ON_DEPENDENCY" Value="51" />
+      <Value Name="CM_PROB_UNSIGNED_DRIVER" Value="52" />
+      <Value Name="CM_PROB_USED_BY_DEBUGGER" Value="53" />
+    </Enum>
+    <Enum EnumName="PnpDeviceProperty.Type" UnderlyingType="uint32">
+      <Value Name="Empty" Value="0" />
+      <Value Name="Null" Value="1" />
+      <Value Name="SByte" Value="2" />
+      <Value Name="Byte" Value="3" />
+      <Value Name="Int16" Value="4" />
+      <Value Name="UInt16" Value="5" />
+      <Value Name="Int32" Value="6" />
+      <Value Name="UInt32" Value="7" />
+      <Value Name="Int64" Value="8" />
+      <Value Name="UInt64" Value="9" />
+      <Value Name="Float" Value="10" />
+      <Value Name="Double" Value="11" />
+      <Value Name="Decimal" Value="12" />
+      <Value Name="Guid" Value="13" />
+      <Value Name="Currency" Value="14" />
+      <Value Name="Date" Value="15" />
+      <Value Name="FileTime" Value="16" />
+      <Value Name="Boolean" Value="17" />
+      <Value Name="String" Value="18" />
+      <Value Name="SecurityDescriptor" Value="19" />
+      <Value Name="SecurityDescriptorString" Value="20" />
+      <Value Name="DEVPROPKEY" Value="21" />
+      <Value Name="DEVPROPTYPE" Value="22" />
+      <Value Name="Error" Value="23" />
+      <Value Name="NTStatus" Value="24" />
+      <Value Name="StringIndirect" Value="25" />
+      <Value Name="SByteArray" Value="4098" />
+      <Value Name="Binary" Value="4099" />
+      <Value Name="Int16Array" Value="4100" />
+      <Value Name="UInt16Array" Value="4101" />
+      <Value Name="Int32Array" Value="4102" />
+      <Value Name="UInt32Array" Value="4103" />
+      <Value Name="Int64Array" Value="4104" />
+      <Value Name="UInt64Array" Value="4105" />
+      <Value Name="FloatArray" Value="4106" />
+      <Value Name="DoubleArray" Value="4107" />
+      <Value Name="DecimalArray" Value="4108" />
+      <Value Name="GuidArray" Value="4109" />
+      <Value Name="CurrencyArray" Value="4110" />
+      <Value Name="DateArray" Value="4111" />
+      <Value Name="FileTimeArray" Value="4112" />
+      <Value Name="BooleanArray" Value="4113" />
+      <Value Name="StringList" Value="8210" />
+      <Value Name="SecurityDescriptorList" Value="8211" />
+      <Value Name="SecurityDescriptorStringList" Value="8212" />
+      <Value Name="DEVPROPKEYArray" Value="4117" />
+      <Value Name="DEVPROPTYPEArray" Value="4118" />
+      <Value Name="ErrorArray" Value="4119" />
+      <Value Name="NTStatusArray" Value="4120" />
+      <Value Name="StringIndirectList" Value="8217" />
+    </Enum>
+  </Enums>
+
+</PowerShellMetadata>

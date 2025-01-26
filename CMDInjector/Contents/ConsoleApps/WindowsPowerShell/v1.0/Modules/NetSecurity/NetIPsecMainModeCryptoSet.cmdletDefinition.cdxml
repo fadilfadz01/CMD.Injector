@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetIKEMMCryptoSet" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetIPsecMainModeCryptoSet</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="InstanceID">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Name" CmdletParameterSets="ByName" IsMandatory="true" Position="0" Aliases="ID"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DisplayName">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByDisplayName" IsMandatory="true"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Description">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DisplayGroup">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RuleGroup">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Group" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxLifetimeMinutes">
+            <Type PSType="uint32"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="MaxMinutes" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxLifetimeSessions">
+            <Type PSType="uint32"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="MaxSessions" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ForceDiffieHellman">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PrimaryStatus">
+            <Type PSType="NetSecurity.PrimaryStatus"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Status">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PolicyStoreSource">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PolicyStoreSourceType">
+            <Type PSType="NetSecurity.PolicyStoreType"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetMainModeRuleMMCryptoSet" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetMainModeRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetIPsecMainModeRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetIPsecMainModeRule"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="TracePolicyStore">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="ElementName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewDisplayName"/>
+            </Parameter>
+            <Parameter ParameterName="Description">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Description"/>
+            </Parameter>
+            <Parameter ParameterName="Proposals">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]"/>
+              <CmdletParameterMetadata PSName="Proposal"/>
+            </Parameter>
+            <Parameter ParameterName="MaxLifetimeMinutes">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxMinutes"/>
+            </Parameter>
+            <Parameter ParameterName="MaxLifetimeSessions">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxSessions"/>
+            </Parameter>
+            <Parameter ParameterName="ForceDiffieHellman">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="ForceDiffieHellman"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="InstanceID">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata Aliases="ID" PSName="Name" Position="0" IsMandatory="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="DisplayName">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="DisplayName" IsMandatory="true" CmdletParameterSets="ByDisplayName"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="DisplayGroup">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="DisplayGroup" IsMandatory="true" CmdletParameterSets="ByDisplayGroup"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="RuleGroup">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Group" IsMandatory="true" CmdletParameterSets="ByGroup"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:DeleteInstance"/>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Rename" ConfirmImpact="Medium"/>
+        <Method MethodName="Rename">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="NewName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="NewName"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Copy" ConfirmImpact="Medium"/>
+        <Method MethodName="CloneObject">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="NewPolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewPolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="NewGPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewGPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="NewName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewName"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </InstanceCmdlets>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="GPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="InstanceID">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata Aliases="ID" PSName="Name"/>
+            </Parameter>
+            <Parameter ParameterName="ElementName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="DisplayName"/>
+            </Parameter>
+            <Parameter ParameterName="Description">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Description"/>
+            </Parameter>
+            <Parameter ParameterName="RuleGroup">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Group"/>
+            </Parameter>
+            <Parameter ParameterName="Proposals">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="Proposal"/>
+            </Parameter>
+            <Parameter ParameterName="MaxLifetimeMinutes">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxMinutes"/>
+            </Parameter>
+            <Parameter ParameterName="MaxLifetimeSessions">
+              <Type PSType="uint32"/>
+              <CmdletParameterMetadata PSName="MaxSessions"/>
+            </Parameter>
+            <Parameter ParameterName="ForceDiffieHellman">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="ForceDiffieHellman"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Default">
+              <Type PSType="System.Management.Automation.SwitchParameter"/>
+              <CmdletParameterMetadata PSName="Default"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.PrimaryStatus" UnderlyingType="uint16">
+      <Value Name="Unknown" Value="0"/>
+      <Value Name="OK" Value="1"/>
+      <Value Name="Inactive" Value="2"/>
+      <Value Name="Error" Value="3"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.PolicyStoreType" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="Local" Value="1"/>
+      <Value Name="GroupPolicy" Value="2"/>
+      <Value Name="Dynamic" Value="3"/>
+      <Value Name="Generated" Value="4"/>
+      <Value Name="Hardcoded" Value="5"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

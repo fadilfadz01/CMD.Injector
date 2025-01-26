@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/StandardCimv2/MSFT_NetEventVmSwitchProvider" ClassVersion="1.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetEventVmSwitchProvider</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="BySessionName">
+        <QueryableProperties>
+          <Property PropertyName="SessionName">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="BySessionName"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetEventSession_Provider" ResultRole="PartComponent" SourceRole="GroupComponent" >
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetEventSession" />
+              <CmdletParameterMetadata PSName="AssociatedEventSession" ValueFromPipeline = "true"  CmdletParameterSets="BySessionOfTheProvider"/> 
+            </AssociatedInstance>
+          </Association> 
+        </QueryableAssociations>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High" />
+        <Method MethodName="cim:DeleteInstance" />
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="SessionName">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipelineByPropertyName="true" CmdletParameterSets="BySessionName"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+      
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium" />
+        <Method MethodName="cim:ModifyInstance">
+         <Parameters>
+            <Parameter ParameterName="Level">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" Position="0">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter> 
+            <Parameter ParameterName="MatchAnyKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="1">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MatchAllKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata IsMandatory="false" Position="2">
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="SwitchName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata Position="3">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="PortIds">
+              <Type PSType="System.UInt32[]" />
+              <CmdletParameterMetadata Position="4">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      
+    </InstanceCmdlets>
+    <StaticCmdlets>
+        <Cmdlet>
+        <CmdletMetadata Verb="Add" ConfirmImpact="High"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="SessionName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="Level">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" Position="1">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MatchAllKeywords">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata Position="3">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MatchAnyKeyword">
+              <Type PSType="System.UInt64" />
+              <CmdletParameterMetadata Position="2">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="SwitchName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata Position="4">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="PortIds">
+              <Type PSType="System.UInt32[]" />
+              <CmdletParameterMetadata Position="5">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+</PowerShellMetadata>

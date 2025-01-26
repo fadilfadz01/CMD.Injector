@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="CMDInjector.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="HOME" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}" Margin="10,0,0,0"/>
+            <TextBlock Text="System-wide injection &amp; activation." Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition MinHeight="40"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="Welcome:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock TextWrapping="Wrap" Margin="25,0,5,0">
+                        <Span/>
+                        <Span/>
+                        Before getting started please read the
+                        <Hyperlink Click="FaqHelp_Click">FAQ</Hyperlink>
+                        and ensure that you fully comprehend and accept the Disclaimer below.
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,15,0,0">
+                    <TextBlock Text="Disclaimer:" FontSize="25" Margin="20,5,0,0" Foreground="Yellow"/>
+                    <TextBlock Text="  Author does not take responsibility for any possible damage of the phone caused by the App. You are using this App solely at your own risk." TextWrapping="Wrap" Margin="25,0,5,0" Foreground="Yellow"/>
+                </StackPanel>
+                <!--<StackPanel Grid.Row="2" Margin="0,15,0,0" VerticalAlignment="Center" Name="UnlockBLBox" Visibility="Collapsed">
+                    <TextBlock Text="Warning:" FontSize="25" Margin="20,5,0,0" Foreground="Red"/>
+                    <TextBlock Text="  The phone bootloader is detected as locked, so the injection will cause your Operating System break &amp; permanent data loss." TextWrapping="Wrap" Foreground="Red" Margin="25,0,5,5"/>
+                </StackPanel>-->
+                <StackPanel Grid.Row="2" Margin="0,15,0,0">
+                    <TextBlock Text="Injection:" FontSize="25" Margin="20,5,0,0"/>
+                    <TextBlock Text="  By injecting CMD system-wide lets you access it across other apps and devices through a telnet client. And the CMD can be un-injected from the system at any time." TextWrapping="Wrap" Margin="25,0,5,0"/>
+                    <TextBlock Text="Injection type" FontSize="18" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,25">
+                        <ComboBox Name="InjectionTypeCombo" MinWidth="110">
+                            <ComboBoxItem Content="Temporary"/>
+                            <ComboBoxItem Content="Permanent"/>
+                        </ComboBox>
+                        <Button Name="InjectionInfoBtn" Content="&#xE171;" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Height="30" Click="InjectionInfoBtn_Click"/>
+                    </StackPanel>
+                    <TextBlock Name="reInjectionBox" Text="The App has been updated, required re-injection in order to update the CMD components and files to the system." Foreground="Yellow" TextWrapping="Wrap" Margin="25,0,0,0" Visibility="Collapsed"/>
+                    <TextBlock Name="reInjectionNote" Text="You have already injected using a higher version of this App. Please update to the latest version to re-inject." Foreground="Yellow" TextWrapping="Wrap" Margin="25,0,0,0" Visibility="Collapsed"/>
+                    <TextBlock Name="reInjectionReboot" Foreground="Yellow" TextWrapping="Wrap" Margin="25,0,0,0" Visibility="Collapsed"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Button Name="InjectBtn" Content="Inject" Height="32" MinWidth="100" Click="InjectBtn_Click"/>
+                        <Button Name="UnInjectBtn" Content="Un-Inject" Height="32" MinWidth="100" Margin="10,0,0,0" Visibility="Collapsed" Click="UnInjectBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

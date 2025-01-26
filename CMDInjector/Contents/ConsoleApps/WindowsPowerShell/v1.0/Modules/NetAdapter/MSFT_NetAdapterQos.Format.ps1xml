@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterQos.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterQos cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>MSFT_NetAdapterQosSettingData</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterQosSettingData</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterQosSettingData</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>Name</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Enabled</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.HardwareCapabilities -and $_.CurrentCapabilities</ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>Capabilities</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.OperationalSettings</ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>OperationalTrafficClasses</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.OperationalSettings</ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>OperationalFlowControl</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.OperationalSettings</ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>OperationalClassifications</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.RemoteSettings</ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>RemoteTrafficClasses</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.RemoteSettings</ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>RemoteFlowControl</PropertyName>
+              </ListItem>
+              <ListItem>
+                <ItemSelectionCondition>
+                  <ScriptBlock>$_.RemoteSettings</ScriptBlock>
+                </ItemSelectionCondition>
+                <PropertyName>RemoteClassifications</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>MSFT_NetAdapter_QosSettings</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter_QosSettings</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter_QosSettings</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>TransmissionSelectionEnabled</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>PriorityAssignmentTable</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>TsaAssignmentTable</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>BandwidthAssignmentTable</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>FlowControlEnabled</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>PriorityFlowControlEnableArray</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ClassificationEnabled</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NumberOfClassificationElements</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ClassificationTable</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>MSFT_NetAdapter_QosClassificationElement</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter_QosClassificationElement</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter_QosClassificationElement</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>ProtocolSelector</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ProtocolSpecificValue</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Priority</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+
+    <View>
+      <Name>MSFT_NetAdapter_QosCapabilities</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapter_QosCapabilities</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapter_QosCapabilities</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>MacSecBypass</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DcbxSupport</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>NumTCs(Max/ETS/PFC)</Label>
+                <PropertyName>NumTCs</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>

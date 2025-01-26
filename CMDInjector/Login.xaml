@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="CMDInjector.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Line Stroke="{ThemeResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+        <StackPanel>
+            <TextBlock Text="LOGIN" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="Making sure it's you." Margin="20,0,0,0"/>
+        </StackPanel>
+        <Button Grid.Row="1" Name="VerifyBtn" Content="Login" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="100" Click="VerifyBtn_Click"/>
+    </Grid>
+</Page>

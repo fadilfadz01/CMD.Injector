@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetNetworkLayerSecurityFilter" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallSecurityFilter</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="Authentication">
+            <Type PSType="NetSecurity.Authentication"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Encryption">
+            <Type PSType="NetSecurity.Encryption"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="OverrideBlockRules">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="LocalUsers">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="LocalUser" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RemoteUsers">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="RemoteUser" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RemoteMachines">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="RemoteMachine" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetFirewallRuleFilterBySecurity" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallRule"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallRule" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallRule"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="Authentication">
+              <Type PSType="NetSecurity.Authentication"/>
+              <CmdletParameterMetadata PSName="Authentication"/>
+            </Parameter>
+            <Parameter ParameterName="Encryption">
+              <Type PSType="NetSecurity.Encryption"/>
+              <CmdletParameterMetadata PSName="Encryption"/>
+            </Parameter>
+            <Parameter ParameterName="OverrideBlockRules">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="OverrideBlockRules"/>
+            </Parameter>
+            <Parameter ParameterName="LocalUsers">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="LocalUser"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteUsers">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteUser"/>
+            </Parameter>
+            <Parameter ParameterName="RemoteMachines">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteMachine"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.Authentication" UnderlyingType="uint16">
+      <Value Name="NotRequired" Value="0"/>
+      <Value Name="Required" Value="1"/>
+      <Value Name="NoEncap" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Encryption" UnderlyingType="uint16">
+      <Value Name="NotRequired" Value="0"/>
+      <Value Name="Required" Value="1"/>
+      <Value Name="Dynamic" Value="2"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

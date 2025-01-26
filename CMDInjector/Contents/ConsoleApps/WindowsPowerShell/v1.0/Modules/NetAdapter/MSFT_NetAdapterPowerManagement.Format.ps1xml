@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+
+Copyright (c) 2011 Microsoft Corporation.  All rights reserved.
+
+Module Name:
+
+    MSFT_NetAdapterPowerManagement.Format.ps1xml
+
+Description:
+
+    Provides formatting definitions for classes in the
+    MSFT_NetAdapterPowerManagement hierarchy.
+
+-->
+
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>NetAdapterPowerManagement ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagementSettingData</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPowerManagementSettingData</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>InterfaceDescription</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>Name</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ArpOffload</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>NSOffload</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>RsnRekeyOffload</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>D0PacketCoalescing</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SelectiveSuspend</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DeviceSleepOnDisconnect</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>WakeOnMagicPacket</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>WakeOnPattern</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+    <View>
+      <Name>NetAdapterPowerManagement_WakePattern Default ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagement_WakePattern</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPowerManagement_WakePattern</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagement_WakePattern_MagicPacket</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPowerManagement_WakePattern_MagicPacket</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagement_WakePattern_EapolRequestId</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPowerManagement_WakePattern_EapolRequestId</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagement_WakePattern_WildCard</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPowerManagement_WakePattern_WildCard</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>WakePacketType</Label>
+                <ScriptBlock>
+                  Import-Module NetAdapter\MSFT_NetAdapterPowerManagement.Format.Helper.psm1
+                  Format-WakePatternType $_.WakePacketType
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ID</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Priority</Label>
+                <ScriptBlock>
+                    "{0:x8}" -f ($_.Priority)
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <PropertyName>FriendlyName</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+    <View>
+      <Name>NetAdapterPowerManagement_WakePattern_TcpSyn ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>WakePacketType</Label>
+                <ScriptBlock>
+                  Import-Module NetAdapter\MSFT_NetAdapterPowerManagement.Format.Helper.psm1
+                  Format-WakePatternType $_.WakePacketType
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ID</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Priority</Label>
+                <ScriptBlock>
+                    "{0:x8}" -f ($_.Priority)
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <PropertyName>FriendlyName</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SourceAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>SourcePort</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DestinationAddress</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>DestinationPort</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+    <View>
+      <Name>NetAdapterPowerManagement_WakePattern_Bitmap ListView</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterPowerManagement_WakePattern_Bitmap</TypeName>
+        <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterPowerManagement_WakePattern_Bitmap</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>WakePacketType</Label>
+                <ScriptBlock>
+                  Import-Module NetAdapter\MSFT_NetAdapterPowerManagement.Format.Helper.psm1
+                  Format-WakePatternType $_.WakePacketType
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ID</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Priority</Label>
+                <ScriptBlock>
+                    "{0:x8}" -f ($_.Priority)
+                </ScriptBlock>
+              </ListItem>
+              <ListItem>
+                <PropertyName>FriendlyName</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>Pattern</Label>
+                <ScriptBlock>
+                  Import-Module NetAdapter\MSFT_NetAdapterPowerManagement.Format.Helper.psm1
+                  Format-BitmapWakePattern $_.Pattern $_.Mask
+                </ScriptBlock>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>

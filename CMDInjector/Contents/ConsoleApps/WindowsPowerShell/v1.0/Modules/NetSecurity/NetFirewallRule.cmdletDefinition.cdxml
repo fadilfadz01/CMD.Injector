@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetFirewallRule" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetFirewallRule</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="GetAll">
+        <QueryableProperties>
+          <Property PropertyName="InstanceID">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Name" CmdletParameterSets="ByName" IsMandatory="true" Position="0" Aliases="ID"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DisplayName">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByDisplayName" IsMandatory="true"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Description">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DisplayGroup">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="RuleGroup">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Group" CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Enabled">
+            <Type PSType="NetSecurity.Enabled"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Direction">
+            <Type PSType="NetSecurity.Direction"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Action">
+            <Type PSType="NetSecurity.Action"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="EdgeTraversalPolicy">
+            <Type PSType="NetSecurity.EdgeTraversal"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="LooseSourceMapping">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery" Aliases="LSM"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="LocalOnlyMapping">
+            <Type PSType="boolean"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Owner">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PrimaryStatus">
+            <Type PSType="NetSecurity.PrimaryStatus"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Status">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PolicyStoreSource">
+            <Type PSType="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PolicyStoreSourceType">
+            <Type PSType="NetSecurity.PolicyStoreType"/>
+            <RegularQuery>
+              <CmdletParameterMetadata CmdletParameterSets="ByQuery"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetFirewallRuleFilterByAddress" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetAddressFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallAddressFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallAddressFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetFirewallRuleFilterByApplication" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetApplicationFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallApplicationFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallApplicationFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetFirewallRuleFilterByInterface" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetInterfaceFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallInterfaceFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallInterfaceFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetFirewallRuleFilterByInterfaceType" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetInterfaceTypeFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallInterfaceTypeFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallInterfaceTypeFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetFirewallRuleFilterByProtocolPort" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetProtocolPortFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallPortFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallPortFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetFirewallRuleFilterBySecurity" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetNetworkLayerSecurityFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallSecurityFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallSecurityFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetFirewallRuleFilterByService" ResultRole="GroupComponent" SourceRole="PartComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetServiceFilter"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallServiceFilter" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallServiceFilter"/>
+            </AssociatedInstance>
+          </Association>
+          <Association Association="MSFT_NetFirewallRuleInProfile" ResultRole="PartComponent" SourceRole="GroupComponent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetFirewallProfile"/>
+              <CmdletParameterMetadata PSName="AssociatedNetFirewallProfile" IsMandatory="true" ValueFromPipeline="true" CmdletParameterSets="ByAssociatedNetFirewallProfile"/>
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+        <QueryOptions>
+          <Option OptionName="All">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata CmdletParameterSets="GetAll"/>
+          </Option>
+          <Option OptionName="PolicyStore">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="GPOSession">
+            <Type PSType="string"/>
+            <CmdletParameterMetadata/>
+          </Option>
+          <Option OptionName="TracePolicyStore">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="ElementName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewDisplayName"/>
+            </Parameter>
+            <Parameter ParameterName="Description">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Description"/>
+            </Parameter>
+            <Parameter ParameterName="Enabled">
+              <Type PSType="NetSecurity.Enabled"/>
+              <CmdletParameterMetadata PSName="Enabled"/>
+            </Parameter>
+            <Parameter ParameterName="Profiles">
+              <Type PSType="NetSecurity.Profile"/>
+              <CmdletParameterMetadata PSName="Profile"/>
+            </Parameter>
+            <Parameter ParameterName="Platforms">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="Platform"/>
+            </Parameter>
+            <Parameter ParameterName="Direction">
+              <Type PSType="NetSecurity.Direction"/>
+              <CmdletParameterMetadata PSName="Direction"/>
+            </Parameter>
+            <Parameter ParameterName="Action">
+              <Type PSType="NetSecurity.Action"/>
+              <CmdletParameterMetadata PSName="Action"/>
+            </Parameter>
+            <Parameter ParameterName="EdgeTraversalPolicy">
+              <Type PSType="NetSecurity.EdgeTraversal"/>
+              <CmdletParameterMetadata PSName="EdgeTraversalPolicy"/>
+            </Parameter>
+            <Parameter ParameterName="LooseSourceMapping">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata Aliases="LSM" PSName="LooseSourceMapping"/>
+            </Parameter>
+            <Parameter ParameterName="LocalOnlyMapping">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="LocalOnlyMapping"/>
+            </Parameter>
+            <Parameter ParameterName="Owner">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Owner"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemoteAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Protocol">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Protocol"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalPort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalPort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemotePort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemotePort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:IcmpType">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="IcmpType"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:DynamicTransport">
+              <Type PSType="NetSecurity.DynamicTransport"/>
+              <CmdletParameterMetadata Aliases="DynamicTransport" PSName="DynamicTarget"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Program">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Program"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Package">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Package"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Service">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Service"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceAlias">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata PSName="InterfaceAlias"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceType">
+              <Type PSType="NetSecurity.InterfaceType"/>
+              <CmdletParameterMetadata PSName="InterfaceType"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalUser">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="LocalUser"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteUser">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteUser"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteMachine">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteMachine"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Authentication">
+              <Type PSType="NetSecurity.Authentication"/>
+              <CmdletParameterMetadata PSName="Authentication"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Encryption">
+              <Type PSType="NetSecurity.Encryption"/>
+              <CmdletParameterMetadata PSName="Encryption"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:OverrideBlockRules">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="OverrideBlockRules"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters>
+          <QueryableProperties>
+            <Property PropertyName="InstanceID">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata Aliases="ID" PSName="Name" Position="0" IsMandatory="true" CmdletParameterSets="ByName"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="DisplayName">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="DisplayName" IsMandatory="true" CmdletParameterSets="ByDisplayName"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="DisplayGroup">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="DisplayGroup" IsMandatory="true" CmdletParameterSets="ByDisplayGroup"/>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="RuleGroup">
+              <Type PSType="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Group" IsMandatory="true" CmdletParameterSets="ByGroup"/>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+            <Option OptionName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata/>
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:DeleteInstance"/>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Rename" ConfirmImpact="Medium"/>
+        <Method MethodName="Rename">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="NewName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="NewName"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Copy" ConfirmImpact="Medium"/>
+        <Method MethodName="CloneObject">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="NewPolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewPolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="NewGPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewGPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="NewName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="NewName"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Enable" ConfirmImpact="Medium"/>
+        <Method MethodName="Enable">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Disable" ConfirmImpact="Medium"/>
+        <Method MethodName="Disable">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+        </Method>
+      </Cmdlet>
+    </InstanceCmdlets>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:CreateInstance">
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="GPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="InstanceID">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata Aliases="ID" PSName="Name"/>
+            </Parameter>
+            <Parameter ParameterName="ElementName">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" PSName="DisplayName"/>
+            </Parameter>
+            <Parameter ParameterName="Description">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Description"/>
+            </Parameter>
+            <Parameter ParameterName="RuleGroup">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Group"/>
+            </Parameter>
+            <Parameter ParameterName="Enabled">
+              <Type PSType="NetSecurity.Enabled"/>
+              <CmdletParameterMetadata PSName="Enabled"/>
+            </Parameter>
+            <Parameter ParameterName="Profiles">
+              <Type PSType="NetSecurity.Profile"/>
+              <CmdletParameterMetadata PSName="Profile"/>
+            </Parameter>
+            <Parameter ParameterName="Platforms">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="Platform"/>
+            </Parameter>
+            <Parameter ParameterName="Direction">
+              <Type PSType="NetSecurity.Direction"/>
+              <CmdletParameterMetadata PSName="Direction"/>
+            </Parameter>
+            <Parameter ParameterName="Action">
+              <Type PSType="NetSecurity.Action"/>
+              <CmdletParameterMetadata PSName="Action"/>
+            </Parameter>
+            <Parameter ParameterName="EdgeTraversalPolicy">
+              <Type PSType="NetSecurity.EdgeTraversal"/>
+              <CmdletParameterMetadata PSName="EdgeTraversalPolicy"/>
+            </Parameter>
+            <Parameter ParameterName="LooseSourceMapping">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata Aliases="LSM" PSName="LooseSourceMapping"/>
+            </Parameter>
+            <Parameter ParameterName="LocalOnlyMapping">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="LocalOnlyMapping"/>
+            </Parameter>
+            <Parameter ParameterName="Owner">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Owner"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteAddress">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemoteAddress"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Protocol">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Protocol"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalPort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="LocalPort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemotePort">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="RemotePort"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:IcmpType">
+              <Type PSType="string[]"/>
+              <CmdletParameterMetadata PSName="IcmpType"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:DynamicTransport">
+              <Type PSType="NetSecurity.DynamicTransport"/>
+              <CmdletParameterMetadata Aliases="DynamicTransport" PSName="DynamicTarget"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Program">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Program"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Package">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Package"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Service">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="Service"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceAlias">
+              <Type PSType="System.Management.Automation.WildcardPattern[]"/>
+              <CmdletParameterMetadata PSName="InterfaceAlias"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:InterfaceType">
+              <Type PSType="NetSecurity.InterfaceType"/>
+              <CmdletParameterMetadata PSName="InterfaceType"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:LocalUser">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="LocalUser"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteUser">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteUser"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:RemoteMachine">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="RemoteMachine"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Authentication">
+              <Type PSType="NetSecurity.Authentication"/>
+              <CmdletParameterMetadata PSName="Authentication"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Encryption">
+              <Type PSType="NetSecurity.Encryption"/>
+              <CmdletParameterMetadata PSName="Encryption"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:OverrideBlockRules">
+              <Type PSType="boolean"/>
+              <CmdletParameterMetadata PSName="OverrideBlockRules"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Show"/>
+        <Method MethodName="EnumerateFull">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="PolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="GPOSession"/>
+            </Parameter>
+            <Parameter ParameterName="Dependents">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance[]" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/NetSecurityDeepEnumElement"/>
+              <CmdletOutputMetadata PSName="Dependents"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="NetSecurity.Enabled" UnderlyingType="uint16">
+      <Value Name="True" Value="1"/>
+      <Value Name="False" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Profile" UnderlyingType="uint16" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="Public" Value="4"/>
+      <Value Name="Private" Value="2"/>
+      <Value Name="Domain" Value="1"/>
+      <Value Name="NotApplicable" Value="65535"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Direction" UnderlyingType="uint16">
+      <Value Name="Inbound" Value="1"/>
+      <Value Name="Outbound" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Action" UnderlyingType="uint16">
+      <Value Name="NotConfigured" Value="0"/>
+      <Value Name="Allow" Value="2"/>
+      <Value Name="Block" Value="4"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.EdgeTraversal" UnderlyingType="uint16">
+      <Value Name="Block" Value="0"/>
+      <Value Name="Allow" Value="1"/>
+      <Value Name="DeferToUser" Value="2"/>
+      <Value Name="DeferToApp" Value="3"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.PrimaryStatus" UnderlyingType="uint16">
+      <Value Name="Unknown" Value="0"/>
+      <Value Name="OK" Value="1"/>
+      <Value Name="Inactive" Value="2"/>
+      <Value Name="Error" Value="3"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.PolicyStoreType" UnderlyingType="uint16">
+      <Value Name="None" Value="0"/>
+      <Value Name="Local" Value="1"/>
+      <Value Name="GroupPolicy" Value="2"/>
+      <Value Name="Dynamic" Value="3"/>
+      <Value Name="Generated" Value="4"/>
+      <Value Name="Hardcoded" Value="5"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.DynamicTransport" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="ProximityApps" Value="1"/>
+      <Value Name="ProximitySharing" Value="2"/>
+      <Value Name="WifiDirectPrinting" Value="4"/>
+      <Value Name="WifiDirectDisplay" Value="8"/>
+      <Value Name="WifiDirectDevices" Value="16"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.InterfaceType" UnderlyingType="uint32" BitwiseFlags="true">
+      <Value Name="Any" Value="0"/>
+      <Value Name="Wired" Value="1"/>
+      <Value Name="Wireless" Value="2"/>
+      <Value Name="RemoteAccess" Value="4"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Authentication" UnderlyingType="uint16">
+      <Value Name="NotRequired" Value="0"/>
+      <Value Name="Required" Value="1"/>
+      <Value Name="NoEncap" Value="2"/>
+    </Enum>
+    <Enum EnumName="NetSecurity.Encryption" UnderlyingType="uint16">
+      <Value Name="NotRequired" Value="0"/>
+      <Value Name="Required" Value="1"/>
+      <Value Name="Dynamic" Value="2"/>
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

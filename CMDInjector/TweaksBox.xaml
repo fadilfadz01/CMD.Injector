@@ -1,0 +1,488 @@
+﻿<Page
+    x:Class="CMDInjector.TweakBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMDInjector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="TWEAKBOX" FontSize="35" FontWeight="Bold" Foreground="{ThemeResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="Various unique tweaks collection." Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="200"/>
+                </Grid.RowDefinitions>
+                <StackPanel Name="NavRoots" Margin="0,-10,0,25">
+                    <TextBlock Text="File Explorer:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Default folder" FontSize="18" Margin="25,0,0,0"/>
+                    <ComboBox Name="FolderBox" MaxWidth="250" MinWidth="150" Margin="40,0,0,0" SelectionChanged="FolderBox_SelectionChanged"/>
+                    <TextBlock Text="Navigation roots" FontSize="18" Margin="25,10,0,0"/>
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="150"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                        <ListBox Name="RootOrderList" BorderThickness="2" BorderBrush="{ThemeResource AppAccentColor}" SelectionMode="Single" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="130" MinWidth="150" Margin="40,0,0,0"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,40,0">
+                            <Button Name="AddBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE710;" Height="30" Margin="0,0,0,12">
+                                <Button.Flyout>
+                                    <MenuFlyout x:Name="AddFlyMenu"/>
+                                </Button.Flyout>
+                            </Button>
+                            <Button Name="RemoveBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE738;" Height="30" Margin="0,0,0,12" Click="RemoveBtn_Click"/>
+                            <Button Name="MoveUpBtn" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74A;" Height="30" Margin="0,0,0,0" Click="MoveUpBtn_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <TextBlock Text="Folder icon" FontSize="18" Margin="25,10,0,0"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MinWidth="150"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Name="FolderPathCombo" Margin="40,0,10,0" SelectionChanged="FolderPathCombo_SelectionChanged" HorizontalAlignment="Stretch"/>
+                        <ComboBox Grid.Column="1" Name="FolderIconCombo" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" MinWidth="70" Margin="0,0,40,0" SelectionChanged="FolderIconCombo_SelectionChanged">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" FontSize="20" HorizontalAlignment="Center"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,-10,0,0">
+                    <TextBlock Text="System:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Name="TipText" Text="Hold down the button to pin it to the start screen." Margin="25,0,0,0" Foreground="Yellow" TextWrapping="Wrap"/>
+                    <TextBlock Text="Power options" FontSize="18" Margin="25,0,0,0"/>
+                    <StackPanel Margin="40,5,0,10">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Name="ShutBtn" Content="Shutdown" MinWidth="100" Margin="0,0,10,0" Click="ShutBtn_Click" Holding="ShutBtn_Holding"/>
+                            <Button Name="RestartBtn" Content="Restart" MinWidth="100" Margin="0,0,10,0" Click="RestartBtn_Click" Holding="RestartBtn_Holding"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Button Name="LockscreenBtn" Content="Lockscreen" MinWidth="100" Margin="0,0,10,0" Click="LockscreenBtn_Click" Holding="LockscreenBtn_Holding"/>
+                            <Button Name="FFULoaderBtn" Content="FFU Loader" MinWidth="100" Margin="0,0,10,0" Click="FFULoaderBtn_Click" Holding="FFULoaderBtn_Holding"/>
+                            <!--<Button Name="ResetAppBtn" Content="ResetApp" MinWidth="100" Margin="0,0,10,0" Click="ResetAppBtn_Click"/>-->
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Name="VolOptStack">
+                        <TextBlock Text="Volume options" FontSize="18" Margin="25,0,0,0"/>
+                        <StackPanel Margin="40,5,0,10">
+                            <StackPanel Orientation="Horizontal">
+                                <Button Name="VolDownBtn" Content="Volume Down" MinWidth="100" Margin="0,0,10,0" Click="VolumeBtn_Click" Holding="VolDownBtn_Holding"/>
+                                <Button Name="VolUpBtn" Content="Volume Up" MinWidth="100" Click="VolumeBtn_Click" Holding="VolUpBtn_Holding"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <Button Name="VolMuteBtn" Content="Mute/Unmute" MinWidth="100" Margin="0,0,10,0" Click="VolumeBtn_Click" Holding="VolMuteBtn_Holding"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Name="SearchOptStack">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Search options" FontSize="18" Margin="25,0,10,0"/>
+                            <TextBlock Name="SearchOptIndicator" Text="(Reboot required)" FontSize="18" Foreground="Yellow" Visibility="Collapsed"/>
+                        </StackPanel>
+                        <StackPanel Name="SearchAppLoadStack" Margin="30,0,30,10">
+                            <TextBlock Name="SearchAppLoadingText" Text="Loading..."/>
+                            <ProgressBar Name="SearchAppLoadingProg" Margin="0,10,0,0"/>
+                        </StackPanel>
+                        <TextBlock Text="Press" FontSize="15" Margin="40,0,0,0"/>
+                        <ComboBox Name="SearchPressAppsCombo" MinWidth="150" SelectedIndex="0" Margin="40,5,0,0" SelectionChanged="SearchPressAppsCombo_SelectionChanged" IsEnabled="False">
+                            <ComboBoxItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Default"/>
+                            <ComboBoxItem Content="None"/>
+                        </ComboBox>
+                        <ComboBox Name="SearchPressParaCombo" MinWidth="150" Margin="40,5,0,0" IsEnabled="False" Visibility="Collapsed" SelectionChanged="SearchPressParaCombo_SelectionChanged">
+                            <ComboBoxItem Content="Default" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="None"/>
+                            <ComboBoxItem IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Menus" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Home"/>
+                            <ComboBoxItem Content="Terminal"/>
+                            <ComboBoxItem Content="Startup"/>
+                            <ComboBoxItem Content="PacMan"/>
+                            <ComboBoxItem Content="Snapper"/>
+                            <ComboBoxItem Content="BootConfig"/>
+                            <ComboBoxItem Content="TweakBox"/>
+                            <ComboBoxItem Content="Settings"/>
+                            <ComboBoxItem Content="Help"/>
+                            <ComboBoxItem Content="About"/>
+                            <ComboBoxItem IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Power Options" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Shutdown"/>
+                            <ComboBoxItem Content="Restart"/>
+                            <ComboBoxItem Content="Lockscreen"/>
+                            <ComboBoxItem Content="FFU Loader"/>
+                            <ComboBoxItem IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Volume Options" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Volume Down"/>
+                            <ComboBoxItem Content="Volume Up"/>
+                            <ComboBoxItem Content="Volume Mute/Unmute"/>
+                        </ComboBox>
+                        <TextBlock Text="Hold" FontSize="15" Margin="40,10,0,0"/>
+                        <ComboBox Name="SearchHoldAppsCombo" MinWidth="150" SelectedIndex="0" Margin="40,5,0,0" SelectionChanged="SearchHoldAppsCombo_SelectionChanged" IsEnabled="False">
+                            <ComboBoxItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Default"/>
+                            <ComboBoxItem Content="None"/>
+                        </ComboBox>
+                        <ComboBox Name="SearchHoldParaCombo" MinWidth="150" Margin="40,5,0,0" IsEnabled="False" Visibility="Collapsed" SelectionChanged="SearchHoldParaCombo_SelectionChanged">
+                            <ComboBoxItem Content="Default" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="None"/>
+                            <ComboBoxItem IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Menus" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Home"/>
+                            <ComboBoxItem Content="Terminal"/>
+                            <ComboBoxItem Content="Startup"/>
+                            <ComboBoxItem Content="PacMan"/>
+                            <ComboBoxItem Content="Snapper"/>
+                            <ComboBoxItem Content="BootConfig"/>
+                            <ComboBoxItem Content="TweakBox"/>
+                            <ComboBoxItem Content="Settings"/>
+                            <ComboBoxItem Content="Help"/>
+                            <ComboBoxItem Content="About"/>
+                            <ComboBoxItem IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Power Options" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Shutdown"/>
+                            <ComboBoxItem Content="Restart"/>
+                            <ComboBoxItem Content="Lockscreen"/>
+                            <ComboBoxItem Content="FFU Loader"/>
+                            <ComboBoxItem IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Volume Options" FontWeight="Bold" IsHitTestVisible="False"/>
+                            <ComboBoxItem Content="Volume Down"/>
+                            <ComboBoxItem Content="Volume up"/>
+                            <ComboBoxItem Content="Volume Mute/Unmute"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Name="NDTKStack" Visibility="Collapsed" Margin="0,10,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Restore NDTKSvc (Non X50)" FontSize="18" Margin="25,0,10,0"/>
+                            <TextBlock Name="NDTKIndicator" Text="(Reboot required)" FontSize="18" Foreground="Yellow" Visibility="Collapsed"/>
+                        </StackPanel>
+                        <ToggleSwitch Name="RestoreNDTKTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="RestoreNDTKTog_Toggled"/>
+                    </StackPanel>
+                    <StackPanel Name="SecMgrStack" Visibility="Collapsed" Margin="0,0,0,10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Security manager" FontSize="18" Margin="25,0,10,0"/>
+                            <TextBlock Name="SecMgrIndicator" Text="(Reboot required)" FontSize="18" Foreground="Yellow" Visibility="Collapsed"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="40,5,0,0">
+                            <Button Name="SecMgrPatchBtn" Content="Patch Driver" MinWidth="100" Click="SecMgrPatchBtn_Click" Margin="0,0,10,0"/>
+                            <Button Name="SecMgrRestoreBtn" Content="Restore Driver" MinWidth="100" Click="SecMgrRestoreBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Name="UfpModeStack" Visibility="Collapsed" Margin="0,0,0,10">
+                        <TextBlock Text="UFP mode" FontSize="18" Margin="25,0,10,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="40,5,0,0">
+                            <Button Name="UfpEnableBtn" Content="Enable UFP" MinWidth="100" Click="UfpEnableBtn_Click" Margin="0,0,10,0"/>
+                            <Button Name="UfpDisableBtn" Content="Disable UFP" MinWidth="100" Click="UfpDisableBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,15,0,0">
+                    <TextBlock Text="Display:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Display orientation" FontSize="18" Margin="25,0,0,0"/>
+                    <ComboBox Name="DisplayOrient" Margin="40,0,0,0" Width="150" IsEnabled="False" SelectionChanged="DisplayOrient_SelectionChanged">
+                        <ComboBoxItem Content="Portrait"/>
+                        <ComboBoxItem Content="Portrait (flipped)"/>
+                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Brightness slider" FontSize="18" Margin="25,10,10,0"/>
+                        <TextBlock Name="BrightTogIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="BrightTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="BrightTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,10,0,0">
+                    <TextBlock Text="Themes:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Background mode" FontSize="18" Margin="25,0,0,0"/>
+                    <ComboBox Name="BackgModeCombo" MinWidth="150" Margin="40,0,0,0" SelectionChanged="BackgModeCombo_SelectionChanged">
+                        <ComboBoxItem Content="Dark"/>
+                        <ComboBoxItem Content="Light"/>
+                    </ComboBox>
+                    <TextBlock Text="Background auto switch" FontSize="18" Margin="25,10,0,0"/>
+                    <ComboBox Name="AutoBackgCombo" MinWidth="150" Margin="40,0,0,0" SelectionChanged="AutoBackgCombo_SelectionChanged">
+                        <ComboBoxItem Content="Off"/>
+                        <ComboBoxItem Name="AutoBackgItem"/>
+                        <ComboBoxItem Content="Custom Schedule"/>
+                    </ComboBox>
+                    <StackPanel Name="BackgShiftStack" Margin="0,10,0,0" Visibility="Collapsed">
+                        <TimePicker Name="BackgStartTime" Header="Switch to light" ClockIdentifier="24HourClock" Margin="40,0,0,0" TimeChanged="ThemeBackgTime_TimeChanged"/>
+                        <TimePicker Name="BackgStopTime" Header="Switch to dark" ClockIdentifier="24HourClock" Margin="40,5,0,0" TimeChanged="ThemeBackgTime_TimeChanged"/>
+                    </StackPanel>
+                    <TextBlock Text="Accent color" FontSize="18" Margin="25,10,0,0"/>
+                    <StackPanel Margin="40,0,0,0" Orientation="Horizontal">
+                        <ComboBox Name="AccentColorCombo" MinWidth="150" MaxWidth="250" SelectedIndex="0" SelectionChanged="AccentColorCombo_SelectionChanged">
+                            <ComboBoxItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                        </ComboBox>
+                        <Button Name="AccentColorInfoBtn" Content="&#xE171;" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" HorizontalAlignment="Right" Height="30" Click="AccentColorInfoBtn_Click" />
+                    </StackPanel>
+                    <ComboBox Name="AccentColorTwoCombo" MinWidth="150" Margin="40,5,0,0" SelectedIndex="0" SelectionChanged="AccentColorTwoCombo_SelectionChanged" IsEnabled="False">
+                        <ComboBoxItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Margin="0,15,0,0">
+                    <TextBlock Text="Updates:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Enable update" FontSize="18" Margin="25,0,0,0"/>
+                    <Button Name="AUBtn" Content="Anniversary Update" Margin="40,0,0,10" MinWidth="100" Click="SystemUpdate_Click"/>
+                    <Button Name="CUBtn" Content="Creator Update" Margin="40,0,0,10" MinWidth="100" Click="SystemUpdate_Click"/>
+                    <Button Name="FCUBtn" Content="Fall Creator Update" Margin="40,0,0,0" MinWidth="100" Click="SystemUpdate_Click"/>
+                    <TextBlock Text="Disable update" FontSize="18" Margin="25,10,0,0"/>
+                    <ToggleSwitch Name="UptTog" Margin="40,-5,0,0" Toggled="UptTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Margin="0,10,0,0">
+                    <TextBlock Text="Start Screen:" FontSize="25" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Start tiles" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="StartTileIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ComboBox Name="TileCombo" Margin="40,0,0,10" Width="150" SelectionChanged="TileCombo_SelectionChanged">
+                        <ComboBoxItem Content="Two Columns"/>
+                        <ComboBoxItem Content="Three Columns"/>
+                        <ComboBoxItem Content="Four Columns"/>
+                        <ComboBoxItem Content="Five Columns"/>
+                        <ComboBoxItem Content="Six Columns"/>
+                    </ComboBox>
+                    <TextBlock Text="Pin folders to start" FontSize="18" Margin="25,0,0,0"/>
+                    <Button Name="PinFolder" Content="Browse" Margin="40,0,0,0" MinWidth="100" Click="PinFolder_Click"/>
+                    <TextBlock Text="Auto wallpaper change" FontSize="18" Margin="25,10,0,0"/>
+                    <ToggleSwitch Name="StartWallTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="StartWallTog_Toggled"/>
+                    <StackPanel Name="WallSwitchExtraStack" Margin="0,0,0,10" Visibility="Collapsed">
+                        <TextBlock Text="Library" Margin="40,0,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="StartWallLibPathBox" MinWidth="150" MaxWidth="235" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Margin="40,0,0,0" IsReadOnly="True"/>
+                            <Button Name="StartWallLibraryBtn" Content="Browse" MinWidth="70" Click="StartWallLibraryBtn_Click"/>
+                        </StackPanel>
+                        <TextBlock Text="Trigger" Margin="40,10,0,0"/>
+                        <ComboBox Name="StartWallTrigCombo" MinWidth="150" Margin="40,0,0,0" SelectionChanged="StartWallTrigCombo_SelectionChanged">
+                            <ComboBoxItem Content="Lockscreen Unlock"/>
+                            <ComboBoxItem Content="Interval"/>
+                        </ComboBox>
+                        <ComboBox Name="StartWallInterCombo" MinWidth="150" Margin="40,5,0,0" Visibility="Collapsed" SelectionChanged="StartWallInterCombo_SelectionChanged">
+                            <ComboBoxItem Content="15 Minutes"/>
+                            <ComboBoxItem Content="30 Minutes"/>
+                            <ComboBoxItem Content="60 Minutes"/>
+                            <ComboBoxItem Content="12 Hours"/>
+                            <ComboBoxItem Content="24 Hours"/>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Margin="0,10,0,0">
+                    <TextBlock Text="Glance Screen:" FontSize="25" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Restore old glance" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="RestoreGlanceIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="GlanceTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="GlanceTog_Toggled"/>
+                    <TextBlock Text="Font file" FontSize="18" Margin="20,0,0,0"/>
+                    <ComboBox Name="FontFileBox" Margin="40,0,0,0" MinWidth="150" SelectedIndex="0" SelectionChanged="FontFileBox_SelectionChanged">
+                        <ComboBoxItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                        <ComboBoxItem Content="WVGA"/>
+                        <ComboBoxItem Content="720P"/>
+                        <ComboBoxItem Content="720p_HI"/>
+                        <ComboBoxItem Content="WXGA"/>
+                        <ComboBoxItem Content="FHD"/>
+                        <ComboBoxItem Content="FHD_HI"/>
+                        <ComboBoxItem Content="WQHD"/>
+                        <ComboBoxItem Content="WQHD_HI"/>
+                    </ComboBox>
+                    <TextBlock Text="Font color" FontSize="18" Margin="25,10,0,0"/>
+                    <ToggleSwitch Name="FontColorTog" Margin="40,-5,0,0" Toggled="FontColorTog_Toggled"/>
+                    <StackPanel Name="GlanceColorStack">
+                        <TextBlock Text="Auto color change" Margin="40,0,0,0"/>
+                        <ComboBox Name="GlanceAutoColor" Margin="40,0,0,0" MinWidth="150" SelectedIndex="0" SelectionChanged="GlanceAutoColor_SelectionChanged">
+                            <ComboBoxItem Content="Off"/>
+                            <ComboBoxItem Content="On"/>
+                        </ComboBox>
+                        <TextBlock Text="Colors" Margin="40,10,0,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                            <RadioButton Name="RedRadio" Content="Red" Margin="0,0,10,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                            <RadioButton Name="CyanRadio" Content="Cyan" Margin="0,0,10,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                            <RadioButton Name="GreenRadio" Content="Green" Margin="0,0,10,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                            <RadioButton Name="MagentaRadio" Content="Magenta" Margin="0,0,10,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                            <RadioButton Name="BlueRadio" Content="Blue" Margin="0,0,10,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                            <RadioButton Name="YellowRadio" Content="Yellow" Margin="0,0,10,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="Move clock" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="MoveClockTog" Margin="40,-5,0,0" Toggled="MoveClockTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Name="LiveLockStack" Grid.Row="7" Margin="0,10,0,0">
+                    <TextBlock Text="Lockscreen:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Live lockscreen" FontSize="18" Margin="25,0,10,0"/>
+                    <ToggleSwitch Name="AutoWallTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="AutoWallTog_Toggled" IsEnabled="False"/>
+                    <TextBlock Text="Library" FontSize="18" Margin="25,0,10,0"/>
+                    <ComboBox Name="WallCollectionCombo" Margin="40,0,0,0" Width="150" SelectionChanged="AutoWallCombo_SelectionChanged">
+                        <ComboBoxItem Content="Red Moon"/>
+                        <ComboBoxItem Content="Flowers"/>
+                        <ComboBoxItem Content="Timelapse"/>
+                        <ComboBoxItem Content="Custom"/>
+                    </ComboBox>
+                    <StackPanel Name="WallCollectionStack" Visibility="Collapsed">
+                        <StackPanel Orientation="Horizontal" Margin="40,5,0,0">
+                            <TextBox Name="WallCollectionBox"  MinWidth="150" MaxWidth="235" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" IsReadOnly="True"/>
+                            <Button Name="WallCollectionBtn" Content="Browse" MinWidth="70" Margin="0,0,40,0">
+                                <Button.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem Name="ZipFileBtn" Text="Zip File" Click="LibraryBrowse_Click"/>
+                                        <MenuFlyoutItem Text="Images Folder" Click="LibraryBrowse_Click"/>
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                            </Button>
+                        </StackPanel>
+                        <ProgressBar Name="ZipFileProg" Margin="40,5,40,0" Visibility="Collapsed"/>
+                        <TextBlock Text="Transition interval" FontSize="18" Margin="25,10,10,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                            <TextBox Name="WallIntervalBox" MinWidth="150" MaxWidth="250" InputScope="Number" PlaceholderText="50 - 600000" MaxLength="5" TextChanged="WallIntervalBox_TextChanged"/>
+                            <Button Name="WallIntervalBtn" Content="&#xE74e;" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" HorizontalAlignment="Right" Height="30" Click="WallIntervalBtn_Click"/>
+                        </StackPanel>
+                        <TextBlock Text="Reverse loop" FontSize="18" Margin="25,10,10,0"/>
+                        <ToggleSwitch Name="WallRevLoopTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="WallRevLoopTog_Toggled"/>
+                    </StackPanel>
+                    <TextBlock Text="Active hours" FontSize="18" Margin="25,10,10,0"/>
+                    <ToggleSwitch Name="ActiveHoursTog" OnContent="On" OffContent="Off" Margin="40,-5,0,0" Toggled="ActiveHoursTog_Toggled"/>
+                    <StackPanel Name="ActiveHoursStack" Margin="0,5,0,10">
+                        <TimePicker Name="StartTimePkr" Margin="40,0,0,0" Header="Start" ClockIdentifier="24HourClock" TimeChanged="LockscreenTimePkr_TimeChanged"/>
+                        <TimePicker Name="StopTimePkr" Margin="40,5,0,0" Header="Stop" ClockIdentifier="24HourClock" TimeChanged="LockscreenTimePkr_TimeChanged"/>
+                    </StackPanel>
+                    <TextBlock Text="Disable on battery saver" FontSize="18" Margin="25,5,0,0"/>
+                    <ToggleSwitch Name="WallDisBatSavTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="WallDisBatSavTog_Toggled"/>
+                </StackPanel>
+                <StackPanel Grid.Row="8" Margin="0,10,0,0">
+                    <TextBlock Text="Boot:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Spinning progress" FontSize="18" Margin="25,0,10,0"/>
+                    <ToggleSwitch Name="BootAnimTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="BootAnimTog_Toggled"/>
+                    <TextBlock Text="Bootup image" FontSize="18" Margin="25,0,10,0"/>
+                    <ToggleSwitch Name="BootImageTog" OnContent="Custom" OffContent="Default" Margin="40,-5,0,0" Toggled="BootImageTog_Toggled"/>
+                    <StackPanel Name="BootImageStack" Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBox Name="BootImageBox" MinWidth="150" MaxWidth="250" Margin="40,0,0,0" IsReadOnly="True"/>
+                        <Button Name="BootImageBtn" Content="Browse"  MinWidth="70" Margin="0,0,40,0" Click="BootImageBtn_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="Shutdown image" FontSize="18" Margin="25,0,10,0"/>
+                    <ToggleSwitch Name="ShutdownImageTog" OnContent="Custom" OffContent="Default" Margin="40,-5,0,0" Toggled="ShutdownImageTog_Toggled"/>
+                    <StackPanel Name="ShutdownImageStack" Orientation="Horizontal" Margin="0,0,0,10" Visibility="Collapsed">
+                        <TextBox Name="ShutdownImageBox" MinWidth="150" MaxWidth="250" Margin="40,0,0,0" IsReadOnly="True"/>
+                        <Button Name="ShutdownImageBtn" Content="Browse"  MinWidth="70" Margin="0,0,40,0" Click="ShutdownImageBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="9" Margin="0,10,0,0">
+                    <TextBlock Text="Navigation Bar:" FontSize="25" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Software mode" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="SoftwareModeIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="SoftNavTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="SoftNavTog_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Double tap to screen off" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="DoubleTapIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="DoubleTapTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="DoubleTapTog_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Auto hide" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="AutoHideIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="AutoHideTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="AutoHideTog_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Swipe up to hide" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="SwipeUpIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="SwipeUpTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="SwipeUpTog_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="User managed" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="UserManagedIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="UserManagedTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="UserManagedTog_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Burn-in protection" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="BurnInIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <ToggleSwitch Name="BurninProtTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="BurninProtTog_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Burn-in timeout" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="BurnInTimeoutIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="BurninTimeoutBox" FontSize="15" InputScope="Number" MaxLength="2" VerticalAlignment="Center" IsSpellCheckEnabled="False" MinWidth="150" MaxWidth="250" Margin="40,0,0,0" TextChanged="BurninTimeoutBox_TextChanged"/>
+                        <Button Name="BurninTimeoutBtn" Content="&#xE74e;" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" HorizontalAlignment="Right" Height="30" Click="BurninTimeoutBtn_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Burn-in replacement color" FontSize="18" Margin="25,10,10,0"/>
+                        <TextBlock Name="BurnInColorIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed" Margin="0,10,0,0"/>
+                    </StackPanel>
+                    <ComboBox Name="ColorPickCombo" MinWidth="150" Margin="40,0,0,0" SelectedIndex="0" SelectionChanged="ColorPickCombo_SelectionChanged">
+                        <ComboBoxItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Burn-in icons opacity" FontSize="18" Margin="25,10,10,0"/>
+                        <TextBlock Name="BurnInOpacityIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed" Margin="0,10,0,0"/>
+                    </StackPanel>
+                    <Slider Name="OpacitySlide" Minimum="0" Maximum="100" Margin="40,0,40,0" ValueChanged="OpacitySlide_ValueChanged"/>
+                </StackPanel>
+                <StackPanel Grid.Row="10">
+                    <TextBlock Text="Crash Dump:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="Dump type" FontSize="18" Margin="25,0,10,0"/>
+                    <ComboBox Name="DumpTypeCombo" MinWidth="150" Margin="40,0,0,0" SelectionChanged="DumpTypeCombo_SelectionChanged">
+                        <ComboBoxItem Content="Disabled"/>
+                        <ComboBoxItem Content="Mini Dump"/>
+                        <ComboBoxItem Content="Full Dump"/>
+                    </ComboBox>
+                    <TextBlock Text="Dump count" FontSize="18" Margin="25,10,10,0"/>
+                    <ComboBox Name="DumpCountCombo" MinWidth="150" Margin="40,0,0,0" SelectionChanged="DumpCountCombo_SelectionChanged">
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                        <ComboBoxItem Content="5"/>
+                        <ComboBoxItem Content="6"/>
+                        <ComboBoxItem Content="7"/>
+                        <ComboBoxItem Content="8"/>
+                        <ComboBoxItem Content="9"/>
+                        <ComboBoxItem Content="10"/>
+                    </ComboBox>
+                    <TextBlock Text="Dump path" FontSize="18" Margin="25,10,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                        <TextBox Name="DumpFolderBox" MinWidth="150" MaxWidth="235" IsReadOnly="True"/>
+                        <Button Name="DumpFolderBtn" Content="Browse" MinWidth="70" Margin="0,0,40,0" Click="DumpFolderBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="11" Margin="0,20,0,0">
+                    <TextBlock Text="Misc:" FontSize="25" Margin="20,0,0,0"/>
+                    <TextBlock Text="DNG support" FontSize="18" Margin="25,0,10,0"/>
+                    <ToggleSwitch Name="DngTog" OnContent="Enabled" OffContent="Disabled" Margin="40,-5,0,0" Toggled="DngTog_Toggled"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Virtual memory" FontSize="18" Margin="25,0,10,0"/>
+                        <TextBlock Name="VirtualMemoryIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="18" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="VirtualMemBox" FontSize="15" VerticalAlignment="Center" MaxLength="25" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" MinWidth="150" MaxWidth="250" Margin="40,0,0,0" TextChanged="VirtualMemBox_TextChanged"/>
+                        <Button Name="VirtualMemBtn" Content="&#xE74e;" FontFamily="ms-appx:///Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" HorizontalAlignment="Right" Height="30" Click="VirtualMemBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

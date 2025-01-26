@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetAdapterRscSettingData" ClassVersion="1.0.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetAdapterRsc</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType ="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Name" Position="0" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceDescription">
+            <Type PSType ="string"/>
+            <RegularQuery AllowGlobbing="true" >
+              <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="IPv4OperationalState">
+            <Type PSType ="System.Boolean"/>
+            <RegularQuery AllowGlobbing="false" >
+              <CmdletParameterMetadata PSName="IPv4OperationalState" IsMandatory="false" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="IPv6OperationalState">
+            <Type PSType ="System.Boolean"/>
+            <RegularQuery AllowGlobbing="false" >
+              <CmdletParameterMetadata PSName="IPv6OperationalState" IsMandatory="false" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="IPv4FailureReason">
+            <Type PSType ="NetAdapterRsc.FailureReason"/>
+            <RegularQuery AllowGlobbing="false" >
+              <CmdletParameterMetadata PSName="IPv4FailureReason" IsMandatory="false" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="IPv6FailureReason">
+            <Type PSType ="NetAdapterRsc.FailureReason"/>
+            <RegularQuery AllowGlobbing="false" >
+              <CmdletParameterMetadata PSName="IPv6FailureReason" IsMandatory="false" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryOptions>
+          <Option OptionName="IncludeHidden">
+            <Type PSType="System.Management.Automation.SwitchParameter" />
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+      <Cmdlet>
+       <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance">
+          <Parameters>
+            <Parameter ParameterName="IPv4Enabled">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="IPv6Enabled">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:NoRestart">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="NoRestart" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+       <CmdletMetadata Verb="Enable" ConfirmImpact="Medium"/>
+        <Method MethodName="Enable">
+          <Parameters>
+            <Parameter ParameterName="IPv4">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="IPv6">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:NoRestart">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="NoRestart" />
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="PassThru" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+       <CmdletMetadata Verb="Disable" ConfirmImpact="Medium"/>
+        <Method MethodName="Disable">
+          <Parameters>
+            <Parameter ParameterName="IPv4">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="IPv6">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:NoRestart">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="NoRestart" />
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata PSName="PassThru" />
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata PSName="Name" Position="0" IsMandatory="true" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceDescription">
+              <Type PSType ="string"/>
+              <RegularQuery AllowGlobbing="true" >
+                <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+          <QueryOptions>
+            <Option OptionName="IncludeHidden">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+            </Option>
+          </QueryOptions>
+        </GetCmdletParameters>
+     </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetAdapterRsc.FailureReason" UnderlyingType="System.UInt32">
+      <Value Name="NoFailure" Value="0" />
+      <Value Name="NicPropertyDisabled" Value="1" />
+      <Value Name="WFPCompatibility" Value="2" />
+      <Value Name="NDISCompatibility" Value="3" />
+      <Value Name="ForwardingEnabled" Value="4" />
+      <Value Name="NetOffloadGlobalDisabled" Value="5" />
+      <Value Name="Capability" Value="6" />
+      <Value Name="Unknown" Value="7" />
+    </Enum>
+  </Enums>
+
+</PowerShellMetadata>

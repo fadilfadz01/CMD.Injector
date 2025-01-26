@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetAdapterVPortSettingData" ClassVersion="1.0.0">
+    <Version>1.0</Version>
+    <DefaultNoun>NetAdapterVPort</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType ="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="Name" Position="0" Aliases="ifAlias InterfaceAlias" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceDescription">
+            <Type PSType ="string"/>
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata PSName="InterfaceDescription" IsMandatory="true" Aliases="ifDesc InstanceID" ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByInstanceID"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="VPortID">
+            <Type PSType ="uint32"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="VPortID" Aliases="Id" CmdletParameterSets="ByName ByInstanceID"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="SwitchID">
+            <Type PSType ="uint32"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="SwitchID" CmdletParameterSets="ByName ByInstanceID"/>
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="FunctionID">
+            <Type PSType ="uint16"/>
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="FunctionID" Aliases="VfID" CmdletParameterSets="ByName ByInstanceID"/>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryOptions>
+          <Option OptionName="PhysicalFunction">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+            <CmdletParameterMetadata PSName="PhysicalFunction" Aliases="PF"/>
+          </Option>
+          <Option OptionName="IncludeHidden">
+            <Type PSType="System.Management.Automation.SwitchParameter"/>
+          </Option>
+        </QueryOptions>
+      </GetCmdletParameters>
+    </InstanceCmdlets>
+  </Class>
+</PowerShellMetadata>

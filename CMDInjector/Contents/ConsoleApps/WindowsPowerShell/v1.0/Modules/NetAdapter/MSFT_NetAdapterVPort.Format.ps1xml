@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+
+Module Name: MSFT_NetAdapterVPort.Format.ps1xml
+
+Description: Output Format file for MSFT_NetAdapterVPort cmdlets
+
+Author:
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+******************************************************************** -->
+<Configuration>
+  <ViewDefinitions>
+  <View>
+    <Name>MSFT_NetAsapterVPort_TableView</Name>
+    <ViewSelectedBy>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#ROOT/StandardCimv2/MSFT_NetAdapterVPortSettingData</TypeName>
+      <TypeName>Microsoft.Management.Infrastructure.CimInstance#MSFT_NetAdapterVPortSettingData</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <label>Name</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ID</label>
+          <Width>6</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>MacAddress</label>
+          <Width>25</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>VID</label>
+          <Width>5</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ProcMask</label>
+          <Width>10</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>FID</label>
+          <Width>9</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>State</label>
+          <Width>11</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>ITR</label>
+          <Width>9</Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <label>QPairs</label>
+          <Width>6</Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <ScriptBlock>
+              Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+              Format-AdapterName $_.Name 25
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>VPortID</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+                $out=""
+                if ($_.FilterList -and ($_.FilterList.Length -ge 1))
+                {
+                  $MacAddress=$_.FilterList[0].MacAddress
+                  if ($MacAddress)
+                  {
+                    Import-Module NetAdapter\NetAdapter.Format.Helper.psm1
+                    $out = Format-MacAddress $MacAddress
+                  }
+                }
+                $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              $out=""
+              if ($_.FilterList -and ($_.FilterList.Length -ge 1))
+              {
+                if ($_.FilterList[0].VlanID -ne $null)
+                {
+                  $out = "$($_.FilterList[0].VlanID)"
+                }
+              }
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+            <ScriptBlock>
+              $out=""
+              if($_.ProcessorAffinityMask -ne $null)
+              {
+                $affinity = $_.ProcessorAffinityMask
+                $ProcNumber = 0
+                while($affinity -and !($affinity%2)){$affinity=$affinity/2;$ProcNumber++}
+                $out="$($_.ProcessorGroup):$ProcNumber"
+              }
+              $out
+            </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+              $out = ""
+              if ($_.FunctionID -ne $null)
+              {
+                if($_.FunctionID -eq 65535)
+                {
+                  $out="PF"
+                }
+                else
+                {
+                  $out=$_.FunctionID
+                }
+              }
+              $out
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+                $out=switch ($_.VPortState)
+                {
+                  0 {"Unknown"}
+                  1 {"Activated"}
+                  2 {"DeActivated"}
+                  default {"Unknown"}
+                }
+                $out
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <ScriptBlock>
+                $out=switch ($_.InterruptModeration)
+                {
+                  0 {"Unknown"}
+                  1 {"Adaptive"}
+                  2 {"Off"}
+                  100 {"Low"}
+                  200 {"Medium"}
+                  300 {"High"}
+                  default {"Unknown"}
+                }
+                $out
+              </ScriptBlock>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>NumQueuePairs</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl>
+  </View>
+  </ViewDefinitions>
+</Configuration>

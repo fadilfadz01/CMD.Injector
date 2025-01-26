@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_NetTCPSetting" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>NetTCPSetting</DefaultNoun>
+
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="SettingName">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" Position="0" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MinRto">
+            <Type PSType="System.UInt32" />
+            <RegularQuery>
+              <CmdletParameterMetadata PSName="MinRtoMs" Aliases="MinRto" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InitialCongestionWindow">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="InitialCongestionWindowMss" Aliases="InitialCongestionWindow" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="CongestionProvider">
+            <Type PSType="NetTCPSetting.CongestionProvider" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="CwndRestart">
+            <Type PSType="NetTCPSetting.CwndRestart" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DelayedAckTimeout">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="DelayedAckTimeoutMs" Aliases="DelayedAckTimeout" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>		  
+          <Property PropertyName="DelayedAckFrequency">
+            <Type PSType="System.Byte" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>		  
+          <Property PropertyName="MemoryPressureProtection">
+            <Type PSType="NetTCPSetting.MemoryPressureProtection" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AutoTuningLevelLocal">
+            <Type PSType="NetTCPSetting.AutoTuningLevelLocal" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AutoTuningLevelGroupPolicy">
+            <Type PSType="NetTCPSetting.AutoTuningLevelGroupPolicy" />
+            <!--<Type PSType="System.Byte" />-->
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AutoTuningLevelEffective">
+            <Type PSType="NetTCPSetting.AutoTuningLevelEffective" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="EcnCapability">
+            <Type PSType="NetTCPSetting.EcnCapability" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="Timestamps">
+            <Type PSType="NetTCPSetting.Timestamps" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InitialRto">
+            <Type PSType="System.UINT32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata PSName="InitialRtoMs" Aliases="InitialRto" IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ScalingHeuristics">
+            <Type PSType="NetTCPSetting.ScalingHeuristics" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DynamicPortRangeStartPort">
+            <Type PSType="System.UINT16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="DynamicPortRangeNumberOfPorts">
+            <Type PSType="System.UINT16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AutomaticUseCustom">
+            <Type PSType="NetTCPSetting.AutomaticUseCustom" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="NonSackRttResiliency">
+            <Type PSType="NetTCPSetting.NonSackRttResiliency" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="ForceWS">
+            <Type PSType="NetTCPSetting.ForceWS" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="MaxSynRetransmissions">
+            <Type PSType="System.Byte" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AutoReusePortRangeStartPort">
+            <Type PSType="System.UINT16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AutoReusePortRangeNumberOfPorts">
+            <Type PSType="System.UINT16" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        <QueryableAssociations>
+          <Association Association="MSFT_NetTransportFilterTCPSetting" ResultRole="Dependent" SourceRole="Antecedent">
+            <AssociatedInstance>
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" ETSType="Microsoft.Management.Infrastructure.CimInstance#root/standardcimv2/MSFT_NetTransportFilter" />
+              <CmdletParameterMetadata PSName="AssociatedTransportFilter" ValueFromPipeline="true" CmdletParameterSets="ByName" />
+            </AssociatedInstance>
+          </Association>
+        </QueryableAssociations>
+      </GetCmdletParameters>
+
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="MinRto">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="MinRtoMs" Aliases="MinRto" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="InitialCongestionWindow">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="InitialCongestionWindowMss" Aliases="InitialCongestionWindow" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="CongestionProvider">
+              <Type PSType="NetTCPSetting.CongestionProvider" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="CwndRestart">
+              <Type PSType="NetTCPSetting.CwndRestart" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DelayedAckTimeout">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="DelayedAckTimeoutMs" Aliases="DelayedAckTimeout" IsMandatory="false" />
+            </Parameter>			
+            <Parameter ParameterName="DelayedAckFrequency">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>			
+            <Parameter ParameterName="MemoryPressureProtection">
+              <Type PSType="NetTCPSetting.MemoryPressureProtection" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AutoTuningLevelLocal">
+              <Type PSType="NetTCPSetting.AutoTuningLevelLocal" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="EcnCapability">
+              <Type PSType="NetTCPSetting.EcnCapability" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="Timestamps">
+              <Type PSType="NetTCPSetting.Timestamps" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="InitialRto">
+              <Type PSType="System.UInt32" />
+              <CmdletParameterMetadata PSName="InitialRtoMs" Aliases="InitialRto" IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ScalingHeuristics">
+              <Type PSType="NetTCPSetting.ScalingHeuristics" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DynamicPortRangeStartPort">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="DynamicPortRangeNumberOfPorts">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AutomaticUseCustom">
+              <Type PSType="NetTCPSetting.AutomaticUseCustom" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="NonSackRttResiliency">
+              <Type PSType="NetTCPSetting.NonSackRttResiliency" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="ForceWS">
+              <Type PSType="NetTCPSetting.ForceWS" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="MaxSynRetransmissions">
+              <Type PSType="System.Byte" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AutoReusePortRangeStartPort">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+            <Parameter ParameterName="AutoReusePortRangeNumberOfPorts">
+              <Type PSType="System.UInt16" />
+              <CmdletParameterMetadata IsMandatory="false" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="SettingName">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Position="0" CmdletParameterSets="ByName" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+
+  </Class>
+
+  <Enums>
+    <Enum EnumName="NetTCPSetting.CwndRestart" UnderlyingType="System.Byte">
+      <Value Name="False" Value="0" />
+      <Value Name="True" Value="1" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.MemoryPressureProtection" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+      <Value Name="Default" Value="2" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.CongestionProvider" UnderlyingType="System.Byte">
+      <Value Name="Default" Value="0" />
+      <Value Name="CTCP" Value="2" />
+      <Value Name="DCTCP" Value="3" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.AutoTuningLevelLocal" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="HighlyRestricted" Value="1" />
+      <Value Name="Restricted" Value="2" />
+      <Value Name="Normal" Value="3" />
+      <Value Name="Experimental" Value="4" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.EcnCapability" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.Timestamps" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.ScalingHeuristics" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.AutoTuningLevelGroupPolicy" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="HighlyRestricted" Value="1" />
+      <Value Name="Restricted" Value="2" />
+      <Value Name="Normal" Value="3" />
+      <Value Name="Experimental" Value="4" />
+      <Value Name="NotConfigured" Value="254" />
+      <Value Name="NotChanged" Value="255" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.AutoTuningLevelEffective" UnderlyingType="System.Byte">
+      <Value Name="Local" Value="0" />
+      <Value Name="GroupPolicy" Value="1" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.AutomaticUseCustom" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.NonSackRttResiliency" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+    <Enum EnumName="NetTCPSetting.ForceWS" UnderlyingType="System.Byte">
+      <Value Name="Disabled" Value="0" />
+      <Value Name="Enabled" Value="1" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>

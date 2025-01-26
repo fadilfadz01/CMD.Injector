@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="root/standardcimv2/MSFT_NetGPO" ClassVersion="1.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>NetGPO</DefaultNoun>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="Open"/>
+        <Method MethodName="Open">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="PolicyStore">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" Position="0" PSName="PolicyStore"/>
+            </Parameter>
+            <Parameter ParameterName="DomainController">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata PSName="DomainController"/>
+            </Parameter>
+            <Parameter ParameterName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletOutputMetadata PSName="GPOSession"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Save"/>
+        <Method MethodName="Save">
+          <ReturnValue>
+            <Type PSType="System.Int32"/>
+            <CmdletOutputMetadata>
+              <ErrorCode/>
+            </CmdletOutputMetadata>
+          </ReturnValue>
+          <Parameters>
+            <Parameter ParameterName="GPOSession">
+              <Type PSType="string"/>
+              <CmdletParameterMetadata IsMandatory="true" Position="0" PSName="GPOSession"/>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+  </Class>
+</PowerShellMetadata>

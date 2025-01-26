@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT/StandardCimv2/MSFT_DNSClientServerAddress" ClassVersion="1.0.0">
+    <Version>1.0.0</Version>
+    <DefaultNoun>DnsClientServerAddress</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="InterfaceIndex">
+            <Type PSType="System.UInt32" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" ValueFromPipeline="true" ValueFromPipelineByPropertyName="true" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="InterfaceAlias">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Position="0" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="AddressFamily">
+            <Type PSType="DnsClientServerAddress.AddressFamily" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="false" CmdletParameterSets="ByName" Aliases="Family" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Low"/>
+        <Method MethodName="cim:ModifyInstance" >
+          <Parameters>
+            <Parameter ParameterName="cim:OperationOption:ServerAddresses">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata IsMandatory="false" PSName="ServerAddresses" Aliases="Addresses" />
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:Validate">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata IsMandatory="false" PSName="Validate" />
+            </Parameter>
+            <Parameter ParameterName="cim:OperationOption:ResetServerAddresses">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata IsMandatory="false" PSName="ResetServerAddresses" Aliases="ResetAddresses" />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByAlias">
+          <QueryableProperties>
+            <Property PropertyName="InterfaceIndex">
+              <Type PSType="System.UInt32" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="true" CmdletParameterSets="ByName" ValueFromPipeline="true" ValueFromPipelineByPropertyName="true" />
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="InterfaceAlias">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="true" CmdletParameterSets="ByAlias" Position="0" />
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+  </Class>
+  <Enums>
+    <Enum EnumName="DnsClientServerAddress.AddressFamily" UnderlyingType="System.UInt16">
+      <Value Name="IPv4" Value="2" />
+      <Value Name="IPv6" Value="23" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>
